@@ -1,0 +1,4 @@
+[NAME] works at Example Corporation.
+His email is [EMAIL].
+His phone number is [PHONE].
+The server IP address is [IP ADDRESS].

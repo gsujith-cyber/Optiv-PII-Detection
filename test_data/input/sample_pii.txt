@@ -1,0 +1,4 @@
+John Smith works at Example Corporation.
+His email is john.smith@example.com.
+His phone number is 9876543210.
+The server IP address is 192.168.1.25.

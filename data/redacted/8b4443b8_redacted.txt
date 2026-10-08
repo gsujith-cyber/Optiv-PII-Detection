@@ -1,0 +1,2812 @@
+--- Page/Slide 1 ---
+= CADENCE
+
+Group Risk Management
+Policy
+
+Document reference GRP-POL-001 | Version 6.0
+
+Policy owner: [PERSON_1], Group Chief Risk Officer ([EMPLOYEE_ID_1])
+[EMAIL_1] | [PHONE_1] | mobile [PHONE_2]
+Author: [PERSON_2], Head of Enterprise Risk Framework ([EMPLOYEE_ID_2]), [EMAIL_2]
+Approved by: Board Risk Committee, chaired by [PERSON_3], on 18 June 2026
+Effective date: 1 July 2026 | Next review: 30 June 2027 | Classification: Internal
+
+Cadence Financial Group, Inc. | 245 Hudson Street, New York, NY 10013, United States
+Policy queries: [PERSON_4], Committee Secretary — [[PERSON_1]], [PHONE_3]
+This policy supersedes version 5.2 dated 1 July 2025 in its entirety.
+
+TRAINING NOTICE. Synthetic teaching artifact. Cadence Financial Group is fictional and every name, identifier, contact detail and account number
+below is fabricated for Pll-detection exercises.
+
+
+--- Page/Slide 2 ---
+>up Risk Management Pol 3RP-POL-001 | Version 6.0 | Internal
+
+Contents
+
+SECTION TITLE PAGE
+1 Purpose and objectives 3
+2 Scope and applicability 3
+5 Regulatory context and standards alignment 4
+4 Definitions 5
+5 Risk governance structure 6
+6 The three lines model 8
+7 Roles, responsibilities and named incumbents 9
+8 Risk appetite and tolerance 10
+9 Group risk taxonomy 13
+10 The risk management process 14
+uu Risk assessment methodology 15
+12 Risk treatment and acceptance 7
+13 Risk and control self-assessment 18
+14 Key risk indicators and monitoring 20
+15 Issue and remediation management 21
+16 Incident and loss event management 22
+7 Emerging risk, scenario analysis and stress testing 24
+18 Change, new product and third-party risk 25
+19 Reporting and escalation 26
+20 Policy exceptions and waivers 27
+21 Assurance, training and awareness 28
+22 Policy governance, breach and review 29
+A Appendix A — Impact and likelihood scales 30
+B Appendix B — Risk appetite statements and limits 31
+Gc Appendix C — RACI mattix and named accountable officers 32
+D ‘Appendix D — Key risk indicator catalogue 33
+E Appendix & — Related documents, approval and version control 34
+
+Document control
+
+Document reference GRP-POL-001
+
+Version 6.0 (supersedes 5.2)
+
+Policy owner [PERSON_1], Group Chief Risk Officer — [EMPLOYEE_ID_1], [EMAIL_4], [PHONE_1]
+Policy author [PERSON_2], Head of Enterprise Risk Framework — [EMPLOYEE_ID_2], [EMAIL_2], +44 20 7555 0171
+Legal reviewer [PERSON_5], Group General Counsel — [EMPLOYEE_ID_3], [EMAIL_5]
+
+Privacy reviewer [PERSON_6], Chief Privacy Officer — [EMPLOYEE_ID_4], [EMAIL_6], +44 20 7555 0163
+Approval authority Board Risk Committee (Chair: [PERSON_3], [EMAIL_7])
+
+Date approved 18 June 2026
+
+Effective date 1 July 2026
+
+Review frequency Annual, or sooner on material change to the business, regulation or risk profile
+
+Next review due 30 June 2027
+
+Classification Internal — contains personal data of named officers
+
+Distribution All employees; Group Policy Portal; external assessor [PERSON_7] (Halloran & Pike LLP,
+
+[EMAIL_8])
+
+Retention Ten years from superseding date, per Records Schedule RS-09
+
+Personal data notice. This policy names individual officers and includes their corporate contact details so that accountability is
+unambiguous and escalation is actionable. Sections 13, 15, 16, 20 and 21 additionally reproduce extracts from operational registers
+that contain employee identifiers, dates of birth, national identifiers and home addresses. Distribution outside the Group requires
+approval from the Chief Privacy Officer.
+
+Page 2 of 35
+
+
+--- Page/Slide 3 ---
+Sroup Risk Management Pol
+
+POL-001 | Version 6.0 | Internal
+
+1. Purpose and objectives
+
+Cadence Financial Group, Inc. (the “Group") accepts risk as an inherent consequence of providing investment banking, asset
+management and consumer banking services. This policy establishes the Group-wide framework through which risk is identified,
+assessed, treated, monitored and reported, so that risk-taking is deliberate, understood, and remains within the appetite set by the
+Board of Directors.
+
+This policy is the apex document of the Group tisk policy hierarchy. All subordinate risk policies, standards and procedures must be
+consistent with it. Where a subordinate document conflicts with this policy, this policy prevails. Interpretation questions are directed to
+the policy author, [PERSON_2] ([EMAIL_9], +44 20 7555 0171),
+
+1.1 Objectives
+
+1. Protect capital, liquidity and earnings by ensuring exposures remain within approved appetite and regulatory limits.
+2. Enable informed risk-taking through a consistent, comparable view of risk across business lines and geographies.
+3. Establish clear accountability for every material risk, with a single named owner at an appropriate level of seniority.
+4. Ensure regulatory compliance with prudential, conduct and data-protection obligations in each jurisdiction.
+
+5. Protect customers and market integrity by embedding conduct considerations into risk decisions,
+
+6. Safeguard reputation by identifying and managing risks to stakeholder confidence.
+
+7. Support resilience so the Group can absorb severe but plausible shocks and continue important business services.
+8. Promote a healthy risk culture in which concerns are raised early, escalated without fear, and acted upon.
+
+1.2 Principles
+
+PRINCIPLE STATEMENT
+
+Risk ownership Risk is owned by the business that creates it. Ownership cannot be delegated to a control function or to a third party.
+Proportionality The depth of assessment, control and reporting is proportionate to the materiality and complexity of the risk.
+Independence The second and third lines have direct, unrestricted access to the Board and are free from business pressure.
+Transparency Risks are reported completely and without filtering. Understating or delaying a risk report is a breach of this policy.
+Forward focus The framework considers emerging and prospective risks, not only realised losses and historical events.
+[PERSON_8] taxonomy, scoring scale and definitions apply Group-wide so that risks aggregate meaningfully
+Substance over form Assessments reflect actual exposure and actual control operation, not documented intent.
+
+2. Scope and applicability
+
+2.1 Entities in scope
+
+This policy applies to Cadence Financial Group, Inc. and every subsidiary, branch and representative office it controls, including
+regulated entities in the United States, the United Kingdom, the European Union, India, Singapore and Hong Kong. Where a subsidiary
+is subject to a local requirement more stringent than this policy, the local requirement applies and the divergence is recorded in the
+Group Policy Divergence Register maintained by [PERSON_4] ([[PERSON_1]]).
+
+Joint ventures and associates in which the Group does not hold control are out of scope. The Group's interest in such entities is
+managed as an investment exposure under the Credit Risk Policy and as a reputational exposure under this policy.
+
+2.2 Persons in scope
+
+This policy applies to all directors, employees, secondees, contingent workers and contractors acting for the Group, regardless of
+location or employment status. Third parties performing outsourced activities are bound through contractual terms requiring equivalence
+with this policy, per Section 18.3.
+
+2.3 Local entity contacts
+
+LEGAL ENTITY LOCAL RISK OFFICER [PERSON_9]Cadence Financial Group, Inc. [PERSON_1] ([EMPLOYEE_ID_1]) [EMAIL_10], +1 Federal Reserve / OCC.
+(us) [PHONE_4]
+
+Cadence Financial Group (UK) [PERSON_6] [EMAIL_11], — PRA/ FCA
+
+Limited ([EMPLOYEE_ID_4]) +44 20 7555 0163
+
+Cadence Asset Management [PERSON_10] [EMAIL_12], AMF
+
+Europe SA (emp-41501) +33 15555 0144
+
+Cadence Services India Private [PERSON_11] [EMAIL_13], +91 RBI
+
+Limited (EmP-37903) 22.4555 O117
+
+Cadence Capital Markets Aiko Nakamura-Reed [EMAIL_14], MAS.
+
+(Singapore) Pte ([EMPLOYEE_ID_5]) +65 6555 0172
+
+2.4 Risks in scope
+All Level 1 risk categories in the Group Risk Taxonomy (Section 9) are in scope. This policy addresses the framework itself; detailed
+management of each category is set out in the subordinate policies listed in [PERSON_12]1 i Page 3 of 35
+
+
+--- Page/Slide 4 ---
+Sroup Risk Management Pol
+
+3. Regulatory context and standards alignment
+
+The framework is designed to satisfy the supervisory expectations of the Group's principal regulators while remaining a single, internally
+coherent framework rather than a collection of jurisdiction-specific approaches.
+
+3.1 External standards
+
+STANDARD OR [PERSON_13] TO THIS POLICY HOW ALIGNMENT IS ACHIEVED
+ISO 31000:2018 — Risk Provides the process model and vocabulary Section 10 mirrors the ISO process; Section 4 adopts ISO-
+management guidelines consistent definitions
+
+COSO Enterprise Risk Management Integrates risk with strategy and performance Appetite is set alongside the strategic plan (Section 8.2)
+(2017)
+
+Basel — Sound Management of Operational risk governance, three lines, loss Sections 6, 13 and 16
+Operational Risk data
+BCBS 239 — Risk Data Aggregation Accuracy, completeness and timeliness of risk Section 19.4 data quality requirements
+data
+IA Three Lines Model (2020) Accountability and assurance structure Section 6
+ISO/EC 27001:2022 and NIST CSF Technology and cyber risk control objectives Technology & Cyber Risk Policy (GRP-POL-014)
+20
+NIST SP 800-37 Risk Management —_System-level risk authorisation Change and system approval process, Section 18.1
+Framework
+PRA Operational Resilience Important business services and impact Section 17.4
+(ssu/2i) tolerances
+EU Digital Operational Resilience Act ICT risk and third-party oversight in the EU Sections 18.3 and 17.4
+(D0RA)
+GDPR, UK DPA 2018, DPDP Act _ Personal data as a risk category Data Privacy Policy (GRP-POL-021); taxonomy Level 2 "Data
+2023, GLBA privacy’
+
+3.2 Regulatory relationship owners
+
+Each principal supervisory relationship has a single named owner accountable for the accuracy and timeliness of submissions and for
+coordinating examination responses.
+
+REGULATOR RELATIONSHIP OWNER CONTACT DEPUTY
+Federal Reserve /OCC [PERSON_14], Group [EMAIL_15], +1 (212) Marta Szewezyk (+48 22 555 0164)
+CFO 555-0121
+PRA/ [[PERSON_2]], +4420 [PERSON_2],
+7555 0129
+AME (France) [PERSON_10] [EMAIL_12], +33 1 Helena Vorstermann
+5555 0144
+RBI (india) [PERSON_16], +9180 Ananya V. Chatterjee
+4555 0182
+MAS (Singapore) ‘[PERSON_17] [EMAIL_16], [PERSON_18]
+
++65 6555 0172
+
+Data protection authorities. [[PERSON_3]], CPO [EMAIL_17], +44 [PERSON_2]
+20 7555 0163
+
+3.3 Relationship to the internal control framework
+
+Risk assessment determines what could go wrong and how severely; the control framework determines what is done to prevent or
+detect it. The two are linked through the control library, in which every control maps to at least one risk in the Group Risk Register, and
+every risk rated [PERSON_19] or above maps to at least one control.
+
+3.4 Relationship to capital and liquidity planning
+
+The output of risk identification and assessment is a direct input to the Internal Capital Adequacy Assessment Process (ICAAP) and the
+Internal Liquidity Adequacy Assessment Process (ILAAP). Material risks not adequately captured by regulatory capital requirements are
+assessed for Pillar 2 add-ons by the Group Treasurer, [PERSON_20] ([EMAIL_18]), with challenge from the Group
+Chief Risk Officer.
+
+3.5 Cross-border considerations
+
+Each regulated subsidiary maintains a board-approved local addendum documenting the local regulatory overlay, the composition of the
+local risk committee and the delegated authorities of local management, Local addenda may narrow Group appetite but may never
+widen it. Cross-border data flows arising from Group-level risk aggregation — which include the employee identifiers and contact details
+reproduced throughout this policy — are assessed under the Data Privacy Policy before transfer.
+
+7 Page 4 of 35
+
+
+--- Page/Slide 5 ---
+Group Risk Management Policy GRP-POL-001 | Version 6.0 | Interna
+
+4. Definitions
+
+The following definitions apply throughout this policy and alll subordinate risk documentation.
+
+TERM DEFINITION
+
+Risk The effect of uncertainty on the Group's objectives, expressed as a combination of the consequence of an event and the
+likelihood of its occurrence.
+
+Inherent risk The level of risk before consideration of any mitigating control, assuming controls are absent or wholly ineffective.
+
+Residual risk The level of risk remaining after operation of controls assessed as designed and operating effectively.
+
+Target risk The level of residual risk the Group intends to achieve following completion of agreed treatment actions.
+
+Risk appetite The aggregate level and type of risk the Group is willing to assume in pursuit of its strategic objectives, approved by the
+Board
+
+Risk tolerance The permissible variation around an appetite measure before escalation is triggered. Tolerance is narrower than the limit.
+
+Risk limit Ahard quantitative boundary that must not be breached. A limit breach is a policy breach.
+
+Risk capacity The maximum risk the Group could absorb given capital, liquidity, operational capability and regulatory constraints.
+
+Risk owner The named individual accountable for management of a specific risk, including adequacy of its controls and treatment.
+
+Recorded in the register by name and employee identifier — for example, [PERSON_21] is owned by [PERSON_22]
+([EMPLOYEE_ID_6]).
+
+Control owner The named individual accountable for design, operation and testing of a specific control.
+
+Control Ameasure that modifies risk, being preventive, detective or corrective, and either manual or automated.
+
+Key control Acontrol on which primary reliance is placed to keep a risk within appetite, [PERSON_23] to mandatory independent testing.
+
+Issue An identified weakness in the design or operation of a control, or a gap between the current and required state.
+
+Incident ‘An event that has occurred and caused, or had potential to cause, loss, disruption, regulatory breach, customer
+detriment or reputational damage.
+
+Near miss An event with potential to result in loss or detriment that did not do so, whether through control operation or through
+chance.
+
+Loss event An incident resulting in quantifiable financial loss, whether or not the loss has yet been booked.
+
+Key risk indicator (KRI) A quantifiable measure used to monitor the level of, or change in, a risk exposure over time.
+
+Key control indicator (KCI) A quantifiable measure of the operating performance of a control
+
+RCSA Risk and Control Self-Assessment: the structured process by which the first line identifies risks, assesses controls and
+rates residual exposure
+
+Risk acceptance documented, time-bound decision to tolerate a residual risk without further treatment, taken by an authorised approver.
+
+Exception (waiver) documented, time-bound approval to operate outside a requirement of this policy or a subordinate standard,
+
+Emerging risk [PERSON_24] newly developing or changing, whose impact or likelihood is not yet well understood and cannot yet be reliably
+quantified
+
+Important business service Aservice delivered to an external end user, the disruption of which could cause intolerable harm to customers or market,
+integrity
+
+Impact tolerance The maximum tolerable duration or extent of disruption to an important business service.
+
+Material risk taker ‘An individual whose professional activities have a material impact on the Group's risk profile, as defined by the
+
+Remuneration Committee and recorded by name, employee identifier and role in the MRT Register.
+
+Personal data ‘Any information relating to an identified or identifiable natural person, including name, employee identifier, corporate or
+personal e-mail, telephone number, home address, date of birth, national identifier and photographic image.
+
+Three lines mode! The accountability structure separating risk ownership (first line), oversight and challenge (second line) and independent
+assurance (third line).
+
+Worked illustration. [PERSON_25] ("Unauthorised access to customer accounts’) is owned by [PERSON_22] ([EMPLOYEE_ID_6],
+[EMAIL_19], [PHONE_5]). Its key control CTL-IAM-04 is owned by [PERSON_26] ([EMPLOYEE_ID_7],
+[EMAIL_20]). inherent rating is Critical (25); residual is High (16) following the March 2026 control uplift. Issue
+ISS-2026-0112 remains open against this risk with a target date of 30 September 2026.
+
+f 7 u led when print Page 5 of 35
+
+
+--- Page/Slide 6 ---
+Management Pol GRP-POL-001 | Version 6.0 | Interna
+
+5. Risk governance structure
+
+The Board of Directors holds ultimate accountability for risk, discharged through a structure of board committees, executive committees
+and management forums, each operating under a written charter specifying membership, quorum, frequency, delegated authority and
+escalation obligations.
+
+Risk Governance Structure — Chairs and Contact Points
+
+Group Executive Risk Committe Asset & Liability Committee
+
+‘Operational isk | cree
+
+| ‘ctnlogy& cyber
+
+| conduct & Compliance | New Proguce Approval
+
+SECOND LINE — isk & Compliance ‘Tino UNE
+
+| FINST LINE — Business & Ope
+
+Figure 1 — Risk governance structure, showing the chair and contact point for each forum.
+
+5.1 Committee mandates and chairs
+
+FORUM FREQUENCY CHAIR CHAIR CONTACT PRIMARY MANDATE
+Board of Directors Bi-monthly [PERSON_27] [EMAIL_21] Approves strategy and appetite; ultimate
+accountability
+Board Risk Committee Quarterly [PERSON_3] (NED) —_—[EMAIL_22], Recommends appetite; approves this
+[PHONE_6] policy; reviews the risk profile
+Audit Committee Quarterly Rosalind M. Achterberg (NED) —[EMAIL_23], Oversees internal and external audit and
+[PHONE_7] the control environment
+Remuneration Committee Semi-annual [PERSON_28] (NED) —[EMAIL_24], Ensures reward reflects risk conduct and
++44 20 7555 0129 appetite adherence
+Group Executive Risk Monthly [PERSON_1], Group CRO [EMAIL_1], — Manages the aggregate profile;
+Committee [PHONE_1] approves High acceptances and
+exceptions
+Asset & Liability Committee — Monthly YevgeniA. Sorokina, Group [EMAIL_25], — Manages capital, liquidity, funding and
+CFO [PHONE_8] IRRBB
+Operational Risk Committee Monthly Sofia Marchetti-Lang [EMAIL_26], Reviews operational profile, incidents,
+[PHONE_9] loss data and RCSA outcomes
+Credit Risk Committee Fortnightly Babatunde O. Osei-Tutu [EMAIL_27], Approves exposures above divisional
+[PHONE_10] authority; reviews portfolio quality
+Technology & Cyber Risk Monthly Caleb A. Whitfield, Group CISO [EMAIL_20], Oversees technology, cyber, data and
+Committee [PHONE_11] resilience risk
+Conduct & Compliance Monthly [PERSON_29], CCO [EMAIL_28], Oversees conduct, financial crime,
+Committee [PHONE_12] customer outcomes and regulatory
+engagement
+New Product Approval As required [PERSON_30], Approves new products, material
+Committee +91 80 4555 0182 changes and market entries
+Divisional Risk Committees Monthly Divisional CEO (see 7.9) Per division Manages the divisional profile within
+
+Group framework and appetite
+
+5.2 Board Risk Committee membership
+
+MEMBER EMP/ DIRID CAPACITY CONTAC APPOINTED
+
+[PERSON_31] DIR-0042 Independent NED (Chair) [EMAIL_29], +1 14 Mar 2021
+[PHONE_13]
+
+Rosalind M. Achterberg DIR-0051 Independent NED [EMAIL_30], +1 02 Sep 2022
+[PHONE_14]
+
+[PERSON_32] Independent NED [EMAIL_31], +44 19 Jan 2023
+20 7555 0129
+
+[PERSON_33] DIR-0063 Independent NED [EMAIL_32], +49 07 Jun 2024
+
+69 5555 0177
+
+Page 6 of 35
+
+
+--- Page/Slide 7 ---
+Group Risk Management Policy GRP-POL-001 | Version 6.0 | Internal
+
+[PERSON_34] (attendee) [EMAIL_33], +1 Standing
+[PHONE_4]
+
+[PERSON_35] [EMPLOYEE_ID_8] Chief internal Auditor (attendee) [EMAIL_34], +1 Standing
+[PHONE_15]
+
+[PERSON_4] [EMPLOYEE_ID_9] Committee Secretary [[PERSON_1]], +1 Standing
+
+[PHONE_16]
+
+Out-of-hours escalation. Where a Critical risk or Severity 1 incident arises outside business hours, contact [PERSON_36] on
+personal mobile [PHONE_17] (home address 88 Willowbank Court, Hoboken, NJ 07030). Deputy: [[PERSON_4]], [PHONE_18]. The Board Risk Committee chair may be reached on [PHONE_19],
+
+5.3 Minimum standards for all risk forums
++ Awritten charter approved by the parent body, reviewed annually.
++ Minutes recording decisions, dissent and the substance of challenge, approved at the following meeting.
++ An action log with named owners and due dates, reviewed at every meeting,
++ Standing attendance rights for the second and third lines, including the right to table an item without management filter.
++ A quorum that cannot be met by first-line attendees alone.
+
+5.4 Committee effectiveness
+
+Each committee conducts an annual self-assessment covering attendance and quorum, timeliness of papers, quality of challenge
+recorded in minutes, and completion of actions. Results are reported to the parent committee. The Board Risk Committee and the Audit
+Committee are additionally subject to an externally facilitated review at least once every three years; the 2025 review was performed by
+[PERSON_7] of Halloran & Pike LLP ([PHONE_20]).
+
+Cadence Financial Group, inc. — Uncontrolled when printed Page 7 of 35
+
+
+--- Page/Slide 8 ---
+Group Risk Management Policy GRP-POL-001 | Version 6.0 | Internal
+
+6. The three lines model
+
+The Group applies the three lines model to establish unambiguous accountability. The model is a statement of accountability, not of
+organisational structure: an individual's line is determined by the activity performed, not by reporting line alone.
+
+Three Lines Model — Accountability and Named Leads
+
+FIRST LINE
+‘Own and manage
+
+(Owns risks created by business
+activity
+
+SECOND LINE THIRD LINE
+
+Oversee and challenge fe assurance
+
+«Sets framework, policy and taxonomy Independent assurance to the Board
+
+1 Defines appetite and tolerance levels ‘Audits design and operating
+effectiveness
+
+Designs and operates daily controls
+
+1 Independently challenges the first
+Completes RCSA and attests line ‘Assesses adequacy of the framework
+
+effectiveness Aggregates and reports risk profile ‘Tracks actions through to closure
+[PERSON_38] issues, incidents and losses «Lead: [PERSON_1] ([EMPLOYEE_ID_1]) Lead: ifeoma [PERSON_39] ([EMPLOYEE_ID_10])
+ng ([EMPLOYEE_ID_11])]] y [EMAIL_35] \[EMAIL_36]
+
+Figure 2— Accountability under the three lines model, with the named lead for each line.
+
+6.1 First line of defence
+
+The first line comprises revenue-generating businesses and the operational and support functions that execute transactions and
+processes. It owns its risks outright, designs and operates controls, performs RCSA, self-identifies issues, records incidents and
+remains accountable for remediation to completion. Accountability is not transferred by the existence of second-line oversight or third-
+line assurance.
+
+6.2 Second line of defence
+
+The second line comprises the Group Risk function, [PERSON_40] and the Data Privacy Office. It sets the framework, taxonomy,
+methodology and policy; defines appetite metrics and tolerances; provides independent, evidenced challenge to first-line assessments;
+aggregates and reports the Group risk profile; and approves exceptions and acceptances within delegated authority. Where a second-
+line function operates a control of its own — for example sanctions screening, operated by [PERSON_41] team — itis a first-
+line activity for that control and is subject to independent challenge accordingly.
+
+6.3 Third line of defence
+
+Group Internal Audit provides independent assurance to the Board on governance, risk management and internal control. It has
+unrestricted access to all records, systems, personnel and premises. It does not design controls, make management decisions or own
+tisk. The Chief Internal Auditor, Ifeoma C. Adeyemi ([EMPLOYEE_ID_8], [EMAIL_37]), reports functionally to the Chair of the
+
+Audit Committee and administratively to the Chief Executive; her appointment, removal and remuneration are matters reserved to the
+Audit Committee.
+
+6.4 Independence safeguards
+
+|AFEGUARD REQUIREMENT
+
+Reporting lines. The Group CRO ([PERSON_42]) reports to the Chief Executive and has a direct, unfettered reporting line to the [PERSON_43]
+of the Board Risk Committee ([PERSON_44]).
+
+Appointment and removal Appointment or removal of the Group CRO, Chief Compliance Officer or Chief Internal Auditor requires approval of
+the relevant board committee
+
+Remuneration Second and third line remuneration is not linked to the financial performance of the businesses they oversee.
+
+Budget Second and third line budgets are approved by the relevant board committee and cannot be reduced by business
+management.
+
+Right of veto ‘The Group CRO may veto any transaction, product or initiative assessed as outside appetite, subject only to Board
+
+Risk Committee override.
+
+Access Second and third line functions hold private sessions with their board committee at least twice a year without
+management present.
+
+6.5 Fourth-line assurance
+
+External auditors, regulators and independent specialist reviewers provide a further layer of assurance. Their findings are recorded in
+the Group Issue Management System on the same basis as internally raised issues, subject to the same tracking, escalation and
+closure verification requirements set out in Section 15. Current external assurance contacts are [PERSON_7] (Halloran & Pike
+LLP, [EMAIL_8], [PHONE_20]) and [PERSON_45] (Northwind Analytics GmbH,
+[EMAIL_38], +49 69 5555 0148).
+
+adence Final \ d when print Page 8 of 35
+
+
+--- Page/Slide 9 ---
+Group Risk Management Poli GRP-POL-001 | Version 6.0 | Internal
+
+7. Roles, responsibilities and named incumbents
+
+7.1 Board of Directors
+* Approves the Group strategy and the risk appetite statement that constrains it.
++ Approves this policy on the recommendation of the Board Risk Committee.
+* Satisfies itself that the framework is adequate, effective and appropriately resourced.
+* Sets the tone for risk culture and holds executive management accountable for it
+* Approves the ICAAP, ILAAP, Recovery Plan and Resolution Pack.
+
+7.2 Board Risk Committee
++ Recommends the risk appetite statement to the Board and monitors adherence to it.
++ Reviews the Group risk profile, emerging risks and material appetite breaches each quarter.
++ Approves risk acceptances rated Critical and material policy exceptions escalated to it.
+* Reviews the adequacy of the Group Risk function's resourcing, standing and independence.
+
+7.3 Group Chief Risk Officer
++ Owns this policy and the enterprise risk management framework.
++ Provides an independent view of the Group risk profile to the Board and to regulators.
+* Chairs the Group Executive Risk Committee and approves High-rated risk acceptances.
++ Maintains the risk taxonomy, assessment methodology and appetite measurement approach.
++ Exercises the right of veto in Section 6.4 and reports its use to the Board Risk Committee.
+
+7.4 Risk owners and control owners
+
+Every risk in the Group Risk Register has a single named risk owner at Director level or above, recorded by name and employee
+identifier. Every key control has a single named control owner, Ownership may not be recorded against a team, a vacant job title, or a
+committee. Where an owner changes role, the outgoing owner must complete a documented handover before the change takes effect;
+the risk remains with the outgoing owner until the handover is accepted
+
+7.5 All employees
++ Operate within appetite, policy and delegated authority at all times.
+* Complete mandatory risk and compliance training by the due date.
++ Report incidents, near misses and control weaknesses promptly through the approved channels.
++ Raise concems, including through the confidential Speak Up channel, without fear of retaliation.
+
+7.6 Group risk leadership team
+
+NAME EMPID ROLE ORPORATE E-MAIL DIRECT LINE BASE OFFI
+
+[PERSON_46] Chief Risk Officer [EMAIL_4] [PHONE_1] New York 24F
+
+[PERSON_47] Chief Financial Officer [EMAIL_25] [PHONE_8] New York 25F
+
+[PERSON_29] [EMPLOYEE_ID_12] Group Chief Compliance Officer [EMAIL_28] [PHONE_12] New York 20F
+
+Caleb A. Whitfield [EMPLOYEE_ID_7] Group Chief Information [EMAIL_20] [PHONE_11] New York 22F
+Security Officer
+
+Helena Vorstermann [EMPLOYEE_ID_4] Chief Privacy Officer [EMAIL_11] +44 20 75550163 [PERSON_48]
+
+Devansh R. Kulkarni [EMPLOYEE_ID_13] Head, Third-Party Risk [EMAIL_39] +91 80 45550182 Bengaluru B
+
+Sofia Marchetti-Lang [EMPLOYEE_ID_11] Head, Operational Risk & [EMAIL_26] [PHONE_9] New York 18F
+SecOps
+
+Tobias Lindqvist [EMPLOYEE_ID_2] Head, Enterprise Risk [EMAIL_40] +44 20 75550171 [PERSON_49] kK. Osadebe [EMPLOYEE_ID_6] 1AM Engineer II [EMAIL_41] [PHONE_21] New York 22F
+
+7.7 Identity records supporting accountability
+Ownership is validated against the authoritative identity record each quarter, so that no risk is recorded against a leaver or a vacant
+position. The identity record is the evidential source for ownership disputes.
+
+Figure 3 — Identity record used to validate risk ownership: employee identifier, work e-mail, mobile number, manager, hire date and photograph.
+
+: i Page 9 of 35
+
+
+--- Page/Slide 10 ---
+7.8 Summary of deci
+DECISION
+Risk appetite statement
+
+This policy
+
+‘Subordinate risk policies
+Acceptance of a Critical residual risk
+Acceptance of a High residual risk
+
+Acceptance of an [PERSON_19] residual
+tisk
+
+Policy exception, Critical or High
+Policy exception, [PERSON_19] or below
+
+New product or material change
+
+Extension of a remediation due date
+
+in authority
+
+RECOMMENDED BY APPROVED BY
+
+[PERSON_42] (Group CRO) Board of Directors
+
+M.T. Achebe Board Risk Committee (A. P.
+
+Brightwell)
+
+Risk category owner Group Executive Risk Committee
+
+Divisional CEO Board Risk Committee
+Risk owner Group Executive Risk Committee
+Risk owner Divisional Risk Committee
+
+Requesting owner Group Executive Risk Committee
+
+Requesting owner Divisional Risk Committee
+
+Product sponsor New Product Approval Cttee (P. S.
+
+Raghavan)
+
+Action owner Original approving forum
+
+NOTED BY
+Regulators as required
+
+Board of Directors
+
+Board Risk Committee
+Board of Directors
+Board Risk Committee
+
+Group Risk function
+
+Board Risk Committee
+Group Risk function
+
+Group Executive Risk Committee
+
+Group Risk function
+
+7.9 Divisional accountability
+
+DIVISION DIVISIONAL CEO CONTACT DIVISIONAL RISK LEAD
+
+Investment Banking [PERSON_50] [EMAIL_42], +1 [PERSON_51] ([EMPLOYEE_ID_14])
+
+[PHONE_22]
+
+Asset Management [PERSON_52], +49 69
+
+5555 0177
+
+[PERSON_53] ([EMPLOYEE_ID_15])
+
+Consumer Banking [PERSON_54] [EMAIL_43], +1 (704)
+
+555-0166
+
+Yusuf ©. Balogun ([EMPLOYEE_ID_16])
+
+Group Functions [PERSON_5] [EMAIL_44], +48 22
+
+555 0193
+
+[PERSON_55] ([EMPLOYEE_ID_17])
+
+Global Operations & Technology _Lars-Erik Brannstrom [EMAIL_45], +46 8
+
+5555 0121.
+
+[PERSON_22] ([EMPLOYEE_ID_6])
+
+8. Risk appetite and tolerance
+
+Risk appetite is the aggregate level and type of risk the Group is willing to assume in pursuit of its strategy. Itis the primary mechanism
+by which the Board constrains executive risk-taking, and it is expressed so that it can be measured, monitored and breached observably.
+
+8.1 Structure of the appetite framework
+
+LAYER SET BY DESCRIPTION
+
+Risk capacity Board The maximum risk the Group could absorb before viability is threatened, bounded by
+capital, liquidity and regulatory minima.
+
+Risk appetite Board The level of risk the Group chooses to accept, set materially inside capacity to
+
+preserve a management buffer.
+
+Risk tolerance Group Executive Risk Committee Permissible variation around each appetite measure; breaching tolerance triggers
+
+escalation but is not itself a policy breach
+
+Risk limits Group CRO / ALCO Hard boundaries cascaded to divisions, desks, portfolios and counterparties. A limit
+breach is a policy breach.
+Triggers Divisional risk functions Early-warning thresholds set inside limits, prompting action before a limit is reached
+
+8.2 Setting and reviewing appetite
+
+Appetite is reviewed at least annually, in parallel with the strategic and financial planning cycle, so that the plan and the appetite
+constraining it are agreed together rather than sequentially. The Group CRO recommends the statement, drawing on the risk profile,
+capital and liquidity position, stress testing results and the emerging risk scan. Out-of-cycle review is triggered by a material acquisition
+or disposal, a material regulatory change, a Critical-rated incident, or any breach of a Board-level appetite measure.
+
+8.3 Qualitative appetite statements
+
+RISK CATEGORY APPETITE BOARD STATEMENT
+
+Credit risk Moderate Credit risk is core to the business, within a diversified portfolio and disciplined underwriting. No
+appetite for exposures originated outside approved criteria
+
+Market risk Low to moderate Accepted in support of client facilitation and prudent balance-sheet management. No appetite for
+
+proprietary directional risk-taking,
+
+Liquidity and funding Low conservative liquidity position capable of withstanding a severe, prolonged stress without recourse
+
+to extraordinary support.
+
+Operational risk
+
+Page 10 of 35,
+
+
+--- Page/Slide 11 ---
+Group Risk Management Policy
+
+Technology and cyber
+‘Third-party risk
+Conduct and customer
+outcomes
+
+Financial crime and sanctions
+
+Regulatory compliance
+Data privacy
+
+Strategic and reputational
+
+Climate and environmental
+
+Cadence Financial Group, Inc
+
+Very low
+Low
+
+Zero
+
+Zero
+
+Zero
+Zero
+
+Low
+
+Low
+
+Uncontrolled
+
+GRP-POL-001 | Version 6.0 | Internal
+
+‘An unavoidable consequence of operating. The Group seeks to minimise it and has no appetite for
+known control failures left unremediated beyond agreed dates.
+
+No appetite for loss of confidentiality, integrity or availabilty of critical systems and data.
+
+Outsourcing accepted where it improves resilience or capability, and only where oversight is
+equivalent to that applied in-house.
+
+‘No appetite for conduct causing foreseeable harm to customers or undermining market integrity.
+
+No appetite for knowingly facilitating financial crime, breaching sanctions, or offering or receiving
+improper payments.
+
+No appetite for wilful or systemic non-compliance with applicable law or regulation,
+No appetite for unauthorised processing, disclosure or loss of personal data.
+
+Strategic risk inherent in executing the plan is accepted; no appetite for activity that would materially
+damage stakeholder confidence.
+
+Financed and operational emissions reduced in line with published commitments; transition and
+physical risk managed within limits.
+
+nen printed Page 11 of 35,
+
+
+--- Page/Slide 12 ---
+Sroup Risk Management Poli OL-001 | Version 6.0 | Internal
+
+8.4 Measurement and monitoring
+
+Every Board-level appetite statement is supported by at least one quantitative measure with a defined limit, tolerance band,
+measurement basis, data source, named owner and reporting frequency. The consolidated position is reported to the Group Executive
+Risk Committee monthly and to the Board Risk Committee quarterly.
+
+[PERSON_56] — Position at 30 June 2026
+
+Reportble dat breaches = 4 °
+
+Figure 4— Appetite dashboard as at 30 June 2026, showing the named owner of each metric. The full statement and limit set is at Appendix 6.
+
+8.5 Appetite and limit breaches
+
+A breach exists when a measure moves outside its approved limit, irrespective of duration or of whether it self-corrected. Breaches are
+not netted, are not resolved by retrospective limit increases, and are reported in the period in which they occurred.
+
+BREACH TYPE DEFINITION NOTIFICATION REQUIRED RESPONSE
+[PERSON_57] breach Early-warning threshold Divisional risk function, same day Management action plan within 5 business days
+reached, limit not breached
+Tolerance breach Outside the tolerance band Group Executive Risk Committee at Documented plan to return within tolerance, with target
+but within the limit hext meeting date
+Limit breach Outside the approved limit MT. Achebe within 24 hours (+1 212 Immediate remediation plan; consideration of trading or
+555-0147); Board Risk Committee at origination restrictions
+next meeting
+Zeto-appetite breach Any occurrence in a zero-__M. T. Achebe and [PERSON_58] investigation, root cause analysis, disciplinary and
+appetite category immediately; Board Risk Committee regulatory notification assessment
+
+within 5 business days
+
+8.6 Breach register extract — H1 2026
+
+REFERENCE — MEASURE BREACHED DATE ACCOUNTABLE OWNER — OWNER CONTACT STATUS
+
+BRC-2026-011 Critical & high issues pastdue 31/05/2026 [PERSON_59] [PHONE_1] Open— BRC notified
+(17 v. limit 10) ([EMPLOYEE_ID_1])
+
+BRC-2026-009 Third parties without current. 30/04/2026 [PERSON_60] +91 80 45550182 —Open—plan agreed
+assessment (9 v. limit 0) (EmP-39220)
+
+BRC-2026-007 Reportable personal data 09/03/2026 Helena Vorstermann +44 20 75550163 Closed 11/03/2026
+breach (1 v. limit 0) ([EMPLOYEE_ID_4])
+
+BRC-2026-004 VaR limit utilisation exceeded on 18/02/2026 [PERSON_51] ([EMPLOYEE_ID_14]) [PHONE_23] —_Closed 20/02/2026
+1B desk 3
+
+BRC-2026-002 Overdue suspicious activity 22/01/2026 [PERSON_29] [PHONE_12] Closed 14/02/2026
+reviews (6 v. limit 0) (EmP-38412)
+
+Prohibited practice. Limits must not be amended to cure an existing breach. Any limit change proposed within thirty days of a breach
+of that limit requires explicit Board Risk Committee approval, and the Committee must be provided with the breach history alongside the
+proposal.
+
+8.7 Cascading appetite to the business
+
+Group appetite is cascaded to divisions, and from divisions to business units, desks and portfolios. The sum of cascaded limits may be
+less than the Group limit but may never exceed it. Divisional limits are approved by the Group Executive Risk Committee and reviewed
+whenever Group appetite changes. Each business unit head must demonstrate the line of sight from local limits to the Board-approved
+statement.
+
+8.8 Linking appetite to reward
+
+Adherence to appetite is a mandatory input to performance assessment for all material risk takers. The Remuneration Committee
+receives an annual risk conduct report from the Group CRO covering appetite breaches, unremediated overdue issues, Critical incidents
+and audit findings attributable to each named individual. The Committee may apply in-year adjustment, malus or clawback where risk
+outcomes warrant it. A favourable financial result achieved outside appetite is not a basis for reward.
+
+Page 12 of 35,
+
+
+--- Page/Slide 13 ---
+Group Risk Management Policy GRP-POL-001 | Version 6.0 | Internal
+
+9. Group risk taxonomy
+
+A single taxonomy is applied Group-wide so that risks can be identified consistently, aggregated meaningfully and compared between
+
+divisions and legal entities. Every risk in the Group Risk Register, every incident, every issue and every loss event must be classified to
+a Level 2 category at minimum,
+
+Group Risk Taxonomy — Level 1 and Level 2 Categories
+
+“Bina reputations!
+
+Figure 5 — Group Risk Taxonomy, Levels 1 and 2.
+
+9.1 Taxonomy governance
++ Owned by the Group CRO and maintained by [PERSON_2], Head of Enterprise Risk Framework ([EMAIL_46]).
++ Changes at Level 1 require Board Risk Committee approval; Level 2 changes require Group Executive Risk Committee approval.
++ Reviewed annually and following any material change to the business model or regulatory environment.
+* Divisions may not create local categories; where none fits, a change request is raised to the Group Risk function
++ Historical classifications are restated when the taxonomy changes, so trend reporting remains comparable.
+
+9.2 Classification rules
+
+Where an event could fall into more than one category it is classified by root cause, not by the form of the consequence. A customer
+refund arising from a system defect is operational risk (technology), not conduct risk, although the conduct consequence is recorded
+
+alongside it. Where a single event has consequences in several categories, the primary classification is used for aggregation and
+secondary tags are applied for analysis.
+
+9.3 Category owners
+SUBORDINATE POLICY
+Credit Risk Babatunde O. Osei-Tutu [EMAIL_27], +1 (212) GRP-POL-002
+(EmP-38550) 555-0136
+
+Market Risk [PERSON_51] ([EMPLOYEE_ID_14]) [EMAIL_47], +91 98860 GRP-POL-003
+55107
+
+Liquidity & Funding Marta Szewezyk ([EMPLOYEE_ID_18]) [EMAIL_48], +48 22. GRP-POL-004
+555 0164
+
+Operational Risk Sofia Marchetti-Lang ([EMPLOYEE_ID_11]) [EMAIL_49], +1 (212) GRP-POL-005
+555-0174
+
+Compliance & Conduct [PERSON_29] ([EMPLOYEE_ID_12]) [EMAIL_28], +1 (212) GRP-POL-008/ [PHONE_24]
+
+Strategic & Reputational [PERSON_14] ([EMPLOYEE_ID_19]) [EMAIL_25], +1 (212) GRP-POL-026
+555-0121
+
+10. The risk management process
+
+The Group applies a single, continuous process to every risk category. The depth of application is proportionate to materiality, but no
+step may be omitted.
+
+Page 13 of 35,
+
+
+--- Page/Slide 14 ---
+Sroup Risk Management Poli OL-001 | Version 6.0 | Internal
+
+Risk Management Process (ISO 31000:2018)
+
+7 = cycle owner and frequency
+Communicat
+1 ‘& Consultation , Protiereporing — Quarterty
+
+rein vik con Quurtery
+
+{ )
+.
+
+Figure 6 — The risk management process, aligned to ISO 31000:2018, with the named process owner.
+
+‘Boas ndeat (40522)
+
+10.1 Identify
+
+SOURCE FREQUENC DESCRIPTION
+
+Risk and control self-assessment Annual / semi: Structured bottom-up identification by process owners
+
+annual
+
+Incident, near-miss and loss data [PERSON_61] What has actually failed, internally and across the industry
+Issue and audit findings [PERSON_62] control weaknesses from all assurance sources
+
+Key risk indicators Monthly Quantitative deterioration signalling changed exposure
+
+Change and project pipeline Continuous Risks introduced by transformation, migration and new products
+Horizon and regulatory scanning Quarterly Emerging regulation, technology, market and geopolitical developments
+Scenario analysis and stress testing Annual Severe but plausible outcomes not yet observed
+
+Third-party assessments Per contract cycle Risks arising from suppliers and outsourced providers
+Employee reporting and Speak Up _ Continuous Concems raised directly by staff
+
+Customer complaints Continuous Systemic indicators of conduct or process failure
+
+10.2 Assess, evaluate and treat
+
+Each identified risk is assessed on an inherent basis and then residually, using the scales at [[PERSON_6]] is evidence-
+based: a residual rating may be reduced below inherent only where relevant controls have been assessed as both appropriately
+designed and operating effectively, with evidence retained. The residual rating is then compared against appetite. Where residual risk
+exceeds appetite the risk must be treated, not merely recorded. Where residual risk is materially below appetite, the business should
+consider whether controls are disproportionate; over-control is a legitimate finding.
+
+[PERSON_64] and report
+
+Monitoring combines key risk indicators, control testing, thematic reviews and independent assurance, proportionate to the residual
+rating as set out in Section 14.3. Reporting is a step in the process, not an administrative by-product: a risk identified and assessed but
+not reported through the correct forum has not been managed.
+
+10.4 Communication and consultation
+
+Communication takes place throughout the process rather than only at its conclusion. Risk owners must consult affected functions —
+including Legal (R. M. Achterberg), [PERSON_40] ([PERSON_65]), Finance ([PERSON_66]), Technology ([PERSON_67]) and the Data
+Privacy Office ([PERSON_68]) — before finalising assessments and treatment plans touching their domains.
+
+Page 14 of 35,
+
+
+--- Page/Slide 15 ---
+3roup Risk Management Polic GRP-POL-001 | Version 6.0 | Int
+
+11. Risk assessment methodology
+
+11.1 Scoring
+Risk is scored as the product of impact and likelihood, each rated on a five-point scale, producing a score between 1 and 25 which maps
+to one of five bands. The same scale applies to inherent and residual assessments and to every risk category, so that a High rating
+means the same thing in credit risk as in technology risk.
+
+Ask Rating Matrix — Inherent and Residual Scoring
+
+f
+
+Figure 7 — Risk rating matrix. Scale definitions are at [PERSON_69]11.2 Rating bands and required response
+
+BAND SCORE DECISION AUTHORITY REQUIRED RESPONSE
+20-25 Board Risk Committee Immediate treatment plan; Board notified within 24 hours; monthly reporting until
+residual falls below Critical
+(High } 13-19 Group Executive Risk Committee Treatment plan within 10 business days; monthly tracking; second-line challenge
+mandatory
+Elevated 8-12 Divisional Risk Committee Treatment pian within 20 business days; quarterly tracking
+[PERSON_70] owner Manage through business-as-usual controls; review at next RCSA
+Low 1-3 Control owner ‘Accept and monitor; no treatment plan required
+
+11.3 Control effectiveness assessment
+
+RATING DEFINITION EFFECT ON RESIDUAL SCORE
+Effective Design is appropriate and the control operated as Full reduction from inherent permitted
+intended throughout the period, evidenced by testing
+Partially effective Design is appropriate but operation was inconsistent, Partial reduction; an issue must be raised
+or a design gap is mitigated by compensating controls
+Ineffective Design is inadequate, or the control did not operate _No reduction; residual equals inherent; issue raised at minimum
+Elevated
+Not assessed No testing performed in the period No reliance permitted; treated as ineffective for rating purposes
+
+Evidence requirement. A residual rating lower than the inherent rating must be supported by retained evidence of control testing
+performed within the preceding twelve months. Unevidenced assertions of control effectiveness will be challenged by the second line
+and, if unresolved, the residual rating is restated to the inherent rating
+
+11.4 Worked assessment example — RSK-4488
+
+Risk reference and title [PERSON_21] — Unauthorised access to customer account records
+
+Taxonomy classification Operational Risk / Technology & cyber
+
+Risk owner [PERSON_22], JAM Engineer Il — [EMPLOYEE_ID_6], [EMAIL_19], [PHONE_21]
+
+Key control and owner CTL-AM-04 (quarterly entitlement review) — [PERSON_26], [EMPLOYEE_ID_7], [EMAIL_20]
+Inherent assessment Impact 5 (Severe) * Likelihood 5 (Almost certain) = 25 — Critical
+
+Control effectiveness Partially effective — Qi 2026 review completed late; one leaver account ([EMPLOYEE_ID_20]) remained enabled 34 days
+Residual assessment Impact 4 (Major) x Likelihood 4 (Likely) = 16 — High
+
+Open issue ISS-2026-0112, owner [PERSON_71], target 30 September 2026
+
+[PERSON_72] challenger [PERSON_2] ([EMPLOYEE_ID_2]) — challenge recorded 22 May 2026, rating upheld
+
+Last reviewed 12 May 2026, attested by [PERSON_36] ([EMPLOYEE_ID_11])
+
+Page 15 of 35,
+
+
+--- Page/Slide 16 ---
+Group Risk Management Policy GRP-POL-001 | Version 6.0 | Internal
+
+11.5 Quantitative and qualitative assessment
+
+Where reliable data exists, risks are assessed quantitatively — through value-at-risk, expected credit loss modelling, or operational loss
+distribution approaches. Where data is sparse, assessment is qualitative and structured, using expert judgement captured in facilitated
+workshops with documented rationale. Qualitative assessments are not inferior, but must state their assumptions explicitly and record
+who made the judgement.
+
+11.6 Model risk
+
+Models used to quantify risk, price instruments or determine capital are themselves a source of risk. All are registered in the Model
+Inventory, tiered by materiality, independently validated before first use and revalidated at a frequency set by tier. Model limitations must
+be disclosed alongside model output wherever that output informs a risk decision. Detailed requirements are in the Model Risk
+Management Policy (GRP-POL-018), owned by [[PERSON_7]] ([EMAIL_50], [PHONE_25]).
+
+11.7 Aggregation
+
+Risks are aggregated to divisional and Group level using the taxonomy. Aggregation does not average ratings: the profile reports the
+count and distribution of risks by band, the largest individual exposures, and any concentrations where several separately rated risks
+share a common cause, control, system or third party.
+
+Cadence Financial Group, Inc. — Uncontrolled when printec Page 16 of 35,
+
+
+--- Page/Slide 17 ---
+12. Risk treatment and acceptance
+
+12.1 Treatment options
+
+OPTION DESCRIPTION TYPICAL APPLICATION AND CONSTRAINTS,
+
+Avoid Cease, decline or do not commence the activity Applied where residual risk is Critical or falls in a zero-appetite category
+giving rise to the risk
+
+Reduce Implement or strengthen controls to lower impact, The default option; requires a dated plan with a named owner
+likelihood or both
+
+Transfer Share the financial consequence through Transfers financial consequence only. Regulatory and reputational
+insurance, indemnity or contractual allocation accountability is never transferred
+
+Accept Tolerate the residual risk without further treatment — Requires formal, time-bound approval at the authority level in Section 7.8
+
+Outsourcing does not transfer accountability. Where an activity is performed by a third party, the Group remains accountable to its
+customers and regulators for the outcome.
+
+12.2 Treatment plans
+
+Every treatment plan must record the risk reference, the specific actions, a single named accountable owner at Director level or above, a
+target completion date, the expected residual rating on completion, interim mitigations, and the approving forum. Plans exceeding twelve
+months must be broken into individually tracked milestones.
+
+12.3 Risk acceptance
+
+RESIDUAL RATING APPROVAL AUTHORITY Bacancn REVIEW REQUIREMENT
+
+Critical Board Risk Committee 6 months Monthly review; re-approval required to extend
+High Group Executive Risk Committee 12 months Quarterly review; re-approval required to extend
+Elevated Divisional Risk Committee 12 months Semi-annual review
+
+[PERSON_73] and below Risk owner 24 months Review at next RCSA cycle
+
+Acceptances expire automatically on their stated date. An expired acceptance is a policy breach and the underlying risk reverts to
+requiring treatment. Rolling re-approval of the same acceptance for a third consecutive term requires escalation one level above the
+normal authority, on the basis that persistent acceptance indicates an unresolved structural problem.
+
+12.4 Risk acceptance register extract — open items at 30 June 2026
+
+REFERENCE _ RISK ACCEPTED RATING ACCEPTED BY [PERSON_74]
+
+ACC-2026-018 RSK-4488 —residual access High [PERSON_22] M.T. Achebe 11/12/2026
+risk pending IAM uplift ([EMPLOYEE_ID_6])
+
+ACC-2026-014 RSK-4502— vendor data High [PERSON_60] M.T. Achebe 30/09/2026
+handling pending contract (EmP-39220)
+renewal
+
+ACC-2026-011 _RSK-4519 — sanctions [PERSON_19] — [PERSON_29] Divisional RC 31/10/2026
+screening false-negative rate ([EMPLOYEE_ID_12])
+
+ACC-2026-006 RSK-4560—records retention Elevated Ananya V. Chatterjee Divisional RC 15/08/2026
+gap, Mumbai office ([EMPLOYEE_ID_21])
+
+ACC-2025-029 RSK-4433—legacy platform —Critical_—_Lars-Erik Brannstrom Board Risk Cttee 31/07/2026
+
+unsupported components
+
+12.5 Prohibited treatments
++ Reducing a residual rating without a corresponding, evidenced change to controls.
++ Re-scoring impact or likelihood to move a risk below an escalation threshold, absent a genuine change in exposure.
+* Splitting a single risk into smaller components so that no component reaches a reporting threshold.
++ Recording a treatment plan as complete before the control is operating and has been tested.
++ Accepting a risk in a zero-appetite category, which is not permitted at any level of authority.
+
+12.6 Closure and verification
+
+([EMPLOYEE_ID_22])
+
+A treatment action may be closed only when the control is operating, evidence has been retained, and the second line has verified
+closure. For actions arising from internal audit findings, verification is performed by Group intemal Audit under Ifeoma C. Adeyemi. Self-
+closure without independent verification is not permitted for risks rated High or above.
+
+Page 17 of 35,
+
+
+--- Page/Slide 18 ---
+Group Risk Management Poli GRP-POL-001 | Version 6.0 | Internal
+
+13. Risk and control self-assessment
+
+The RCSA is the primary mechanism through which the first line discharges its ownership of risk. It is a structured assessment,
+performed by the people who operate the process, of what could go wrong, what controls exist, and how well those controls work.
+
+13.1 Scope and frequency
+
+SCOPE UNIT REFRESH
+
+Material business processes Annual Semi-annual Material change to the process, system or organisation
+
+Important business services Annual Quarterly Any breach of impact tolerance
+
+Legal entities Annual Annual Change in regulatory permissions or licence conditions
+
+Critical third parties Annual Semi-annual Change in service scope, sub-contracting or adverse assessment
+‘outcome
+
+13.2 Required steps
+
+1, Define the scope — the process, service or entity assessed, with clear boundaries and hand-off points.
+2. Identify risks — what could prevent the objectives of that scope from being met, classified to the taxonomy.
+3. Rate inherent risk — impact and likelihood before controls, using the Appendix A scales.
+4, Identify controls — the specific controls addressing each risk, distinguishing key from supporting controls.
+5, Assess control effectiveness — design and operation, supported by testing evidence.
+6. Rate residual risk — the exposure remaining, justified by the control assessment.
+7. Compare to appetite — and determine whether treatment or acceptance is required.
+8. Raise issues — for every control rated partially effective or ineffective.
+9. Attest — formal sign-off by the accountable executive.
+10. Second-line challenge — independent review and recorded challenge by the Group Risk function.
+13.3 H1 2026 attestation status
+OPE UNIT ATTESTING EXECUTIVE ONTACT RISKS ATTESTED CHALLENGE
+Consumer Banking Operations Sofia Marchetti-Lang [EMAIL_26] 42 12105/2026 [PERSON_8]
+([EMPLOYEE_ID_11])
+Investment Banking Front Office [PERSON_50] [EMAIL_51] 38 14/05/2026 2 ratings
+(emp-41184) raised
+Asset Management [PERSON_75] (DIR-0063) [EMAIL_52] 29 15/05/2026 Upheld
+Global Technology Services Lars-Erik Brannstrom [EMAIL_45] 51 19/05/2026 1 rating
+([EMPLOYEE_ID_22]) raised
+
+13.4 Attestation evidence
+Attestation is captured on signed form GRP-006 and retained for seven years. Scanned copies must be legible at 300 dpi.
+
+CADENCE FINANCIAL GROUP
+
+aor]
+
+‘. Marchetti-Lang
+
+Figure 8 — Signed RCSA attestation, H1 2026. The reviewer-note column mixes dates of birth, a social security number, a tax identifier, a mobile number
+and a passport number in one field.
+
+: i Page 18 of 35,
+
+
+--- Page/Slide 19 ---
+13.5 Quality standards
++ The assessment is performed by those who operate the process, facilitated but not authored by the risk function.
++ Controls are described by what they do, who performs them, how often and what evidence they leave, not by policy name.
++ Every risk rated [PERSON_19] or above has at least one key control mapped to it.
++ Copy-forward of the previous cycle's assessment without review is not permitted and will be rejected on challenge.
++ Where the same risk appears in multiple scope units, ratings are reconciled before submission.
+
+13.6 Attestation obligation
+
+The accountable executive attests in writing that the assessment is complete and accurate to the best of their knowledge, that identified
+control weaknesses have been raised as issues, and that no known risk has been omitted. Attestation may not be delegated below the
+accountable executive. Knowingly false attestation is a disciplinary matter and, for material risk takers, is reportable to the Remuneration
+Committee.
+
+13.7 Second-line challenge
+
+The Group Risk function reviews every submitted RCSA and records its challenge, which may include disputing a rating, disputing a
+control effectiveness assessment, or requiring additional risks to be added. Where challenge is unresolved between the first and second
+line, the matter escalates to the Divisional Risk Committee and, if still unresolved, to the Group Executive Risk Committee. Unresolved
+challenge is reported to the Board Risk Committee quarterly.
+
+REFERENCE MATTER IN DISPUTE FIRST-LINE POSITION SECOND-LINE CHALLENGER OUTCON
+
+CHL-2026-031. RSK-4433 residual rating M. Szewezyk — High T. Lindqvist ([EMPLOYEE_ID_2]) Escalated to [[PERSON_9]]
+(Treasury) 04/06/2026
+
+CHL-2026-027 CTL-+AM-04 effectiveness [PERSON_77] — Effective [[PERSON_10]] ([EMPLOYEE_ID_23]) _Restated to Partially
+
+effective
+
+CHL-2026-022 Omission of key person [PERSON_79] — not T. Lindqvist Risk RSK-4547 added
+dependency risk applicable
+
+CHL-2026-019 RSK-4560 retention gap likelihood [PERSON_80] — [PERSON_81] ([EMPLOYEE_ID_4]) Restated to Possible
+
+13.8 Control evidence from platform configuration
+
+Where a control is system-enforced, the configuration screen is acceptable evidence of design, provided the capture is dated and shows
+the production tenant. Such captures frequently contain the personal data of account holders and must be handled under Section 3.5
+before any onward distribution.
+
+User Groups Es
+
+Figure 9 — Configuration evidence for co ing user names, e-mail addresses, assigned roles and last-login timestamps. Text in this
+
+‘ough optice
+
+exhibit is recoverable only t
+
+Page 19 of 35,
+
+
+--- Page/Slide 20 ---
+14. Key risk indicators and monitoring
+
+14.1 Purpose and design standards
+
+Key risk indicators provide a forward-looking view of how exposure is changing between assessment cycles. They prompt action before
+a risk crystallises, rather than confirming after the event that it has.
+
+REQUIREMENT STANDARD
+
+Relevance Each indicator maps to at least one risk in the Group Risk Register and to the appetite measure it supports.
+
+Measurability Derived from a defined, auditable data source with a documented calculation. Manually compiled indicators require a
+documented preparation and review contol
+
+Predictive value Leading indicators are preferred. Lagging indicators are permitted but must be balanced by at least one leading indicator for
+the same risk
+
+Thresholds Green, amber and red thresholds defined in advance, approved by the risk owner, changed only with second-line
+agreement.
+
+Ownership ‘Anamed owner is responsible for production, accuracy and commentary.
+
+Actionability Each indicator has a defined response for amber and red status. An indicator with no defined response is removed.
+
+14.2 Monitoring intensity by residual rating
+
+RESIDUAL
+
+Crane KRI REPORTING KEY CONTROL TESTING INDEPENDENT ASSURANCE
+Critical Weekly Monthly, independent Targeted audit within 6 months
+High Monthly Quarterly, independent Included in the annual audit plan
+Elevated Monthly ‘Semi-annual Risk-based; considered in plan
+Moderate Quarterly Annual, self-testing permitted Cyclical coverage
+
+14.3 Breach response
+
+An indicator moving to amber requires commentary from the owner explaining the movement, expected direction of travel and any action
+taken. Moving to red requires a documented action plan within five business days and escalation per Section 19. An indicator red for
+three consecutive periods must be escalated to the Group Executive Risk Committee with an assessment of whether the underlying risk
+rating remains appropriate
+
+14.4 Risk profile trend
+‘Group Risk Profile Trend = Roling Eight Quarters
+
+G32 QH26 175 Q?75_g325__OH25__O126 0226
+
+5
+
+Figure 10 — Risk p nd reporting format, produced monthly by
+
+14.5 Platform au:
+
+Platform activity is logged and retained for thirteen months. The log is the evidential record for disputes over who submitted, accepted or
+amended an assessment, and is reviewed monthly by the second line
+
+evidence
+
+14.6 Data quality
+
+Risk data must be accurate, complete, timely and reconciled to source, [PERSON_82] produced indicators require evidenced preparation and
+independent review. Any indicator from an unreconciled source is reported with an explicit data quality caveat. Persistent data quality
+failures are recorded as issues under Section 15.
+
+Page 20 of 35,
+
+
+--- Page/Slide 21 ---
+3roup Risk Management Pol GRP-POL-001 | Version 6.0 | Internal
+
+15. Issue and remediation management
+
+15.1 Definition and sources
+
+An issue is a weakness in the design or operation of a control, or a gap between the current and required state. Issues are recorded
+centrally in the Group Issue Management System regardless of source, so the Group has a single complete view of known control
+weaknesses. Sources include self-identification, RCSA, control testing, incidents, internal audit, external audit, regulatory examination
+and third-party assessment.
+
+15.2 Rating and timeframes
+
+TARGET
+
+RATING CRITERIA Son APPROVAL TO EXTEND
+Control failure exposing the Group to Critical 30 days Board Risk Committee
+residual risk, a zero-appetite breach, or
+regulatory action
+(High } Key control absent or ineffective for a High- 90 days Group Executive Risk Committee
+rated risk
+Elevated Control design gap or inconsistent operation for 180 days Divisional Risk Committee
+
+an Elevated risk
+
+Moderate Efficiency or documentation weakness with 270 days Risk owner
+limited exposure
+
+Low Minor observation; improvement opportunity 365 days Risk owner
+
+15.3 Mandatory issue attributes
++ Adescription stating the weakness, not the desired solution.
++ Root cause, determined through structured analysis rather than asserted.
+«The risk or risks affected, referenced to the Group Risk Register.
++ Rating, with rationale, and a single named accountable owner at Director level or above.
++ Agreed actions, each with its own owner and date, plus interim mitigation until permanent remediation lands.
++ Original target date, retained permanently and never overwritten by an extension.
+
+15.4 Open issue register extract — Critical and High, at 30 June 2026
+
+REFERENCE WEAKNESS RATING ACCOUNTABLE OWNER OWNER [PERSON_83]
+
+1SS-2026-0112 Leaver accounts not disabled within High [PERSON_22] [EMAIL_41] [PERSON_84] (ext. 1)
+SLA ([EMPLOYEE_ID_6])
+
+1SS-2026-0104 Tier 1 vendor assessments High —_[PERSON_60] +91 80 4555 0182 31/08/2026
+overdue (9 providers) (EmP-39220)
+
+1SS-2026-0097 Unsupported components on Critical Lars-€rik Brannstrom [EMAIL_45] 31/07/2026 (ext. 2)
+legacy platform (EP-41402)
+
+1SS-2026-0088 Sanctions screening false-negative High [PERSON_29] [PHONE_12] 30/09/2026
+rate above threshold (EmP-38412)
+
+ISS-2026-0081 Evidence intake accepts bundles Critical [PERSON_26] ([EMPLOYEE_ID_7]) [EMAIL_53] 31/07/2026
+without PII scan
+
+1SS-2026-0074 Records retention schedule not ‘High [PERSON_11] [EMAIL_13] 15/08/2026
+applied, Mumbai ([EMPLOYEE_ID_21])
+
+'SS-2026-0066 Key person dependency, High [PERSON_55] [PHONE_26] 30/11/2026
+reconciliation process ([EMPLOYEE_ID_17])
+
+'SS-2025-0431 Manual workaround in payment High Yusuf ©. Balogun ([EMPLOYEE_ID_16]) [EMAIL_54] 31/07/2026 (ext. 3)
+
+repair queue
+
+15.5 Extensions and overdue issues
+
+Extension requests must be submitted before the due date, with the reason for slippage, revised date, interim mitigation and evidence
+that resourcing has been addressed. Retrospective extensions are not permitted. A second extension requires approval one level above
+the normal authority; a third requires Board Risk Committee approval regardless of rating.
+
+Board-level appetite measure. The Group has no appetite for Critical or High issues remaining overdue. The count is reported at
+every Board Risk Committee meeting together with the name of the accountable owner for each. Where an issue rated High or above is
+more than sixty days overdue, the accountable owner attends the Group Executive Risk Committee in person to explain the delay. At 30
+June 2026 this applied to L.-E. [PERSON_85] (ISS-2026-0097) and [PERSON_86] (ISS-2025-0431).
+
+15.6 Thematic analysis and closure
+
+The Group Risk function performs quarterly thematic analysis across the issue population to identify common root causes, recurring
+failures, repeat findings and concentrations by system, process, third party or location. Closure requires evidence that the control is
+designed appropriately, is operating, and has been tested at least once since implementation. For Critical and High issues, closure is
+verified independently. Closure evidence is retained for seven years.
+
+Page 21 of 35,
+
+
+--- Page/Slide 22 ---
+Sroup Risk Management Poli OL-001 | Version 6.0 | Internal
+
+16. Incident and loss event management
+
+16.1 Reporting obligation
+
+All incidents, near misses and loss events must be reported by the individual who becomes aware of them, through the Group Incident
+Management System, no later than the end of the next business day. The obligation is not contingent on knowing the cause, the extent
+of loss, or whether the event will prove material. Failure to report a known incident is a breach of this policy. Near misses are reported on
+the same basis: an event that caused no loss only because of chance carries the same learning value as one that did.
+
+16.2 Severity classification
+
+SEVERITY _ INDICATIVE CRITERIA INITIAL NOTIFICATION GOVERNAN
+Severity 1 ‘Sustained outage of an important business —_[PERSON_42] (+1 212.555-0147) and _Crrisis Management Team convened; Board
+service; material customer detriment; the CEO within 1 hour notified within 24 hours
+
+suspected material regulatory breach;
+confirmed data breach
+
+Severity 2 Significant service degradation; contained Divisional CEO and Group Risk within Group Executive Risk Committee at next meeting
+data incident; loss above the High threshold 4 hours
+
+Severity 3 Localised disruption; limited customer Business unit head within 1 business Divisional Risk Committee
+impact; loss above the [PERSON_19] threshold day
+
+Severity 4 Minor operational event; no customer impact; Logged in the incident system Reviewed in aggregate monthly
+near miss
+
+16.3 Response lifecycle
+
+. Detect and report — record the event with the facts known at the time.
+
+. Triage and classify — assign severity, taxonomy category and an incident manager.
+Contain — limit further impact; containment takes precedence over investigation.
+
+. Notify — internal escalation per 16.2 and regulatory notification assessment per 16.6.
+Recover — restore service and confirm restoration is stable.
+Investigate — establish root cause through structured analysis, not assertion
+
+. Remediate — raise issues and actions under Section 15.
+
+. Review — post-incident review for all Severity 1 and 2 events, within 20 business days.
+Learn — share findings and update the register, RCSA and KRIs as appropriate.
+
+CO@NAARwWNKE
+
+16.4 Incident register extract — Severity 1 and 2, H1 2026
+
+REFEREN SEV INCIDENT MANAGER MANAGER CONT rATU
+
+INC-2026-0417 1 Evidence folder mis-shared; SSNs and [[PERSON_4]] ([EMPLOYEE_ID_24]) [PHONE_27] Closed
+DOBs for 27 staff exposed 11/03/2026
+
+INC-2026-0452 2 Payment repair queue backlog; 1,840 [PERSON_11] ([EMPLOYEE_ID_16]) [EMAIL_55] Closed
+items delayed 02/04/2026
+
+INC-2026-0488 1 Core banking outage, 4h12m, Lars-Erik Brannstrom +46 8 5555 0121 Closed
+exceeded impact tolerance ([EMPLOYEE_ID_22]) 29/04/2026
+
+INC-2026-0511 2 Vendor sub-contracted without [PERSON_87] 80 4555 0182 Open
+consent; data sent offshore ([EMPLOYEE_ID_23])
+
+INC-2026-0533 2 Misdirected statement run; 412 Harriet L. Okafor ([EMPLOYEE_ID_25]) [EMAIL_56] Open
+
+customers received wrong data
+16.5 Case study — INC-2026-0417 (verbatim from the incident record)
+
+“On 9 March 2026 at 09:12 EST a vendor administrator, [PERSON_88] of Meridian Staffing Ltd
+([EMAIL_57], [PHONE_28]), uploaded 42 evidence files to a collaboration workspace configured with
+organisation-wide read access. At 11:40 EST our SOC shift lead, [PERSON_89], identified that eleven of the files contained unmasked
+social security numbers and dates of birth for Cadence staff."
+
+"Affected individuals included [PERSON_90] ([EMPLOYEE_ID_23], DOB 14 July 1991), [PERSON_91] ([EMPLOYEE_ID_26], SSN [SSN_1]),
+[PERSON_18] ([EMPLOYEE_ID_27], passport TK4820913) and Rohan Deshmukh ([EMPLOYEE_ID_28], PAN [PAN_1]). [PERSON_92]'s own record
+was also exposed, showing SSN 90-42-7781 and his home address at 1180 [PERSON_93], Apartment 4C, Jersey City, NJ 07302."
+
+“Workspace permissions were revoked at 13:05 EST and the vendor account suspended. [PERSON_6] completed the privacy
+assessment on 11 March and concluded that no notification threshold was met. Notification letters were nonetheless issued to all 30
+affected individuals; acknowledgements were received from 28 by 12 March. Root cause was recorded as the absence of pre-ingest [PERSON_94]
+scanning combined with a workspace template defaulting to broad access."
+
+Detection note for training use. The passage above is the hardest artifact class in this document: identifiers appear inside narrative
+prose with no field labels, mixing full names, employee identifiers, a date of birth, a social security number, a passport number, a
+national tax identifier, a home address, an external e-mail and a telephone number.
+
+Page 22 of 35,
+
+
+--- Page/Slide 23 ---
+Sroup Risk Management Poli GRP-POL-001 | Version 6.0 | Internal
+
+16.6 Loss data
+
+All operational risk losses are recorded, including near misses with a quantified potential loss, recoveries and timing losses. Losses are
+recorded gross of insurance recovery, with recoveries tracked separately, and are attributed to the period of occurrence rather than
+discovery or booking. The loss data set feeds capital modelling, scenario analysis and the operational risk appetite measure, and is
+subject to annual completeness assurance by Group Internal Audit.
+
+LOSS EVENT [PERSON_95] LOSS BOOKED BY PERIOD URRENCE
+LOS-2026-0088 Core banking outage — USD 2.4m [PERSON_14] April 2026
+
+customer redress ([EMPLOYEE_ID_19])
+LOS-2026-0071 Payment repair backlog — USD 0.6m [PERSON_20] ([EMPLOYEE_ID_18]) March 2026
+
+interest compensation
+
+LOS-2026-0054 —_Misdirected statements — USD 0.3m [PERSON_54] ([EMPLOYEE_ID_25]) February 2026
+notification and credit monitoring
+
+LOS-2026-0039 External card fraud, Coral USD 0.2m Yusuf ©. Balogun ([EMPLOYEE_ID_16]) January 2026
+Gables cluster
+
+16.7 Regulatory and external notification
+
+Whether an incident requires notification to a regulator, a data protection authority, affected individuals, customers or a market operator
+is determined jointly by [PERSON_96] ([PERSON_97]), [PERSON_40] ([PERSON_65]) and the Data Privacy Office ([PERSON_68]), and must
+be concluded within the shortest applicable statutory deadline. Where deadlines differ by jurisdiction, the shortest applies. No individual
+may unilaterally decide that an incident does not require notification.
+
+16.8 Customer-facing incident correspondence
+
+Correspondence issued to affected customers forms part of the incident record and is retained for seven years. Such correspondence
+routinely contains personal data in unstructured form and must be screened before use in any downstream analysis.
+
+‘Dear Ms Prieto-Ramos, thank you for calling us on 15 April about the three transactions on your Cadence Platinum card ending 2218. |
+have confirmed that the charges of $412.60, $89.99 and $1,204.00 were made in Miami on 12 April while you were travelling, and |
+have arranged a replacement card to your home at 2214 Palmetto Crescent, Coral Gables, FL 33134."
+
+“You mentioned that you had recently changed your mobile number to [PHONE_29] and that your husband, [PERSON_98], is a
+joint holder on the linked savings account ending 7741. | have noted both changes. Your case handler is [PERSON_99] and you can
+
+reach him on [PHONE_30] or at [EMAIL_58]. For identity verification on future calls we hold the last four digits of
+your social security number (8827) and your date of birth, 3 August 1996."
+
+16.9 Root cause and just culture
+
+Root cause analysis examines systems, processes, design and management oversight, not solely individual error. Where individual
+conduct is a contributing factor it is addressed separately through the disciplinary process. The Group operates a just culture: individuals
+who report incidents promptly and honestly, including their own errors, will not be penalised for having reported. This protection does not
+extend to wilful misconduct or to concealment.
+
+16.10 Ci Management Team
+
+ROLE ON THE TEAM PRIMARY CONT ALTERNATE
+
+Chair [PERSON_1] ([EMPLOYEE_ID_1]) [PHONE_2] (mobile) Caleb A. Whitfield
+Technology recovery Lars-Erik Brannstrom ([EMPLOYEE_ID_22]) +46 70 555 0188 (mobile) [PERSON_22]
+‘Security operations [PERSON_36] ([EMPLOYEE_ID_11]) #[PHONE_31] (mobile) [[PERSON_4]]
+Legal and regulatory [PERSON_5] ([EMPLOYEE_ID_3]) [PHONE_32] (mobile) [PERSON_29]
+Privacy Helena Vorstermann ([EMPLOYEE_ID_29]) +44 [PHONE_33] (mobile) [PERSON_2]
+‘Communications Deniis Kowalczyk ([EMPLOYEE_ID_30]) [PHONE_34] (mobile) [PERSON_100] and physical [PERSON_101] ([EMPLOYEE_ID_31]) +1 (@17) 555-0102 (mobile) [PERSON_17]
+
+Page 23 of 35,
+
+
+--- Page/Slide 24 ---
+3roup Risk Management Polic GRP-POL-001 | Version 6.0 | Int
+
+17. Emerging risk, scenario analysis and stress testing
+
+17.1 Emerging risk identification
+
+Emerging risks are newly developing or changing risks whose impact and likelihood cannot yet be reliably quantified. Because they are
+by definition absent from historical loss data, they will not be surfaced by backward-looking processes and require deliberate horizon
+scanning,
+
+The Group Risk function performs a quarterly emerging risk scan drawing on regulatory pipelines, supervisory publications, industry
+bodies, peer loss events, technology developments, macroeconomic and geopolitical analysis, climate science and input from the
+business. Candidate risks are assessed for velocity as well as potential impact and presented to the Group Executive Risk Committee
+with a recommended treatment: monitor, investigate, or escalate to the register.
+
+EMERGING RISK UNDER WATCH VELOCITY —_ ASSIGNED ANALYST CONTACT STATUS
+Generative AI in customer-facing High Tobias Lindqvist ([EMPLOYEE_ID_2]) [EMAIL_40] —_Escalated to register
+processes
+
+Quantum-vulnerable cryptography Low [PERSON_22] ([EMPLOYEE_ID_6]) [EMAIL_59] Investigate
+Concentration in cloud service [PERSON_102] ([EMPLOYEE_ID_13]) +91 80 4555 0182 Escalated to register
+provision
+
+Deepfake-enabled authorised push Veryhigh—_—&Rafael [PERSON_103] ([EMPLOYEE_ID_24]) [PHONE_27] Escalated to register
+
+payment fraud
+
+Cross-border data localisation [PERSON_104] ([EMPLOYEE_ID_4]) +44 20 7555 0163 Investigate
+requirements
+
+17.2 Scenario analysis
+
+Scenario analysis assesses exposure to severe but plausible events for which historical data is unavailable or unrepresentative.
+Scenarios are developed through facilitated workshops with business, risk and subject-matter experts, and must explicitly record
+assumptions made, the control environment assumed, estimated frequency and severity, and the range of uncertainty around the
+estimate.
+
+SCENARIO THEME FREQUENCY WORKSHOP LEAD PURPOSE
+
+Severe cyber intrusion with data Annual Caleb A. Whitfield ([EMPLOYEE_ID_7]) Tests detection, containment, notification and
+
+exfiltration recovery
+
+Failure of a critical third party Annual [PERSON_60] ([EMPLOYEE_ID_13]) _Tests substitutability, exit planning and continuity
+
+Prolonged loss of a core banking platform Annual Lars-Erik Brannstrom ([EMPLOYEE_ID_22]) _Tests impact tolerance for important business
+services
+
+Large-scale internal fraud [PERSON_105], Nakagawa ([EMPLOYEE_ID_12]) —_Tests segregation of duties, surveillance and
+escalation
+
+‘Systemic mis-selling or conduct failure Biennial, [PERSON_54] ([EMPLOYEE_ID_25]) Tests product governance and redress capability
+
+‘Severe macroeconomic downturn Annual Babatunde O. Osei-Tutu ([EMPLOYEE_ID_32]) Feeds ICAAP and credit provisioning
+
+Climate transition and physical risk Annual [PERSON_14] ([EMPLOYEE_ID_19]) Assesses financed emissions and physical asset
+risk
+
+17.3 Stress testing
+
+Stress testing quantifies the effect of adverse conditions on capital, liquidity and earnings. The Group conducts regulatory prescribed
+tests, internal tests aligned to its own profile, and reverse stress tests identifying circumstances under which the business model would
+become unviable. Reverse stress testing results are reported to the Board annually and inform the Recovery Plan. Assumptions and the
+sensitivity of results to them are disclosed alongside results; a stress result presented without its assumptions is not a valid report.
+
+17.4 Operational resilience
+
+The Group identifies its important business services, maps the people, processes, technology, facilities, data and third parties on which
+each depends, and sets a Board-approved impact tolerance for each. It then tests its ability to remain within those tolerances under
+severe but plausible disruption. Where testing shows a tolerance cannot be met, the gap is recorded as an issue and remediated under
+Section 15.
+
+IMPORTANT BUSINESS SERVICE IMPACT TOLERANCE SERVICE OWNER LAST TESTED
+Retail payments and transfers 2hours [PERSON_54] ([EMPLOYEE_ID_25]) 18/04/2026 — tolerance breached
+Customer account access (digital) 4hours [PERSON_106] ([EMPLOYEE_ID_22]) 22/03/2026 — passed
+Trade execution and settlement hour [PERSON_51] ([EMPLOYEE_ID_14]) 09/05/2026 — passed
+Client reporting and valuations 24 hours [[PERSON_7]] ([EMPLOYEE_ID_15]) 14/02/2026 — passed
+
+17.5 Use of results
+
+Scenario and stress results are not standalone exercises. They must demonstrably inform capital and liquidity planning, appetite
+calibration, the Recovery Plan, resilience investment and the risk register. The Group Executive Risk Committee reviews the use made
+of each exercise and reports to the Board Risk Committee where results have not been acted upon.
+
+Page 24 of 35,
+
+
+--- Page/Slide 25 ---
+18. Change, new product and third-party
+
+18.1 Change risk
+
+Change is a significant source of operational risk. All material change initiatives — system implementations, migrations, organisational
+restructures, outsourcing transitions and regulatory implementation programmes — require a risk assessment at initiation, at each major
+stage gate and prior to go-live. The assessment must address risks introduced by the change, risks to business-as-usual during
+transition, control coverage during parallel running, and the rollback position if the change fails.
+
+Go-live approval requires confirmation that controls have been designed, implemented and tested; that data migration has been
+reconciled; that affected staff have been trained; that support arrangements are in place; and that a documented rollback plan exists.
+Go-live may not proceed on the basis that controls will be implemented shortly afterwards.
+
+18.2 New product approval
+
+No new product, service, market or distribution channel may be launched without approval from the New Product Approval Committee,
+chaired by [PERSON_107]. A material change to an existing product requires the same approval. The submission must address,
+at minimum: target market, customer need and foreseeable harm; risk assessment across every applicable taxonomy category; legal,
+regulatory, tax and accounting analysis; financial crime, sanctions and conduct assessment; a data privacy impact assessment where
+personal data is processed; technology, resilience and third-party dependencies; operational readiness; pricing, profitability and capital
+consumption; and exit and wind-down arrangements.
+
+Every approved product is subject to post-mplementation review within twelve months, assessing whether the product performed as
+expected, whether customer outcomes matched those anticipated, and whether the risk assessment remains valid.
+
+18.3 Third-party and outsourcing risk
+
+Third-party arrangements are managed across the full lifecycle: strategy and sourcing, due diligence, contracting, onboarding, ongoing
+monitoring and exit. Depth of oversight is determined by criticality tier, assessed on the importance of the service, the sensitivity of data
+shared, the substitutability of the provider and the regulatory classification of the arrangement.
+
+TIER DEFINITION DUE DILIGENCE ONGOING OVERSIGHT
+Tier 1 — Critical Supports an important business Full on-site assessment; board- Annual reassessment; quarterly service review; exit plan
+service or processes sensitive data level approval tested every 2 years
+at scale
+[PERSON_108]— Material _Significant operational dependency _Full remote assessment; Annual reassessment; semi-annual service review;
+without direct customer service evidence-based control review documented exit plan
+impact
+Tier 3— Standard Routine supply with limited Questionnaire-based Biennial reassessment
+dependency or data access assessment
+[PERSON_109]— Low Commodity supply, no data access, [PERSON_110] only Contract renewal review
+
+readily substitutable
+
+18.4 Tier 1 provider register extract
+
+s:
+
+PROVIDER SERVICE RELATIONSHIP OWNER PROVIDER contact ASSESSMENT
+
+Meridian Staffing Ltd Offshore delivery resourcing [PERSON_60] ([EMPLOYEE_ID_13]) [PERSON_88], +1 (646) Overdue —
+555-0203, 31/03/2026
+
+Northwind Analytics GmbH Risk model validation [PERSON_53] ([EMPLOYEE_ID_15]) _[PERSON_45], 30/09/2026
+[EMAIL_38]
+
+Veritrace Screening Services Pre-employment screening _ [PERSON_4] ([EMPLOYEE_ID_9]) Marcus Twiley, [PERSON_111] —
+
+[EMAIL_60] 30/04/2026
+
+18.5 Offshore personnel roster
+
+Where provider personnel access Group systems, the provider supplies a named roster each quarter. The roster is itself a transfer of
+personal data and must be minimised: from FY27 national identifiers must be replaced with vendor identifiers.
+
+NAME VENDOR ID ROLE NATIONAL ID CONTACT LOCATION | SHIFT
+
+[PERSON_112] MER-IN-4471 Application support L2 PANAQBPR7741L -+91.[PHONE_35] —_Bengaluru 14:00—
+23:00 IST
+
+Sneha M. Vaidyanathan MER-IN-4488 Application support L1 PAN [PAN_2]  +91.[PHONE_36] Bengaluru 06:00-
+15:00 IST
+
+[PERSON_51] MER-IN-4502 Database administrator PAN [PAN_3] — [PHONE_37] Chennai 22:00-07:00
+IsT
+
+Grazyna Wieczorek MER-PL-1187 Reconciliation analyst [PERSON_113] [PHONE_38] Krakow 09:00-18:00
+ceT
+
+Tier 1 and Tier 2 contracts must include audit and inspection rights for the Group and its regulators, service levels with remedies,
+notification obligations for incidents and sub-contracting, data protection terms, continuity commitments and defined termination
+assistance. Sub-contracting of material functions requires prior written consent. Concentration is assessed at Group level annually and
+reported to the Board Risk Committee.
+
+Page 25 of 35,
+
+
+--- Page/Slide 26 ---
+Group Risk Management Policy GRP-POL-001 | Version 6.0 | Internal
+
+19. Reporting and escalation
+
+19.1 Escalation principles
+
+Escalation is mandatory, not discretionary. The threshold is the assessed rating of the risk, not the confidence of the owner that it will be
+resolved. An owner who believes a risk is under control must still escalate it if it meets the threshold.
+
+Escalation Ladder — Authority and Named Escalation Contact
+
+Critical (20-25)
+
+‘A Brightwell« [PHONE_39]
+
+M. Achebe + [PHONE_40]
+
+. Kulkarni + +92 80 4555 0182
+
+[PERSON_114] [PHONE_2]
+
+Control owner [PERSON_115] [PHONE_3]
+
+Figure 12 — Escalation ladder, decision authority and the named escalation contact at each level
+
+19.2 Immediate escalation triggers
+The following must be escalated to the Group CRO immediately on identification ([PERSON_42], [PHONE_41], mobile [PHONE_42]), irrespective of scheduled reporting cycles:
+
+* Any risk assessed as Critical, or any breach of a Board-level appetite limit.
+
+* Any occurrence in a zero-appetite category, or any Severity 1 incident.
+
++ Any suspected material regulatory breach or unplanned regulatory contact regarding a potential breach.
+
+* Any confirmed or suspected personal data breach.
+
+* Any suspected fraud involving an employee, or external fraud above the Group reporting threshold.
+
++ Any circumstance reasonably expected to attract significant adverse media attention.
+
+* Any inability to meet an impact tolerance for an important business service.
+
+19.3 Reporting calendar and distribution
+
+REPORT FREQUENCY PREPARED BY DISTRIBUTION
+Group Risk Profile Report Quarterly Tobias Lindqvist [EMAIL_61]; [EMAIL_62]
+([EMAIL_40])
+Executive Risk Dashboard Monthly Priyanka [PERSON_116] [EMAIL_63]
+([EMAIL_64])
+Appetite Adherence Report Monthly Priyanka S. Raghavan [EMAIL_63]; [EMAIL_65] (quarterly)
+Issue and Remediation Report Monthly Tobias Lindqvist [EMAIL_63]
+Incident and Loss Report Monthly [PERSON_37] [EMAIL_66]
+([EMAIL_67])
+Emerging Risk Report Quarterly Tobias Lindqvist [EMAIL_68]:; [EMAIL_61]
+Risk Culture Report Annual [PERSON_12] [EMAIL_61]; [EMAIL_69]
+([[PERSON_1]])
+Framework Effectiveness Review Annual [PERSON_117]; [EMAIL_62]
+([EMAIL_1])
+Risk Conduct Report Annual [PERSON_1] [EMAIL_69] ([PERSON_118])
+19.4 Reporting standards
+
++ Reports state the position, the movement since the previous period and the forward outlook, not the position alone,
+* Deteriorating positions are highlighted explicitly rather than left for the reader to infer.
+
++ Data is reconciled to source, with the source and as-at date stated on every material figure.
+
++ Estimates and manual adjustments are identified as such, with their basis disclosed.
+
++ Where information is incomplete, the gap is disclosed rather than omitted.
+
++ Reports are circulated at least five business days before the meeting at which they are considered.
+
+Aggregation capability. In line with BCBS 239, the Group must be able to produce accurate aggregated risk data rapidly, including ad
+
+hoc during a stress, The ability to meet ad-hoc requests within defined timeframes is tested at least annually and results reported to the
+Board Risk Committee.
+
+adence Financial G Incontrolled when printec Page 26 of 35,
+
+
+--- Page/Slide 27 ---
+20. Policy exceptions and waivers
+
+20.1 Principle and requirements
+
+Exceptions are permitted only where compliance is not achievable within the required timeframe and where residual exposure is
+understood, mitigated and accepted by an authorised approver. An exception is a temporary, documented deviation; it is not a
+permanent alternative to compliance, and it does not alter the requirement itself.
+
+ATTRIBUTE REQUIREMENT
+
+Requestor Named individual at Director level or above accountable for the affected activity
+
+Requirement affected Specific clause of this policy or of a subordinate standard
+
+Business justification Why compliance cannot be achieved within the required timeframe
+
+Risk assessment Residual rating of the exposure created, assessed using Section 11
+
+Compensating controls Specific controls operating during the exception period, with named owners,
+
+Remediation plan Dated plan to achieve compliance, or a rationale for permanent variance
+
+[PERSON_119] date Mandatory. Exceptions expire automatically and are not renewed by default
+
+Approver As set out in Section 7.8, determined by the residual rating
+
+20.2 Exception register extract — open at 30 June 2026
+REQUIREMENT WAIVED REQUESTOR REQUESTOR CONTACT RATING _ EXPIRY
+
+EXC-2026-041 13.1—annual RCSA for newly _—_—[PERSON_120] (DIR-0063) [EMAIL_70] [PERSON_121]
+acquired entity
+
+EXC-2026-036 18.3 — on-site assessment for [PERSON_122] +91 80 4555 0182 High 31/08/2026
+1 provider (EmP-39220)
+
+EXC-2026-029 14.2 — automated data source for [PERSON_107] [EMAIL_71] Moderate 31/12/2026
+two KRIS ([EMPLOYEE_ID_23])
+
+EXC-2026-024 11.3 — independent testing of CTL- [PERSON_26] ([EMPLOYEE_ID_7]) [PHONE_11] High 30/09/2026 (ext. 2)
+1AM-04
+
+EXC-2025-118 16.1 — next-day incident reporting, Bienvenido T. Salcedo (MER- [PHONE_43] Elevated 31/07/2026 (ext. 3)
+Manila desk PH-2214)
+
+20.3 Administration
+
+All exceptions are recorded in the Group Exception Register maintained by the Group Risk function. The register is reported to the
+Group Executive Risk Committee monthly and to the Board Risk Committee quarterly, including total count, ageing profile, exceptions
+extended more than once, and any that have expired without remediation. Operating under an expired exception is a policy breach.
+
+No exception is available from a legal or regulatory requirement, from a zero-appetite statement, or from the incident reporting
+obligation in Section 16.1. Where compliance with a legal requirement is not achievable, the matter is escalated immediately to the
+Group General Counsel ([PERSON_97], [EMAIL_5]) and the Board Risk Committee.
+
+21. Assurance, training and awareness
+
+21.1 Assurance over the framework
+
+Group Internal Audit reviews the design and operating effectiveness of the enterprise risk management framework at least once every
+two years and reports its opinion to the Audit Committee and the Board Risk Committee. The Group CRO additionally presents an
+annual framework effectiveness review to the Board covering governance, appetite, process, data, systems, resourcing and culture,
+stating explicitly any areas where the framework is not yet operating as intended.
+
+[PERSON_123]!
+
+FREQUENCY ACCOUNTABLE CONTENT
+
+All employees and contingent workers Annual ‘Ananya [PERSON_124] ([EMPLOYEE_ID_21]) Risk fundamentals, taxonomy, incident reporting,
+‘Speak Up, appetite awareness
+
+People managers Annual [PERSON_4] ([EMPLOYEE_ID_9]) The above plus escalation obligations, issue
+ownership and culture leadership
+
+Risk and control owners Annual [PERSON_13] ([EMPLOYEE_ID_2]) RCSA methodology, control assessment, rating
+standards, treatment and acceptance
+
+Second-line practitioners Annual, role-based Tobias Lindqvist Framework methodology, challenge technique,
+aggregation and reporting
+
+New joiners Within 30 days [PERSON_125] covering the framework, appetite and
+reporting obligations
+
+Board and executive Annual [PERSON_1] ([EMPLOYEE_ID_1]) Framework updates, emerging risk briefing, regulatory
+developments, deep dives
+
+Page 27 of 35,
+
+
+--- Page/Slide 28 ---
+21.3 Training completion — outstanding at 30 June 2026
+
+Completion of mandatory training is a Board-level appetite measure with a target of at least 95 per cent. Non-completion is escalated to
+the relevant divisional CEO and is an input to performance assessment.
+
+EMPLOYEE EMP ID DIVISION MANAGER DUE DAYS OVERDUE
+[PERSON_14] [EMPLOYEE_ID_27] Capital Markets (HK) ‘[PERSON_17] 31/05/2026 30
+[PERSON_126] [EMPLOYEE_ID_26] Consumer Banking [PERSON_54] 31/05/2026 30
+[PERSON_127] Asset Management [PERSON_75] 15/06/2026 15
+Bienvenido T. Salcedo MER- Contingent — Manila Devansh R. Kulkarni 15/06/2026 45
+PH-2214
+‘Sneha M. Vaidyanathan MER-IN-4488 Contingent — Bengaluru ‘Ananya V. Chatterjee 2106/2026 8
+[PERSON_128] [EMPLOYEE_ID_30] Group Functions Marta Szewczyk 2106/2026 8
+21.4 Risk culture
+
+Risk culture comprises the shared norms and behaviours determining how tisk is actually treated, as distinct from how policy states it
+should be. The Group assesses its culture annually using employee survey results, Speak Up volumes and themes, incident and issue
+self-identification rates, RCSA challenge outcomes, exception and acceptance volumes, and behavioural indicators drawn from
+performance and conduct data.
+
+A high proportion of issues identified by the business itself, rather than by audit or regulators, is treated as a positive indicator. A low
+incident reporting volume is investigated rather than celebrated, on the basis that it more often indicates under-reporting than an
+absence of incidents.
+
+21.5 Speak Up
+
+All individuals may raise concerns confidentially, and anonymously where they choose, through the Group Speak Up channel operated
+independently of line management. Concerns relating to risk, control, conduct or compliance are routed to the appropriate function for
+investigation, with oversight by the Audit Committee. Retaliation against any person raising a concern in good faith is a serious
+disciplinary matter, whether or not the concern is ultimately substantiated,
+
+E THEME RAISED INVESTIGATING OFFICER TATUS
+
+SPK-2026-0071 Pressure to re-score a residual rating [PERSON_129] ([EMPLOYEE_ID_8]) Substantiated — referred to HR
+downward
+
+SPK-2026-0064 Incident not reported within required Named —T. Sofia Marchetti-Lang ([EMPLOYEE_ID_11]) Substantiated — closed
+timeframe Lindqvist
+
+‘SPK-2026-0058 Vendor personnel accessing data [PERSON_130] ([EMPLOYEE_ID_4]) Under investigation
+beyond scope
+
+‘SPK-2026-0049 Concerns over training completion Named —[PERSON_131] ([EMPLOYEE_ID_9]) Not substantiated
+
+attestation Osadebe
+
+‘Speak Up contacts. Confidential line [PHONE_44] (24 hours). Independent operator: Veritrace Integrity Services. Audit
+Committee sponsor: [PERSON_5] (r.achterberg @cadencefg.com). Where a concern relates to the Group CRO or Chief
+Internal Auditor, itis routed directly to the Board Chair, [PERSON_27] ([EMAIL_21]).
+
+21.6 Access credentials for risk governance
+
+Physical and system access for committee members is issued and revoked by Facilities under control CTL-PHY-03. Badges carry the
+holder's name, employee identifier, role, work e-mail, mobile number, date of birth, validity dates, a photograph and an encoded barcode
+value, and are therefore treated as personal data in their own right.
+
+CADENCE FINANCIAL GROUP
+
+[EMAIL_4]
+Tin sane
+
+2a February 979
+)AUQWVUQ. TV NI
+
+iber (evidence for control CTL-PHY-03).
+
+Figure 13 — Issued access credential for a Group Executive Risk Committee mem
+
+Page 28 of 35,
+
+
+--- Page/Slide 29 ---
+Sroup Risk Management Poli GRP-POL-001 | Version 6.0 | Internal
+
+22. Policy governance, breach and review
+
+22.1 Ownership and maintenance
+
+This policy is owned by the Group Chief Risk Officer, [PERSON_1] ([EMPLOYEE_ID_1]), and maintained by [PERSON_2], Head of
+Enterprise Risk Framework ([EMPLOYEE_ID_2], [EMAIL_40], +44 20 7555 0171). The owner is accountable for keeping it
+current, ensuring subordinate documents remain aligned, and reporting on its effectiveness to the Board Risk Committee.
+
+22.2 Review cycle and amendment
+
+The policy is reviewed at least annually. Out-of-cycle review is triggered by a material change to strategy, structure or business model; a
+material change to applicable regulation; a Critical-rated incident or material regulatory finding relating to risk management; a material
+change to the appetite statement; or a recommendation from Group Internal Audit or the Board Risk Committee.
+
+Material amendments require Board Risk Committee approval. Non-material amendments — typographical corrections, role title
+updates, references and formatting — may be approved by the Group CRO and are reported to the Board Risk Committee at its next
+meeting. Where there is doubt, the amendment is treated as material.
+
+22.3 Policy breach
+Failure to comply with this policy is a breach and may constitute misconduct. Breaches are recorded as incidents under Section 16 and
+investigated proportionately. The following are treated as serious breaches and reported to the Board Risk Committee individually:
+
++ Failure to report a known incident, near miss or loss event.
+
++ Knowingly false or misleading attestation, assessment or report.
+
+* Operating outside an approved limit without escalation.
+
+* Operating under an expired risk acceptance or exception.
+
++ Amending a limit or a rating to conceal or cure a breach.
+
++ Retaliation against an individual who has raised a concern in good faith.
+
++ Obstructing the second or third line in the performance of their duties.
+
+Confirmed breaches are referred to Human Resources (D. R. Okonjo, [EMAIL_72]) for consideration under the
+disciplinary process and, for material risk takers, reported to the Remuneration Committee for consideration of variable-pay adjustment.
+
+22.4 [PERSON_132] determinations — H1 2026
+
+REFERENCE BREACH INDIVIDUAL TERMINED BY OUTCOME
+PBR-2026-008 Re-scored residual rating without control Withheld pending appeal [PERSON_35] Referred to Remco
+change (EmP-41184)
+PBR-2026-005 Incident reported 4 days after awareness [PERSON_133] ([PERSON_134] warning
+PH-2214)
+PBR-2026-003 Operated under expired exception Grazyna Wieczorek Tobias Lindqvist Coaching; exception
+EXC-2025-097 ([EMPLOYEE_ID_17]) renewed
+
+22.5 Interpretation
+
+Questions of interpretation are determined by the Group Risk function. Where interpretation has Group-wide consequence, the
+determination is recorded and published on the Group Policy Portal so that it is applied consistently. Local interpretations narrowing a
+Group requirement are permitted; those widening it are not.
+
+22.6 Effectiveness measures
+
+ASURE TARGET MEASURE OWNER REPORTED TO
+
+RCSA completed on time 100% T. Lindqvist ([EMPLOYEE_ID_2]) Group Executive Risk
+Committee
+
+Critical and High issues overdue [PERSON_135] ([EMPLOYEE_ID_1]) Board Risk Committee
+
+Incidents reported within one business day 295% R. E, [[PERSON_1]] ([EMPLOYEE_ID_24]) Operational Risk Committee
+
+Issues self-identified by the first line > 70% of total raised T. Lindqvist Board Risk Committee
+
+Risk acceptances expired without action Zero P.S. Raghavan ([EMPLOYEE_ID_23]) Group Executive Risk
+‘Committee
+
+Exceptions extended more than once $ 10% of open exceptions _[PERSON_136]
+
+Mandatory risk training completion 295% [PERSON_80] ([EMPLOYEE_ID_21]) _ Board Risk Committee
+
+Ad-hoc risk data requests met within timeframe 290% T. Lindqvist Board Risk Committee
+
+Page 29 of 35,
+
+
+--- Page/Slide 30 ---
+Appendix A — Impact and likelihood scales
+
+A.1 Impact scale
+
+Impact is assessed against every dimension below, and the overall rating is the highest attained on any single dimension. impact is not
+averaged across dimensions.
+
+FINANCIAL
+
+RATING (SINGLE Event) REGULATORY CUSTOMER OPERATIONAL REPUTATIONAL
+—Severe >USD 50m [PERSON_137] condition, Widespread detriment; Important business Sustained international
+enforcement action or systemic redress required service unavailable adverse coverage; loss of
+public censure beyond impact tolerance stakeholder confidence
+4—Major USD10m—50m [PERSON_16]] regulatory finding Significant detriment toa‘ Material disruption to a_—_Sustained national adverse
+with mandated remediation defined customer group _—_core process exceeding _coverage
+one business day
+3 USD 1m—10m Reportable breach; Detriment to a limited Disruption contained Trade or regional press
+Moderate supervisory attention group; individual redress within one business day coverage
+required
+2—Minor — USD 100k~1m Technical breach, self: Isolated detriment; Localised disruption Limited internal or client-
+reported and remediated straightforward remedy absorbed within normal __level concern
+capacity
+a < USD 100k No breach; observation —_No customer detriment Negligible disruption No external awareness
+Insignificant only
+A.2 Likelihood scale
+RATING DESCRIPTOR FREQUENCY-BASED GUIDANCE PROBABILITY-BASED GUIDANCE (12 MONTHS)
+5 Almost certain Expected to occur more than once a year Greater than 90%
+4 Likely Expected to occur once within 1-2 years 60% 90%
+3 Possible Could occur once within 2-5 years 259% — 60%
+2 Unlikely Could occur once within 5-10 years 5% — 2596
+1 Rare May occur once in more than 10 years —_Less than 59%
+
+Applying the scales. Likelihood for inherent assessment assumes the absence of controls. Likelihood for residual assessment reflects
+controls assessed as effective. Where an event has already occurred within the assessment period, residual likelihood may not be
+rated below 3 (Possible) without documented justification approved by the second line. Scale interpretation queries are directed to
+[PERSON_2] (\[EMAIL_73], +44 20 7555 0171).
+
+A.3 Financial thresholds by legal entity
+
+The thresholds in A.1 apply at Group level. Legal entities apply scaled thresholds proportionate to their size, approved annually by the
+Group Executive Risk Committee, so that a risk material to a smaller entity is not obscured on consolidation.
+
+LEGAL ENTITY SEVERE (5) THRESHOLD + THRESHOLD OWNER LAST APPROVED
+Cadence Financial Group, Inc. (Group) usp 50m [PERSON_14] ([EMPLOYEE_ID_19]) 12 Feb 2026
+Cadence Financial Group (UK) Limited GBP 18m [PERSON_28] (DIR-0058) 12 Feb 2026
+Cadence Asset Management Europe SA EUR 9m [PERSON_10] ([EMPLOYEE_ID_33]) 12 Feb 2026
+Cadence Services India Private Limited INR 420m ‘Ananya [PERSON_124] ([EMPLOYEE_ID_21]) 12 Feb 2026
+Cadence Capital Markets (Singapore) Pte SGD 12m [PERSON_17] ([EMPLOYEE_ID_5]) 12 Feb 2026
+
+A.4 Velocity
+
+For emerging risks and scenario work, velocity is recorded alongside impact and likelihood. Velocity does not change the score but
+informs prioritisation: a risk that could crystallise within days demands a different response from one with a multi-year onset, even at the
+same score.
+
+VELOCITY TIME FROM ONSET TO FULL IMPACT IMPLICATION FOR TREATMENT
+
+Very high Less than 1 week Pre-prepared response required; controls must be preventive or automated
+detective
+
+High 1 week — 3 months Contingency plan required and tested
+
+Medium 3-12 months Monitored through KRIs with defined trigger points
+
+Low More than 12 months Managed through the planning cycle
+
+Page 30 of 35,
+
+
+--- Page/Slide 31 ---
+Sroup Risk Management Poli GRP-POL-001 | Version 6.0 | Internal
+
+Appendix B — Risk appetite statements and limits
+
+The measures below give effect to the qualitative statements in Section 8.3. Each is reported monthly to the Group Executive Risk
+Committee and quarterly to the Board Risk Committee. Limits are approved by the Board; tolerance bands by the Group Executive Risk
+Committee
+
+CATEGOR MEASURE Lim TON ANCE NAMED OWNER contact
+
+Capital Common Equity Tier 1ratio > 12.5% 12.5% 13.59% [PERSON_139] [PHONE_4]
+Leverage ratio 24.5% 45% -5.0% [PERSON_140]. [PERSON_17] [EMAIL_74]
+
+Liquidity Liquidity coverage ratio 2 120% 120%-135% Marta Szewezyk +48 22.555 0164
+Net stable funding ratio 2 110% 110% ~ 118% Marta Szewezyk [EMAIL_48]
+
+Credit Nom performing loan ratio <25% 2.0%-25% Babatunde O. Osei-Tutu. [PHONE_10]
+Single-name exposure as % of < 10% 8% - 10% Babatunde O. Osei-Tutu. —[EMAIL_75]
+ceT1
+
+Market Trading book VaR (1-day, 99%) <USD18m — USD 14m—18m [PERSON_141] [PHONE_5]
+VaR backtesting exceptions <4peryear 3-4 Avvind K. Pla [EMAIL_47]
+
+Operational Operational losses as % of gross < 3.0% 2.4%-3.0% Sofia Marchett-Lang [PHONE_9]
+income
+Open Critical and High issues 0 zero appetite ‘[PERSON_59] [PHONE_1]
+past due
+Severity 1 incidents (roling12 <4 3-4 Lars-Erik Brannstrom +46 8 5555 0121,
+months)
+
+Technology & Availablity of important business > 99.99% 99.90% — 99.95% Caleb A. Whitfield [PHONE_11]
+
+cyber services
+Critical vulnerabilities open ° zero appetite [PERSON_26] [EMAIL_20]
+beyond SLA
+Unsupported software in critical 0 zero appetite [PERSON_22] [PHONE_21]
+services
+
+Third party Tier 1 providers without current 0 zero appetite [PERSON_60] +91 80 4555 0182
+assessment
+Tier 1 providers without a tested 0 zero appetite [PERSON_142] —[EMAIL_76]
+exitplan
+
+Conduct & Material regulatory breaches 0 zero appetite [PERSON_29] [PHONE_12]
+
+i
+
+Ged Complaints upheld by the < 15% 12% — 15% Yusuf ©. Balogun [PHONE_30]
+ombudsman
+
+Financial crime Overdue suspicious activity 0 zero appetite [PERSON_29] [EMAIL_28]
+reviews
+Customers without current due < 0.5% 0.3%-0.5% [PERSON_143] [PHONE_6],
+diligence
+
+Data privacy Reportable personal data ° zero appetite Helena Vorstermann +44 20 7555 0163,
+breaches
+Subject access requests within 100% ze1o appetite [PERSON_6] [EMAIL_6]
+deadline
+
+People & culture Mandatory risk taining 295% 95% 9796 ‘Ananya V. Chatterjee +91 22 4555 0117
+completion
+Voluntary atwition in control $ 12% 10% - 12% [PERSON_144]
+functions
+
+Climate Financed emissions against Onorbelow  0~3%above [PERSON_145]
+pathway
+
+Measurement basis. Each measure has a documented definition covering calculation, data source, as-at convention, treatment of
+exclusions and responsible producer. Definitions are held in the Appetite Measurement Standard (GRP-STD-002) and may only be
+changed with Group Executive Risk Committee approval. Changing a definition in a way that alters a reported position requires
+restatement of prior periods.
+
+Page 31 of 35,
+
+
+--- Page/Slide 32 ---
+[PERSON_146] — RACI matrix and named accountable officers
+
+R= Responsible | A= Accountable (single owner) | C = Consulted | | = Informed
+
+ACTIVITY
+
+Approve risk appetite statement A R c
+Approve this policy 1 A cS
+Maintain the risk taxonomy 1 1 1
+Cascade appetite to divisions 1 1 c
+Identify risks 1 1 1
+Perform RCSA - 1 1
+Attest RCSA outcome = 1 1
+Challenge RCSA 1 1
+Assess control effectiveness - 1 1
+Develop treatment plans = 1 1
+Approve Critical risk acceptance 1 A c
+Approve High risk acceptance 1 1 C
+Raise and rate issues - 1 1
+Remediate issues — 1 1
+Verity issue closure - 1 1
+Report incidents - 1 1
+Investigate Severity 1 incidents 1 1 A
+Determine regulatory notification 1 1 A
+Define and report KRIS = [PERSON_147] scenario analysis, 1 c c
+Approve new products - 1 1
+Assess third-party risk = 1 1
+Approve policy exceptions c 1
+Report the Group risk profile 1 1 c
+Assure the framework 0 ic 1
+Deliver tisk training - 1 Il
+
+Assess risk culture ' G c
+
+C.1 Named accountable officers
+
+RACI COLUMN CURRENT INCUMBENT
+
+EMP / DIR ID CORPORATE
+
+>> O> > 0>>>08
+
+AIL
+
+RISK OWNER
+
+RPoaoDmDAaAAARAAAAGQOA
+
+praaaa °
+
+°
+
+DIRECT LINE
+
+&
+
+97000728
+
+PRORAOROABRAROARABRAGQA
+
+2ND LINE 1A
+
+Board [PERSON_27] ([PERSON_148]) [EMAIL_77] [PHONE_45]
+BRC [PERSON_31] DIR-0042 —[EMAIL_22] [PHONE_6]
+CEO [PERSON_50] [EMPLOYEE_ID_34] _ [EMAIL_42] [PHONE_46]
+Group [PERSON_149] [EMPLOYEE_ID_1] —[EMAIL_1] [PHONE_1]
+Div. CEO (Consumer) [PERSON_54] [EMPLOYEE_ID_25] _ [EMAIL_78] [PHONE_47]
+Risk owner (example) [PERSON_22] [EMPLOYEE_ID_6] _ [EMAIL_19] [PHONE_21]
+2nd line [PERSON_2] [EMPLOYEE_ID_2] — [EMAIL_40] +44 20 7555 0171
+internal Audit ifeoma C. Adeyemi [EMPLOYEE_ID_8] _i,[EMAIL_79] [PHONE_48]
+BRC — Board Risk Committee. [A — Group Internal Audit. "2nd line" denotes the Group Risk, Compliance and Data Privacy functions collectively.
+
+Where a cell shows "—", the party has no defined involvement.
+
+Page 32 of 35,
+
+
+--- Page/Slide 33 ---
+Group Risk Management Policy
+
+Appendix D — Key risk indicator catalogue
+
+GRP-POL-001 | Version 6.0 | Internal
+
+The following is the mandatory minimum indicator set. Divisions maintain additional indicators approved by their Divisional Risk
+Committee and registered with the Group Risk function.
+
+TEGORY
+
+Credit
+
+Market
+
+Liquidity
+
+Operational
+
+Technology &
+cyber
+
+Third party
+
+Conduct &
+compliance
+
+Data privacy
+
+People & culture
+
+INDICATOR
+
+Early arrears (30+ days) as % of
+book:
+
+Watchlist exposures as % of CET1
+Covenant breaches in the period
+VaR utilisation against limit
+Stressed VaR utilisation
+
+LCR headroom above limit
+
+Wholesale funding concentration,
+top 10
+
+Open Critical and High issues past
+due
+
+Incidents reported within SLA
+
+Manual workarounds in critical
+processes
+
+Key control testing completed on
+time
+
+Critical vulnerabilities open beyond
+SLA
+
+Privileged accounts without review
+Change failure rate
+Backup restoration tests failed
+
+Tier 1 providers with overdue
+assessment
+
+Provider SLA breaches, Tier 1 and
+2
+
+Complaints per 1,000 customers
+Regulatory deadlines missed
+Overdue suspicious activity reviews
+Personal data incidents reported
+
+Subject access requests near
+deadline
+
+Control function vacaney rate
+Mandatory training overdue
+‘Speak Up cases open beyond SLA
+
+TYPE
+
+Leading
+
+Leading
+Lagging
+Leading
+Leading
+Leading
+
+Leading
+
+Lagging
+
+Lagging
+Leading
+
+Leading
+
+Leading
+
+Leading
+Lagging
+Leading
+
+Leading
+
+Lagging
+
+Lagging
+Lagging
+Leading
+Lagging
+Leading
+
+Leading
+Leading
+
+Lagging
+
+FREQ.
+Monthly
+
+Monthly
+Monthly
+Daily
+Weekly
+Daily
+Weekly
+
+Monthly
+
+Monthly
+Monthly
+
+Monthly
+
+Weekly
+
+Monthly
+Monthly
+Quarterly
+Monthly
+
+Monthly
+
+Monthly
+Monthly
+Weekly
+Monthly
+Weekly
+
+Monthly
+Monthly
+Monthly
+
+AMBER
+
+1.5% — 2.0%
+
+4% - 6%
+3-5
+
+75% — 90%
+70% — 85%
+10-15 pts
+25% ~ 30%
+
+1-5
+
+90% — 959%
+
+5-10
+
+90% — 95%
+
+1-3
+
+f
+[PERSON_150]
+
+8% ~ 12%
+3% — 5%
+1-2
+
+RED
+
+> 2.0%
+
+> 6%
+>5
+
+> 90%
+> 85%
+< 10 pts
+> 30%
+
+>5
+
+< 90%
+
+>10
+
+< 90%
+
+>3
+
+>5
+> 5%
+>1
+
+>2
+
+>6
+
+>3.0
+>1
+>5
+>3
+
+>3
+
+> 12%
+> 5%
+>2
+
+INDICATOR OWNER
+
+[PERSON_151]
+
+B. O. Osei-Tutu
+[PERSON_152]. [PERSON_153]. Pilla
+
+M. Szewezyk
+
+M. Szewezyk
+
+M. T. Achebe
+
+[PERSON_154]
+
+[PERSON_155]
+
+P.S. Raghavan
+
+C.A. Whitfield
+
+[PERSON_156]
+L-E. Brannstrom
+LE. Brannstrom
+
+D.R. Kulkarni
+
+P.S. Raghavan
+
+Y. 0. Balogun
+[PERSON_157]
+FL. Nakagawa
+[PERSON_68]
+
+[PERSON_68]
+
+[PERSON_158]
+
+1. C. Adeyemi
+
+Threshold review. Thresholds are reviewed annually, and whenever an indicator has remained red or green without variation for four
+consecutive quarters, to confirm they remain calibrated to provide a useful signal rather than persistent noise or false comfort. Review
+is coordinated by [PERSON_107] ([EMAIL_80], +91 80 4555 0182).
+
+Page 33 of 35,
+
+
+--- Page/Slide 34 ---
+Appendix E — Related documents, approval and version control
+
+E.1 Subordinate policies and owners
+
+REFERENCE DOCUMENT
+GRP-POL.002 Credit Risk Policy
+
+GRP-POL-003 Market Risk Policy
+
+GRP-POL-004 Liquidity and Funding Risk Policy
+GRP-POL-005 Operational Risk Policy
+
+GRP-POL-008 Compliance Policy
+
+GRP-POL-009 Financial Crime and Sanctions Policy
+GRP-POL-O11 Conduct Risk and Customer Outcomes Policy
+GRP-POL-014 Technology and Cyber Risk Policy
+GRP-POL-015 Third-Party Risk Management Policy
+GRP-POL-016 Business Continuity and Resilience Policy
+GRP-POL-O18 Model Risk Management Policy
+GRP-POL-021 Data Privacy Policy
+
+GRP-POL-022 Data Governance and Records Policy
+GRP-POL-026 Climate and Environmental Risk Policy
+
+E.2 Supporting standards and procedures
+
+REFERENCE DOCUMENT
+GRP-STD-001 Risk Taxonomy Standard
+
+GRP-STD-002 Appetite Measurement Standard
+GRP-STD-004 Risk Assessment Standard
+
+GRP-STD-006 RCSA Standard
+
+GRP-STD-007 Issue Management Standard
+GRP-STD-008 Incident and Loss Data Standard
+GRP-STD-010 Key Risk indicator Standard
+GRP-STD-012, Scenario and Stress Testing Standard
+GRP-PRO-003 Risk Acceptance and Exception Procedure
+
+E.3 Version history
+
+VERSION DATE AUTHOR
+
+10 1 July 2018 [PERSON_2]
+30 1 July 2021 [PERSON_2]
+
+40 1 July 2022 [PERSON_107]
+50 1 July 2024 Tobias Lindqvist
+
+51 3 Feb 2025 Priyanka [PERSON_116]
+52 1 July 2025, [PERSON_2]
+
+6.0 1 July 2026 Tobias Lindqvist
+
+E.4 Approval record
+ROLE NAME
+
+Head of Enterprise Risk Framework Tobias Lindqvist ([EMPLOYEE_ID_2])
+Group Executive Risk Committee
+
+Group General Counsel [PERSON_5]
+
+(emp-37012)
+
+OWNER
+
+CONTACT
+
+Babatunde O. Osei-Tutu ([EMPLOYEE_ID_32]) [EMAIL_81]
+
+[PERSON_51] ([EMPLOYEE_ID_14])
+
+[PERSON_20] ([EMPLOYEE_ID_18])
+[PERSON_36] ([EMPLOYEE_ID_11])
+[PERSON_29] ([EMPLOYEE_ID_12])
+[PERSON_29] ([EMPLOYEE_ID_12])
+[PERSON_54] ([EMPLOYEE_ID_25])
+[PERSON_26] ([EMPLOYEE_ID_7])
+[PERSON_60] ([EMPLOYEE_ID_13])
+Lars-Erik Brannstrom ([EMPLOYEE_ID_22])
+[PERSON_53] ([EMPLOYEE_ID_15])
+[PERSON_6] ([EMPLOYEE_ID_4])
+[PERSON_128] ([EMPLOYEE_ID_30])
+
+[PERSON_14] ([EMPLOYEE_ID_19])
+
+[EMAIL_47]
+[EMAIL_48]
+[EMAIL_26]
+{[EMAIL_82]
+[PHONE_12]
+[EMAIL_78]
+[EMAIL_20]
+[EMAIL_39]
+[EMAIL_45]
+[EMAIL_50]
+[EMAIL_6]
+[EMAIL_44]
+
+[EMAIL_74]
+
+[PERSON_1] ([EMPLOYEE_ID_1])
+
+OWNER
+[PERSON_2] ([EMPLOYEE_ID_2])
+[PERSON_107] ([EMPLOYEE_ID_23])
+[PERSON_2] ([EMPLOYEE_ID_2])
+
+‘Sofia Marcheti-Lang ([EMPLOYEE_ID_11])
+[PERSON_2] ([EMPLOYEE_ID_2])
+[[PERSON_4]] ([EMPLOYEE_ID_24])
+[PERSON_107] ([EMPLOYEE_ID_23])
+[PERSON_53] ([EMPLOYEE_ID_15])
+
+[PERSON_22] ([EMPLOYEE_ID_6])
+
+APPROVED BY
+
+MMARY OF CHANGE
+
+Board Risk Cttee Initial issue following framework consolidation
+
+Board Risk Cttee Operational resilience and impact tolerances added
+
+Board Risk Citee Climate risk added to taxonomy; appetite framework
+
+restructured
+
+Board Risk Cttee Third-party tering revised for DORA; model risk section
+
+added
+
+M.T. Achebe Non-material: Appendix D thresholds recalibrated
+
+Board Risk Citee Issue extension controls strengthened; overdue issues
+
+made a Board appetite measure
+
+Board Risk Cttee Data privacy elevated to zero appetite; velocity
+introduced (A.4); acceptance durations and re-
+approval escalation added (12.3); prohibited
+treatments codified (12.5); BCBS 239 aggregation
+testing added (19.4); named accountable officers
+
+published (Appendix C.1)
+
+CONTA\ ACTION DATE
+[EMAIL_40], +4420 Drafted 21 Apr [AADHAAR_1]
+
+[EMAIL_4], +1 (212) Recommended 28 May [PHONE_49]
+
+[EMAIL_83], +1 Legal review 4 Jun 2026
+
+(212) 555.0113
+
+Page 34 of 35,
+
+
+--- Page/Slide 35 ---
+Group Risk Management Policy GRP-POL-001 | Version 6.0 | Internal
+
+Chief Privacy Officer [PERSON_6] ([EMPLOYEE_ID_4]) [EMAIL_84], +44 Privacy review 6 Jun 2026
+20 7555 0163
+Group Chief Risk Officer [PERSON_1] ([EMPLOYEE_ID_1]) _ [EMAIL_4] [PERSON_159] 2026
+Board Risk Committee Chair [PERSON_3] (DIR-0042) [EMAIL_22], +1 (212) Approved 18 Jun [PHONE_50]
+Board Chair Eleanor R. Vasquez-Holt [EMAIL_21], +1 (212) Noted 25 Jun 2026
+(01R-0001) 555-0100
+
+E.5 Confidentiality and handling
+
+This document is classified Internal and contains the personal data of named officers, together with register extracts containing
+employee identifiers, dates of birth, national identifiers, home addresses and photographic images. Any interception, review,
+retransmission or other use by persons other than the intended recipient is prohibited. Distribution outside the Group requires the
+approval of the Chief Privacy Officer.
+
+Training artifact disclaimer. Cadence Financial Group, Meridian Staffing, Northwind Analytics, Veritrace Screening Services, Halloran
+& Pike LLP and AegisGRC are fictional. All names, e-mail addresses, telephone numbers, employee and director identifiers, national
+identifiers, account numbers, addresses and dates in this document were generated for Pll-detection teaching purposes and
+correspond to no real person or organisation. Identifier values follow published test formats and are not usable.
+
+E.6 Exercise prompts for students
+
+1. Extract text from every page and report which pages required optical character recognition.
+
+2. Enumerate all Pll instances by category, with page and location references, distinguishing body text, tables, narrative prose and
+image-only occurrences.
+
+. Identify every identifier that appears only inside an image, and measure the recall difference against digitally native text.
+
+. Locate identifiers embedded in unlabelled narrative prose (Sections 16.5 and 16.8) and explain why field-based extraction fails there.
+
+. Produce a masked derivative that preserves page count, layout and cross-artifact traceability of individuals via stable tokens.
+
+. Justify the false-positive controls you would apply to PAN, PESEL, TIN and card-number patterns.
+
+oanRe
+
+Cadence Financial Group, Inc. — Uncontrolled when printec Page 35 of 35,

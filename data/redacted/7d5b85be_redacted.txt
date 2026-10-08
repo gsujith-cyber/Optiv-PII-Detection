@@ -1,0 +1,781 @@
+--- Page/Slide 1 ---
+Summer Internship – 2026
+By 
+Uptoskills
+
+
+Duration :- 	3 Months	
+Start Date :-  	21-05-2026						
+End Date :-  	21-08-2026
+
+						Name :-  G Sujith
+	Course :-  Btech - CSE
+						Enroll No :- College roll no
+
+Interview date :  20-05-2026
+Offer letter date : 21-05-2026
+Leader Assigned on: First interaction date with your leaders
+[PERSON_1] :  Vanshika jadaun
+[PERSON_2] : [PERSON_3]
+Project Name: Cyber Security 
+Project Briefed : 
+
+
+
+
+Task – 1 : Installation of [PERSON_4] and Burpsuite Professional
+
+Date of allotment :  22-05-2026
+Date of completion : 25-06-2026
+Dead line : 3 Days
+
+[PERSON_1] Installation
+
+Screenshot 1:  [PERSON_4] Platform Selection Page
+
+
+
+This screenshot shows the official [PERSON_4] download page (kali.org/get-kali), displaying two recommended installation options — Installer Images and Virtual Machines. Since we are setting up [PERSON_4] inside VirtualBox, we select the Virtual Machines option (right side), which provides pre-built VMware & VirtualBox images. This method is preferred for internship and learning environments as it runs in an isolated environment without affecting the host operating system.
+
+Screenshot 2:  [PERSON_1] Desktop (VM Opened)
+
+
+
+This screenshot shows the [PERSON_4] desktop environment successfully running inside VirtualBox. The XFCE desktop with the [PERSON_4] dragon wallpaper, taskbar, and application menu confirms that the virtual machine has been set up correctly and [PERSON_4] is fully operational. This marks the successful completion of the [PERSON_4] installation process on the host machine.
+
+Verification of [PERSON_4]
+
+Screenshot 3: Terminal — OS Version Verification
+
+
+
+This screenshot shows the [PERSON_4] terminal with the output of the command: cat /etc/os-release
+The output displays the exact version of [PERSON_4] installed (e.g., [PERSON_5] GNU/Linux 2024.x), confirming the operating system is correctly installed and up to date. The terminal is one of the primary tools used in cybersecurity for executing commands, running scripts, and operating security tools like [PERSON_2], Metasploit, and more.
+
+[PERSON_3] Professional Installation
+
+
+
+This screenshot shows [PERSON_3] Professional being installed and launched for the first time inside [PERSON_4]. After downloading the installer from the official PortSwigger website (portswigger.net/burp/pro), the setup wizard was executed through the terminal. The launch screen confirms that [PERSON_3] Professional has been successfully installed and the license has been activated, giving full access to all professional features including the [PERSON_6], [PERSON_7], Intruder, and [PERSON_8] modules.
+
+4. Working of [PERSON_3] Professional
+
+
+
+This screenshot demonstrates the working of [PERSON_3] Professional — specifically the [PERSON_6] → Intercept feature, which is the core functionality of the tool. [PERSON_9] is acting as a middleman between the browser and the web server, intercepting and displaying HTTP/HTTPS requests in real time. This allows a security tester to analyze, modify, and forward web traffic, which is essential for identifying vulnerabilities such as SQL injection, XSS, and authentication flaws in web applications.
+
+Conclusion
+This report documented the successful installation of [PERSON_4] as a virtual machine and [PERSON_3] Professional within it. With just 5 key screenshots, the entire setup process has been captured — from downloading [PERSON_4], booting the desktop, verifying via terminal, installing [PERSON_9], and demonstrating its core functionality. These tools are now fully configured and ready for use in web application penetration testing tasks during the internship at Uptoskills.
+
+
+
+Task 2: SQLi Labs 
+
+Date of allotment :  26-05-2026
+Date of completion : 02-06-2026
+Dead line : 7 Days
+
+2.1: SQL Injection Vulnerability in WHERE Clause Allowing Retrieval of Hidden Data
+
+Objective:
+To identify and exploit a SQL Injection vulnerability in the product category filter and retrieve hidden products from the database.
+
+Platform:
+Port Swigger Web Security Academy
+
+Tools Used:
+[PERSON_4]
+[PERSON_3] Professional
+Firefox
+
+Vulnerability Description:
+The web application uses a category parameter to filter products. User input is not properly sanitized before being included in an SQL query. This allows an attacker to modify the SQL query and retrieve hidden data.
+
+Procedure:
+ Step 1:  Access the Lab
+Opened the PortSwigger Web Security Academy lab and launched the target application.
+
+
+Step 2:  Intercept the Request
+Navigated to the "Corporate Gifts" category and captured the request using [PERSON_3].
+
+
+Step 3:  Test and Exploit the Vulnerability
+Modified the category parameter by adding a single quote (') to check for SQL Injection behavior.
+The following payload was injected into the category parameter:
+Corporate gifts' OR 1=1--
+Modified Request:
+GET /filter?category=Corporate+gifts'+OR+1=1—
+
+
+
+Step 4: Observe the Response
+After sending the modified request through [PERSON_4], the application displayed products from all categories, including hidden products.
+
+Step 6: Lab Completion
+The application returned a successful response and the lab was marked as solved.
+
+
+Impact:
+An attacker can retrieve unauthorized data from the database by manipulating SQL queries. This may lead to information disclosure and further compromise of the application.
+Remediation:
+1. Use parameterized queries (Prepared Statements).
+2. Validate and sanitize user input.
+3. Apply least-privilege database permissions.
+4. Implement secure coding practices.
+5. Perform regular security testing.
+
+Result:
+Successfully exploited a SQL Injection vulnerability in the WHERE clause and retrieved hidden data. The lab was completed successfully.
+
+Conclusion:
+This lab demonstrated how improper input validation can lead to SQL Injection vulnerabilities. By manipulating the category parameter, hidden data was retrieved from the backend database, highlighting the importance of secure query handling.
+
+2.2: SQL Injection Vulnerability Allowing Login Bypass
+
+Objective:
+To exploit a SQL Injection vulnerability in the login functionality and gain unauthorized access to the administrator account.
+Tools Used:
+[PERSON_4]
+[PERSON_3] Professional
+Firefox
+
+Vulnerability Description:
+The login form fails to properly sanitize user input. This allows an attacker to manipulate the SQL query used for authentication and bypass password verification.
+
+Procedure:
+
+Step 1: Access the Lab
+Opened the PortSwigger Web Security Academy lab and navigated to the login page.
+
+Step 2: Capture the Login Request
+Entered test credentials and intercepted the POST request using [PERSON_3].
+Original Request:
+POST /login
+username=test&password=test
+
+Step 3: Send Request to [PERSON_5]
+
+The intercepted request was sent to [PERSON_10] for modification and testing.
+
+Step 4: Perform SQL Injection
+
+
+Modified the username parameter with the following payload:
+
+administrator'--
+
+Modified Request:
+username=administrator'--&password=test
+
+Step 5: Analyze the Response
+
+The server returned a successful response and redirected the session to the administrator account.
+
+Response:
+HTTP/2 302 Found
+
+Location: /my-account?id=administrator
+
+Step 6: Verify Login
+
+
+The response page displayed a successful login message indicating access to the administrator account.
+
+Impact:
+An attacker can bypass authentication controls and gain unauthorized access to privileged accounts, potentially leading to complete compromise of the application.
+
+Remediation:
+1. Use parameterized queries (Prepared Statements).
+2. Validate and sanitize user input.
+3. Implement secure authentication mechanisms.
+4. Apply least-privilege access control.
+5. Conduct regular security assessments.
+
+Result:
+Successfully bypassed the login mechanism and gained access to the administrator account using SQL Injection.
+
+Conclusion:
+The application was vulnerable to SQL Injection in the login functionality. By injecting SQL syntax into the username field, authentication was bypassed and administrative access was obtained.
+
+2.3 – SQL Injection Attack, Querying the Database Type and Version on [PERSON_6]
+
+Objective:
+To identify the backend database type and version using UNION-based SQL Injection.
+
+Tools Used:
+[PERSON_4]
+[PERSON_3] Professional
+Firefox
+Procedure:
+Step 1: Access the Lab
+Opened the PortSwigger Web Security Academy lab "SQL Injection Attack, Querying the Database Type and Version on [PERSON_6]".
+Step 2: Capture the Request
+
+
+
+Selected a product category and intercepted the HTTP request using [PERSON_3]. The captured request was sent to [PERSON_8] for testing.
+Step 3: Determine the Number of Columns
+
+Performed ORDER BY testing to identify the number of columns returned by the SQL query.
+
+Payloads used:
+' ORDER BY 1--
+' ORDER BY 2--
+' ORDER BY 3--
+The first two payloads executed successfully, while the third payload generated an error, indicating that the query contained two columns.
+
+
+Step 4: Verify UNION-Based SQL Injection
+
+Tested UNION SELECT injection using NULL values to ensure the correct number of columns.
+
+Payload used:
+' UNION SELECT NULL,NULL FROM dual--
+The application responded successfully, confirming that UNION-based SQL Injection was possible.
+
+
+Step 5: Retrieve [PERSON_6] Database Version
+Identified a text-compatible column and extracted the [PERSON_6] database version using the following payload:
+' UNION SELECT banner,NULL FROM v$version--
+The response displayed [PERSON_6] version information.
+
+Step 6: Analyze the Response
+
+
+The response contained [PERSON_6] database version details including:
+[PERSON_6] Database 11g Enterprise Edition Release 11.2.0.2.0
+PL/SQL Release 11.2.0.2.0
+CORE 11.2.0.2.0
+This confirmed that the backend database was [PERSON_11].
+
+
+
+
+Step 7: Verify Lab Completion
+
+After successfully retrieving the database version, the lab status changed to Solved.
+Payload Used:
+' UNION SELECT banner,NULL FROM v$version--
+Result:
+Successfully identified the backend database as [PERSON_6] Database 11g.
+Conclusion
+The application was vulnerable to UNION-based SQL Injection, allowing disclosure of database information.
+
+
+2.4 – SQL Injection Attack, Querying the Database Type and Version on MySQL and Microsoft
+
+Objective:
+To identify the backend database type and version using UNION-based SQL Injection.
+
+Tools Used:
+[PERSON_4]
+[PERSON_3] Professional
+Firefox
+
+
+Procedure:
+Step 1: Access the Lab
+
+
+Opened the PortSwigger Web Security Academy lab and launched the target application.
+
+Step 2: Capture the Request
+
+
+
+Selected a product category and intercepted the HTTP request using [PERSON_3]. The request was sent to [PERSON_8] for further testing.
+
+Step 3: Determine the Number of Columns
+
+Used ORDER BY testing to identify the number of columns in the SQL query.
+
+Payloads used:
+
+' ORDER BY 1--
+' ORDER BY 2--
+' ORDER BY 3--
+
+The first two payloads executed successfully, while ORDER BY 3 generated an error, indicating that the query contained two columns.
+
+Step 4: Verify UNION-Based SQL Injection
+Verified UNION injection by matching the number of columns.
+Payload used:
+' UNION SELECT NULL,NULL#
+The application responded successfully, confirming UNION-based SQL Injection.
+
+
+Step 5: Retrieve Database Version
+
+
+
+Extracted the database version using the following payload:
+
+' UNION SELECT @@version,NULL#
+
+The response displayed version information from the backend database.
+Step 6: Analyze the Response
+
+The response displayed the backend database version:
+
+8.0.42-Ubuntu20.04.1
+
+This confirmed that the application was using MySQL.
+
+
+
+Step 7: Verify Lab Completion
+
+After successfully retrieving the database version, the lab status changed to Solved.
+
+Payload Used:
+' UNION SELECT @@version,NULL#
+
+Result:
+Successfully identified the backend database type and version.
+
+Conclusion:
+The application was vulnerable to UNION-based SQL Injection. The vulnerability allowed disclosure of backend database information, including the database version.
+
+
+2.5 – SQL Injection Attack, Listing the Database Contents on Non-[PERSON_6] Databases
+
+Objective:
+To enumerate database tables, identify credential columns, retrieve user credentials, and gain administrator access.
+
+Tools Used:
+[PERSON_4]
+[PERSON_3] Professional
+Firefox
+
+Procedure:
+Step 1: Access the Lab
+Opened the PortSwigger Web Security Academy lab and launched the target application.
+
+Step 2: Capture the Request
+
+
+Selected a product category and intercepted the request using [PERSON_3]. The request was sent to [PERSON_8].
+
+Step 3: Determine the Number of Columns
+
+
+Used ORDER BY testing to determine the number of columns in the SQL query.
+Payloads used:
+' ORDER BY 1--
+' ORDER BY 2--
+' ORDER BY 3--
+
+The query contained two columns.
+
+Step 4: Enumerate Database Tables
+
+
+
+Listed database tables using information_schema.tables.
+Payload used:
+
+' UNION SELECT table_name,NULL FROM information_schema.tables--
+
+The response displayed multiple tables, including the application user table:
+
+users_dehqnd
+
+Step 5: Enumerate Column Names
+
+
+
+Retrieved column names from the identified user table.
+
+Payload used:
+' UNION SELECT column_name,NULL FROM information_schema.columns WHERE table_name='users_dehqnd'--
+
+The response revealed the credential columns:
+password_psnbnx
+username_fvjglk
+
+Step 6: Extract User Credentials
+
+
+Retrieved usernames and passwords from the user table.
+
+Payload used:
+' UNION SELECT username_fvjglk,password_psnbnx FROM users_dehqnd--
+The response displayed usernames and corresponding passwords.
+
+
+
+Step 7: Login as Administrator
+
+Used the extracted credentials to log in to the administrator account.
+
+Step 9: Verify Lab Completion
+
+
+The lab status changed to Solved after logging in as administrator.
+
+Payloads Used:
+
+' UNION SELECT table_name,NULL FROM information_schema.tables--
+
+' UNION SELECT column_name,NULL FROM information_schema.columns WHERE table_name='users_dehqnd'--
+
+' UNION SELECT username_fvjglk,password_psnbnx FROM users_dehqnd--
+
+Result:
+Successfully enumerated database contents, extracted administrator credentials, and gained unauthorized access to the administrator account.
+
+Conclusion:
+
+The application was vulnerable to SQL Injection, allowing attackers to enumerate database structures, retrieve sensitive user credentials, and bypass authentication controls.
+
+
+Task 3: Reconnaissance
+
+Date of allotment :  03-05-2026
+Date of completion : 10-05-2026
+Dead line : 7 Days
+
+
+Target:
+UptoSkills Website
+
+Objective:
+To perform reconnaissance (Recon) on the target website and gather publicly available information about its infrastructure, technologies, services, security configuration, and online presence.
+Tools Used
+Google Search
+LinkedIn
+NSLOOKUP
+Shodan
+Censys
+Google Dorking
+[PERSON_12]
+[PERSON_13]
+Sitemap.xml
+SSL Labs
+SecurityHeaders
+Wayback Machine
+[PERSON_4]
+
+1. Basic Information Gathering
+Objective:
+To collect publicly available information about the organization.
+Methodology:
+Information was gathered using the official website, LinkedIn profile, and search engines.
+Information Collected:
+Organization Name: UptoSkills
+Services Offered: Training and [PERSON_14]
+Official Website: UptoSkills
+
+Observation:
+Publicly available information provided insights into the organization's services and online presence.
+
+
+2. DNS Reconnaissance using NSLOOKUP
+Objective:
+To identify DNS information and IP addresses associated with the target.
+[PERSON_15] Used:
+nslookup uptoskills.com
+Information Collected:
+IP Address
+DNS Information
+Domain Resolution Details
+Observation:
+The domain successfully resolved to public IP addresses, indicating active DNS configuration.
+
+
+3. [PERSON_16]
+Objective:
+To gather information about internet-facing infrastructure.
+Tool Used:
+Shodan
+Information Collected:
+Hosting Information
+Open Services
+Server Location
+ISP Information
+Observation:
+Shodan provided information about publicly accessible infrastructure associated with the target.
+
+
+4. Censys Reconnaissance
+Objective:
+To identify publicly visible assets and certificate information.
+Tool Used:
+Censys
+Information Collected:
+SSL Certificate Details
+IP Information
+Public Services
+Observation:
+Censys identified internet-facing assets and certificate-related information.
+
+
+5. Google Dorking
+Objective:
+To identify publicly indexed resources.
+[PERSON_17] Used:
+site:uptoskills.com
+site:uptoskills.com filetype:pdf
+site:uptoskills.com inurl:login
+site:uptoskills.com inurl:register
+Observation:
+Several indexed pages and publicly accessible resources were identified through advanced search operators.
+
+
+6. Technology Fingerprinting using [PERSON_12]
+Objective
+To identify technologies used by the website.
+Tool Used
+[PERSON_7]
+Information Collected
+Web Server
+Frameworks
+CDN
+Analytics Technologies
+Observation
+The website technologies and frameworks were successfully identified.
+
+
+7. [PERSON_18]:
+To identify subdomains associated with the target domain.
+Tool Used:
+[PERSON_19] Collected:
+Public Subdomains
+Additional Assets
+Observation:
+Several subdomains associated with the organization were identified.
+
+
+8. URL Enumeration
+Objective:
+To identify publicly accessible URLs and website structure.
+Methodology:
+The sitemap.xml file was analyzed.
+URLs Identified:
+https://uptoskills.com/
+https://uptoskills.com/login
+https://uptoskills.com/register
+https://uptoskills.com/forcorporate
+https://uptoskills.com/forCollege
+https://recruitus.uptoskills.com/
+
+Observation:
+URL enumeration provided visibility into the website structure and accessible resources.
+
+
+9. SSL/TLS Analysis
+Objective:
+To evaluate SSL/TLS configuration and certificate security.
+Tool Used:
+SSL Labs
+Information Collected:
+SSL Grade
+TLS Versions
+Certificate Information
+
+Observation:
+SSL/TLS configuration was analyzed to determine the security posture of encrypted communications.
+
+
+10. Security Headers Analysis
+Objective:
+To evaluate security-related HTTP response headers.
+Tool Used:
+SecurityHeaders.com
+Information Collected:
+HSTS
+Content Security Policy
+X-Frame-Options
+X-Content-Type-Options
+
+Observation:
+The assessment identified implemented and missing security headers.
+
+
+
+11. Historical Analysis using Wayback Machine
+Objective:
+To review archived versions of the website.
+Tool Used:
+Wayback Machine
+Observation:
+Archived snapshots provided insights into previous versions of the website and historical content.
+
+
+
+Overall Result:
+The reconnaissance phase was successfully completed on the target website (UptoSkills). Information related to the organization's public presence, DNS records, hosting infrastructure, technologies, subdomains, URLs, SSL/TLS configuration, security headers, and historical website data was collected using various OSINT and reconnaissance techniques. The gathered information provided a comprehensive understanding of the target's publicly exposed attack surface and security posture, which can be used as a foundation for further security assessment and vulnerability analysis.
+
+Conclusion:
+Reconnaissance activities were successfully performed against the target website. Information regarding DNS configuration, public infrastructure, technologies, subdomains, URLs, SSL/TLS configuration, security headers, and historical website content was collected. The reconnaissance phase provided a comprehensive understanding of the target's publicly available attack surface and security posture.
+
+
+Task 3: [PERSON_2]
+
+Date of allotment :  10-05-2026
+Date of completion : 18-05-2026
+Dead line : 7 Days
+
+Objective:
+The objective of this task was to perform network reconnaissance on the target domain using [PERSON_2]. Various scanning techniques were utilized to identify active hosts, open ports, operating system information, and network exposure.
+
+Target Information:
+Target Domain: uptoskills.com
+Tools Used:
+[PERSON_20][PERSON_2] (Network Mapper)
+Terminal
+
+Task 1: Host Discovery ([PERSON_21])
+[PERSON_8] Used:
+nmap -sn uptoskills.com
+Purpose:
+To verify whether the target host is active and reachable on the network.
+Procedure:
+Opened the [PERSON_4] terminal.
+Executed the [PERSON_9] command.
+Observed the host status in the output.
+Result:
+The target host was successfully identified as active and reachable.
+
+2: Basic Port Scan
+[PERSON_8] Used:
+nmap uptoskills.com
+Purpose:
+To identify commonly open TCP ports and associated services.
+Procedure:
+Executed a basic [PERSON_2] scan.
+[PERSON_22] to scan default ports.
+Reviewed the identified open ports.
+Result:
+Open TCP ports and corresponding services were successfully identified.
+
+
+
+3: Operating System Detection
+[PERSON_8] Used:
+sudo nmap -O uptoskills.com
+Purpose:
+To identify the operating system running on the target host.
+Procedure:
+Executed the OS detection command with root privileges.
+[PERSON_22] to perform TCP/IP fingerprinting.
+Reviewed the operating system information.
+Result:
+The operating system was estimated based on network fingerprinting techniques.
+
+
+
+4: Aggressive Scan
+[PERSON_8] Used:
+nmap -A uptoskills.com
+Purpose:
+To perform advanced reconnaissance including operating system detection, script scanning, service analysis, and traceroute.
+Procedure:
+Executed the Aggressive Scan command.
+[PERSON_22] to complete all scanning phases.
+Reviewed the detailed output generated.
+Result:
+Detailed information regarding network services, operating system characteristics, and routing information was obtained.
+
+
+
+5: Timing Template Scans
+T1 – Sneaky Scan
+[PERSON_8] Used:
+nmap -T1 uptoskills.com
+Purpose:
+To perform a slow scan that minimizes the likelihood of detection.
+Result:
+The scan was completed using a low-speed profile with minimal network footprint.
+
+T2 – Polite Scan
+[PERSON_8] Used:
+nmap -T2 uptoskills.com
+Purpose:
+To reduce bandwidth consumption during scanning.
+Result:
+The scan completed while minimizing impact on network resources.
+
+T3 – Normal Scan
+[PERSON_8] Used:
+nmap -T3 uptoskills.com
+Purpose:
+To perform scanning using [PERSON_2]'s default timing configuration.
+Result:
+A balanced scan was performed with standard speed and accuracy.
+
+T4 – Aggressive Timing
+[PERSON_8] Used:
+nmap -T4 uptoskills.com
+Purpose:
+To increase scanning speed and reduce scan completion time.
+Result:
+The scan completed faster while maintaining reliable results.
+
+T5 – Insane Timing
+
+[PERSON_8] Used:
+nmap -T5 uptoskills.com
+
+Purpose:
+To perform scanning at maximum speed.
+
+
+Result:
+The scan completed rapidly but may be less reliable on unstable networks.
+
+6: Verbose Scan
+[PERSON_8] Used
+nmap -v uptoskills.com
+Purpose:
+To display additional details and real-time scan progress.
+Procedure:
+Executed the verbose scan command.
+Monitored scan activities and discovered hosts.
+Result:
+Additional information and scanning progress details were displayed during execution.
+
+7: Specific Port Scan
+[PERSON_8] Used:
+nmap -p 80,443 uptoskills.com
+Purpose:
+To verify the status of HTTP and HTTPS services.
+Procedure:
+Executed the specific port scan command.
+Scanned ports 80 and 443.
+Reviewed the results.
+Result:
+The status of HTTP and HTTPS ports was successfully identified.
+
+8: Full Port Scan
+[PERSON_8] Used:
+nmap -p- uptoskills.com
+Purpose:
+To scan all 65,535 TCP ports.
+Procedure:
+Executed the full port scan command.
+[PERSON_22] to complete scanning of all TCP ports.
+Reviewed the discovered services.
+Result:
+All accessible TCP ports and services were successfully identified.
+
+9: TCP Connect Scan
+[PERSON_8] Used:
+nmap -sT uptoskills.com
+Purpose:
+To identify open TCP ports by establishing a complete TCP connection with the target services.
+Procedure:
+Opened the [PERSON_4] terminal.
+Executed the TCP Connect Scan command.
+[PERSON_22] to perform the full TCP three-way handshake with target ports.
+Reviewed the identified open ports and services.
+Result:
+Open TCP ports were successfully identified by establishing complete TCP connections with the target services.
+
+
+Overall Result:
+[PERSON_23] was successfully utilized to perform host discovery, port scanning, operating system detection, timing-based scanning, verbose scanning, and TCP SYN scanning against the target domain. The assessment identified active hosts, open ports, and network characteristics, providing valuable information about the target's exposed attack surface and network infrastructure.
+
+Conclusion:
+The [PERSON_2] reconnaissance activity successfully demonstrated various network scanning techniques used during the information-gathering phase of a security assessment. Through host discovery, port scanning, operating system detection, timing configuration analysis, and TCP SYN scanning, a comprehensive understanding of the target's network exposure was achieved. [PERSON_2] proved to be an effective tool for reconnaissance and security assessment activities.

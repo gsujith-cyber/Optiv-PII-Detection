@@ -1,0 +1,2559 @@
+--- Page/Slide 1 ---
+
+
+
+
+
+1. Introduction
+1.1 Purpose
+The purpose of this document is to assist Cadence in understanding and operationalizing the enhancements made to its Third-Party Risk Management (TPRM) capabilities through the implementation of the OneTrust TPRM solution. This engagement aims to provide Cadence with a standardized, scalable, and automated solution that aligns with its business, operational, and compliance requirements. l 
+As part of this engagement, [PERSON_1] supported the implementation and configuration of Cadence’s OneTrust TPRM instance. This comprises:
+Designing and implementing structured workflows aligned with Cadence’s operational needs and [PERSON_2] requirements.
+Configuring user roles to ensure appropriate access management.
+Establishing vendor onboarding attributes to streamline supplier risk processes.
+Refreshing and tailoring the Due Diligence Questionnaire to ensure alignment with Cadence’s risk assessment objectives and regulatory requirements.
+Through this effort, Cadence will attain a more structured, transparent, and efficient [PERSON_2] framework, reducing manual effort and ensuring compliance with internal and external risk requirements.
+1.2 Scope
+The scope of this document focuses on Cadence’s TPRM processes, and the responsibilities of internal stakeholders involved in managing third-party risks. The following activities are included within this scope:
+Current State Analysis: Review the current state of Cadence’s OneTrust TPRM instance, including its configuration, workflows, and supporting processes, while also assessing alignment with the broader [PERSON_2] program.
+Refreshing the Due Diligence Questionnaire: Enhance and update existing questionnaires to align with Cadence’s organizational structure, compliance needs, and industry best practices.
+Configuration of OneTrust TPRM: Document and configure custom workflows, rules, questionnaire templates, and notification processes in OneTrust tailored to Cadence’s requirements.
+Training & Knowledge Transfer: Provide documentation covering OneTrust setup and configuration, workflow logics and questionnaire rules, ensuring Cadence stakeholders can effectively manage and operate the solution.
+2. Enhancements Implemented in OneTrust
+Building on the objectives outlined in Section 1, this section details the key enhancements implemented within Cadence’s OneTrust [PERSON_2] framework. These enhancements were designed to streamline vendor risk management, standardize due diligence processes, and improve visibility across the third-party lifecycle.
+2.1 Standardization of Third-Party Types
+A standardized third-party taxonomy has been established and configured within OneTrust to ensure consistency in vendor classification. This taxonomy defines clear categories that are consistently applied across onboarding and due diligence workflows, including:  
+Staffing Vendors
+Service Providers and Vendors
+Marketing Partners
+Revenue Partners
+International Vendors
+Tier-3 Vendors
+This standardization eliminates ambiguity and ensures all third parties are consistently classified, enabling risk assessments and routing of workflows.
+2.2 Configured Workflows by Third-Party Types
+End-to-end workflows have been designed and implemented in OneTrust to manage the lifecycle of each third-party type. These workflows ensure that third parties are automatically directed through the appropriate due diligence questionnaires, approvals, and process based on their classification (e.g., third-party type). 
+The following workflows have been configured in OneTrust:
+Staffing Vendors Workflow
+Service Providers and [PERSON_3]Marketing Partners Workflow 
+Revenue Partners Workflow
+International Vendors Workflow
+Renewal Workflow
+Offboarding Workflow 
+Tier-3 Vendors Workflow
+Integration with Ironclad ensures that contract creation and execution trigger corresponding workflows in OneTrust, aligning contract and risk management activities.
+2.3 Additional Enhancements Delivered
+Due Diligence Questionnaires (DDQ):
+The DDQ templates have been refreshed and aligned with Cadence’s requirements. The updated questionnaires capture critical information of the third party about data sensitivity, regulatory obligations, country risk, and geopolitical considerations.
+Risk Methodology:
+A standardized risk tiering methodology has been embedded into OneTrust. This model integrates multiple factors (financial, operational, compliance, and security) and supports a consistent evaluation process for all third parties. 
+In addition to tiering, risk statements have been developed along with associated mitigation recommendations mapped to due diligence questions. These enable Cadence to not only identify potential risks but also track mitigation activities and ensure accountability through the OneTrust platform. 
+Frequency of Reassessments:
+Standard review cadences have been configured in OneTrust:
+Tier 1 third parties: annual reviews
+[PERSON_4] parties: reviews every 24 months
+Tier 3 third parties: reviews every 24 months
+User Roles and Access Controls:
+Role-based access has been fully defined and configured in OneTrust to ensure appropriate separation of duties, controlled visibility, and compliance with Cadence’s security requirements. The roles and associated permissions are as follows:
+Vendor Risk Management (VRM) Team:
+Access Level: Full Admin for [PERSON_2] module
+Privileges: Full access to third party records and risk assessments
+Actions: Configure and administer risk assessments, oversee workflows, and manage risk management activities, approve or reject the third-party
+Operation teams (Legal, Compliance, Finance, Procurement, IT, Data Quality)
+Access Level: Edit
+Privileges: Edit access for questionnaire review; focusing on different sections of questionnaire
+Actions: Review the third-party responses for corresponding sections focusing on major areas like country risks, financial statements and IT requirements. Reviewing and communicating risks to VRM team.
+Privacy Teams
+Access Level: Edit
+Privileges: Review access to Privacy section
+Actions: Review questionnaire responses for Artificial Intelligence (AI), confidentiality, and data protection
+Security Team
+Access Level: Edit (Security & Technical)
+Privileges: Edit access to IT/security assessments and certifications
+Actions: Review SOC/ISO/PCI certifications, perform technical assessments, validate security compliance
+
+
+
+2.4 Key Objectives and Outcomes 
+The implemented enhancements provide Cadence with a standardized, automated, and auditable TPRM framework within OneTrust. The key objectives achieved are:
+Elimination of manual and fragmented processes.
+Centralized vendor classification and workflow automation.
+Refreshed due diligence questionnaires aligned with industry standards.
+Consistent application of risk tiering and review cadences.
+Enhanced visibility, compliance, and scalability of the TPRM program.
+Through these enhancements, [PERSON_5] program has an efficient, and scalable framework that reduces risk exposure and ensures compliance with both internal policies and external regulatory requirements.
+3. Transition Toward Integrated Risk Management
+
+Based on: OneTrust TPRM Training
+The visual above, adapted from OneTrust’s framework, illustrates the maturity progression from compliance-driven and siloed risk functions toward integrated and business-enabling risk management.
+Currently, [PERSON_5] program is positioned at the “Siloed Risk Function” stage, where risk ownership and assessment activities are distributed across functions such as Legal, Compliance, Security, and Procurement. Each area maintains its own risk processes, resulting in fragmented oversight.
+The strategic objective of this engagement is to transition Cadence toward the “Integrated Risk Management (IRM)” stage - where all third-party risks are collectively managed through a unified, automated, and standardized framework within OneTrust. This will establish a single source of truth for vendor risk visibility, governance, and decision-making.
+A key enabler of this transformation is the integration between Ironclad and OneTrust, which connects contract lifecycle management with third-party risk workflows. Through this integration:
+Contract creation and execution in Ironclad automatically triggers corresponding due diligence and assessment workflows in OneTrust.
+Vendor-related data (e.g., contract terms, renewal dates, risk tier, and compliance status) synchronizes between systems for continuous visibility.
+Risk and contractual obligations are managed cohesively within a single ecosystem.
+
+Optiv’s implementation approach supports this evolution by consolidating all risk-related processes into OneTrust and aligning them with two primary risk domains:
+Operational Risks:
+Identified through due diligence questionnaires covering Legal, Financial, Privacy, and Compliance areas. These assessments capture vendor-level dependencies, regulatory exposures, and process inefficiencies at both organizational and product/service levels.
+Cyber Risks:
+Identified through security questionnaires focusing on data protection, access control, incident management, and infrastructure security.
+By structuring risk assessments around these two domains, and integrating [PERSON_6] with OneTrust, Cadence can now:
+Manage operational and cybersecurity risks in a unified workstream.
+Automate due diligence, escalation, and remediation workflows.
+Maintain cross-functional visibility across all risk stakeholders.
+Strengthen accountability through consistent, platform-driven governance.
+Progress toward a mature Integrated Risk Management model that aligns risk oversight with Cadence’s business objectives and growth strategy.
+4. Proposed [PERSON_2] approach
+4.1 Defined Third-Party Types
+Cadence’s third parties are classified based on defined categories to ensure consistent application of due diligence, risk assessments, and workflow assignments within OneTrust.
+The table below lists each Third-Party Type, with a description of its scope, the user groups responsible for reviewing associated workflows, and the approver accountable for final validation.
+
+4.2 User Groups Details 
+This section outlines the user groups established within Cadence’s OneTrust instance, their purpose, access permissions, and associated members. Each group is assigned review responsibilities aligned to its function and area of expertise.
+The user details listed below represent the current configuration within OneTrust. These groups are reviewed annually to maintain data integrity and ensure proper access control.
+
+4.2. Workflow for Third-Party types
+Cadence’s third-party workflows in OneTrust are now fully automated and tailored to the criticality and type of vendor.
+Third parties are classified based on data sensitivity and risk criticality, with separate workflows established for Tier 1, [PERSON_7], and Tier 3 vendors. Tier 3 third parties typically represent lower-risk engagements (e.g., limited data access or short-term service contracts), while Tiers 1 and 2 represent medium- and high-risk third parties requiring enhanced due diligence.
+Additionally, classification by third-party Category ensures that distinct workflows are automatically triggered for Staffing Vendors, Service Providers, Marketing Partners, Revenue Partners, and International Vendors.
+When a new third-party is added to the OneTrust platform, it is routed through an automated onboarding workflow that analyzes both third-party tier and category. Based on these attributes, the system assigns the appropriate workflow path for due diligence, assessment, and approval.
+4.2.1 Onboarding Workflow
+Cadence’s OneTrust environment has been configured with automated workflows that manage the lifecycle of third-party assessments based on both vendor category and risk tier. The integration between Ironclad and OneTrust ensures that every new vendor entering the system is automatically analyzed and assigned to the appropriate workflow.
+
+
+4.2.2 Tier 1 and 2 Workflows
+Vendors tiered under Tier 1 and Tier 2 undergo a comprehensive due diligence process, differentiated by data criticality and risk profile. The following vendor categories fall under this group: Staffing Vendors, Service Providers and Vendors, Marketing Partners, Revenue Partners, and International Vendors. Each category is assigned a tailored due diligence questionnaire, which is automatically sent to the Primary Vendor Contact upon workflow initiation.
+
+
+
+4.2.3 [PERSON_8] 3 third parties are subject to a simplified due diligence process, reflecting their lower criticality and risk exposure. A distinct questionnaire is designed for this tier, focusing on essential operational and security controls.
+
+
+
+
+Note: Renewal and offboarding processes are incorporated into the above workflows based on the tier of the third party. The offboarding workflow currently sends notifications to relevant stakeholders for review and approval of offboarding actions.
+For future iterations, Cadence may consider expanding automation by developing an integration with Torii to streamline the offboarding workflow through API-triggered deprovisioning and asset revocation.
+5. Final Approach
+5.1 Final Approved Workflow 
+The following workflow diagram represents the approved configuration that was demonstrated and validated during the review sessions with the Cadence team.
+The workflow begins in Ironclad, where a New Vendor Request Form or Contract Submission Form is initiated. Vendor details from Ironclad are automatically transmitted into OneTrust through integration. Once received, the vendor attributes are used to determine the appropriate workflow path and initiate the due diligence process.
+The OneTrust configuration includes automated routing for vendor onboarding, assessment, renewal, and offboarding, driven by predefined rules and risk tier classification.
+
+This workflow design ensures:
+Consistent automation of vendor onboarding and assessment processes.
+Centralized visibility of vendor risk posture across Legal, Security, and Compliance teams.
+Seamless data synchronization between Ironclad and OneTrust for vendor [PERSON_9], renewal timelines, and workflow triggers.
+Standardization of due diligence questionnaires and risk scoring logic across all vendor types and tiers.
+5.2 Attributes for [PERSON_10]
+The following attributes form the foundational elements used in workflow configuration and automation logic within OneTrust. These attributes are populated in Ironclad and passed to OneTrust to enable rule-based actions such as third-party categorization, questionnaire assignment, and renewal triggers.
+
+These attributes are the primary configuration drivers for automation rules within OneTrust. Any future additions to vendor [PERSON_9] (e.g., region, data processing scope) can be easily integrated using the same data mapping framework.
+6. OneTrust Configuration
+This section outlines the configuration activities performed within OneTrust to operationalize Cadence’s TPRM framework. It details the setup of user groups, custom attributes, questionnaires, and automation rules required to support the integrated workflows.
+6.1 User Management
+User groups were configured in OneTrust to define role-based permissions and streamline review workflows. These groups ensure that specific teams - such as Legal, Compliance, Security, and Finance - receive automated notifications and review tasks based on vendor category and workflow stage.
+The configuration allows:
+Centralized visibility of all assigned users per workflow.
+Role-based access control to vendor data and questionnaires.
+Efficient collaboration through automated task notifications and approvals.
+To create or update user groups in OneTrust, the following process is applied:
+[PERSON_11] to Settings  User Management  User Groups. 
+Click “Create User Group”.
+Enter the “Group Name” and “Description” (as defined in section 4.2)
+Search and add users by name or email address.
+Assign “Roles and Organization” (e.g., “TPRM Administrator,” “Reviewer”).
+Click “Add” and “Create” to finalize.
+User groups and memberships are reviewed annually to maintain accurate access and ensure deactivation of users no longer participating in the TPRM program.
+
+
+
+
+
+
+
+
+6.2 Attribute Development
+Attributes are key data points used to categorize and automate third-party workflows. Based on Cadence’s requirements, both system and custom attributes were developed within OneTrust.
+To create a new attribute:
+[PERSON_11] to Attribute Manager  Vendor Attributes
+Click “Add Attribute”
+Enter the “Name of Key” (e.g., [PERSON_12]).
+Provide a [PERSON_13] explaining the attribute’s purpose.
+Set the “Response Type” (e.g., Single Select).
+Add Options (e.g., Tier 1, [PERSON_7], Tier 3).
+Click “Save Attribute”.
+All attributes were verified to ensure they are in an Active state. Attributes can be edited or deactivated as needed using the three-dot menu in the Inventory Manager view.
+
+
+
+
+
+
+An attribute can be deactivated and edited using the 3 dots option visible by hovering the cursor over the attribute in the above-mentioned section and seen in the image below:
+
+
+Cadence should review these attributes annually to confirm ongoing relevance. New attributes can be added as the TPRM program evolves (for example, adding “Tier 4” or new data-handling classifications).
+
+
+
+6.3 Questionnaire Development and Risk Configuration
+Questionnaire development is a one-time configuration activity performed in OneTrust. Once developed, the questionnaires can be reused across multiple assessments. These questionnaires can be workflow specific or third-party specific, depending on the organization’s requirements.
+As per Cadence’s requirements, two questionnaires were developed each aligned with the third-party tiering model to support automated due diligence activities. These questionnaires are designed to gather detailed information from vendors based on their assigned tier and risk exposure. Both questionnaires are accessible within the [PERSON_14] section of the Third-Party Risk Management module in OneTrust.
+The two developed questionnaires are:
+Due [[PERSON_1]] T1–2 v1 – Applicable for Tier 1 and Tier 2 third parties.
+Due Diligence Questionnaire T3 v1 – Applicable for Tier 3 third parties.
+Each questionnaire consists of sections that cover the following key areas:
+Contracting and Legal
+Compliance and Legal
+Finance
+Data Privacy and Security
+IT Systems and Integration
+These sections collectively ensure comprehensive due diligence and risk coverage for all third-party engagements.
+
+
+6.3.1 Creating Questionnaire Template
+Creating a questionnaire template in OneTrust can be efficiently managed by first preparing a structured CSV version of the questions. This helps with version control and simplifies updates during later stages. It is strongly recommended to refer to and update the Final Due Diligence Questionnaire v1.0 before implementation within OneTrust.
+This document also includes details of the rules applied within the questionnaire template. These rules should be referenced and updated as required for any future implementations or modifications to the template. The rules control question behavior, such as conditional visibility and response-based logic, ensuring that subsequent questions appear only when relevant answers are selected.
+To build a questionnaire template in OneTrust, follow these steps:
+[PERSON_11] to the “Templates” section within the “Third-Party Risk Management” module.
+Click “Create custom template”.
+Enter the “Name”, “Template language”, and “Description”.
+Select an appropriate “Template icon”.
+Click “Create template”.
+
+
+Once created, the template will appear as a tile under the [PERSON_14] section.
+Within the Due Diligence Questionnaire T1–2 v1 template, a total of eight sections were developed, each containing approved questions mapped to [PERSON_5] requirements. These sections cover diverse operational and risk areas to ensure a comprehensive evaluation of third parties.
+
+
+Scenario 1: Launching (Showing) follow-up questions depending on selection of “Yes”.
+Conditional logic, also known as “Show logic,” has been configured across the questionnaire to trigger follow-up questions based on the respondent’s selections.
+
+
+For example:
+When a question requires a Yes/No response, selecting “Yes” automatically launches additional follow-up questions for detailed input, while selecting “No” hides those dependent questions. This ensures that the questionnaire remains dynamic and relevant to the vendor’s response profile.
+
+
+Rule/Logic:
+
+
+To add conditional logic for such scenarios, the following steps can be executed:
+Select “Show logic” in the “Details” tab and click “Save.”
+Add questions into the template.
+Click on the “Show logic” symbol for the question where logic is to be applied.
+Add “Condition”.
+Add “Action”.
+In the above scenario, if “Yes” is selected for question 4.4 (Condition), then question 4.5 will be automatically displayed to the user (Action). The configuration details of these conditions and actions are documented in Appendix C.
+Scenario 2: Launching multiple questions after answering one question
+If multiple questions are to be displayed based on the response to a single question, the “Copy logic to additional questions” option can be utilized. This enables the logic applied to one question to be extended to other related questions, streamlining configuration efforts.
+For example, as per Cadence’s requirements, this logic is applied to questions related to Artificial Intelligence (AI). When the initial AI-related question is answered, three additional follow-up questions are automatically launched to gather more specific details.
+
+
+This configuration allows efficient reuse of logic rules and helps maintain questionnaire consistency across related risk domains.
+The method of adding rules is applied individually to all logic-based questions and documented in [PERSON_16] configuration team has maintained distinct logic rules for each scenario to simplify future maintenance. This approach allows easier modification or removal of rules while minimizing the risk of errors during updates or version changes.
+6.3.2 Questionnaire Template Rules
+Automation rules are created within questionnaire templates to analyze responses provided by the Primary Vendor Contact (PVC). These rules automatically generate risk records based on the vendor’s answers and predefined logic.
+To create a questionnaire rule:
+Open “Third-Party Risk Management” in OneTrust.
+[PERSON_11] to the “Templates” section.
+Select the questionnaire in which rules are to be added.
+Ensure all questions are created and saved before rule configuration.
+Click on the “Rules” tab.
+Click “Add Rule” to create a new logic condition.
+
+
+To define the logic for a rule, perform the following steps:
+Add “Rule Name”.
+Select “Trigger” as Question.
+Choose the relevant question from the list.
+Set “Operator” as Equal To.
+Choose Yes, No, or any other applicable option based on the question design.
+Select “Action” as “Create risk”.
+
+
+
+Action dropdown within the rule setup offers multiple options that can be used to generate risks, create tasks, or trigger follow-up actions.
+
+
+Currently, the configuration focuses on the “Create risk” action type. When defining a rule, OneTrust provides two options for risk creation:
+Create risk from the library
+Create new risk
+To use a risk from the library, users can select an existing predefined risk. If a new risk needs to be created, follow the process below:
+Select “Create new risk”.
+Assign a “Risk category”.
+Define scoring parameters.
+Add “Risk name” and “Description”.
+Assign “Deadline” and “Reminder frequency” as per SLA.
+Identify responsible stakeholders or approvers.
+Determine whether a “Control” is to be added.
+If no control is required, click “Save” to finalize the rule.
+
+
+
+
+
+Adding Risk controls: Determining the correct risk scoring and associated controls is critical, as it influences the mitigation timeline and monitoring cadence. To add a control for a documented risk, follow the steps below:
+Click “Add risk control”.
+Choose whether to add a control from the “Control library” or to create a Custom control.
+For custom controls, select “Create custom control” and complete the required fields.
+Add control details including the control name, category, and implementation guidance.
+Click “Save” once the control information is finalized.
+
+
+
+
+
+The control becomes linked to the risk within OneTrust and is displayed whenever the risk is triggered during an assessment. This ensures consistent tracking and documentation of mitigation measures across third parties and assessments.
+6.3.3 Updating Questionnaire Template Version
+Two questionnaire templates - Due Diligence Questionnaire T1–2 v1 and Due Diligence Questionnaire T3 v1 are currently in use for third-party due diligence activities under the TPRM program. Each template includes multiple sections and questions tailored to third-party tiers and risk exposure.
+These templates can be reviewed annually and updated as needed. New questions or sections may be added to address emerging regulatory or operational requirements.
+To create a newer version of an existing questionnaire template:
+Open the questionnaire template in OneTrust.
+Use the “Copy version” or “Duplicate template” option to create a draft version.
+Update questions, sections, or logic rules as required.
+Save and validate the new version with the Vendor Risk Management team before publishing.
+Using the above method will require the user to manually update new questionnaire into the published workflows. There is a preferred alternative way to develop a new version of the questionnaire that is as follows:
+If only limited changes are to be made in the questionnaire template such that it should automatically be updated in all published workflows, then following steps are to be executed:
+Open the existing published questionnaire template.
+Click on “Create new version” button
+Make changes in questions and rules
+Publish the new version of the questionnaire.
+
+
+Please note: in this scenario the name of the questionnaire will remain same, but the version number will get changed as seen on the top left corner near the “Template details” option.
+6.4 Workflow Development
+The workflows have been developed based on the attributes “[PERSON_12]” and “Vendor Category.” This section outlines the configuration process for creating and managing workflows within OneTrust, as determined by the details mentioned in Section 4.2.
+Each workflow governs the automation of specific vendor management activities such as onboarding, assessment, renewal, and offboarding. These workflows ensure that third parties are appropriately categorized and routed through the correct due diligence process.
+To create a new workflow in OneTrust, follow the steps below:
+Click on the “Workflow” section in the left navigation panel.
+Click on the “View” button under the “Vendor Workflows” tile.
+Click on “Default Onboarding Workflow” (a new workflow can also be created directly).
+Click on the “Clone” button located in the top-right corner of the screen.
+Enter the workflow name as “CD_Onboarding_Workflow.”
+Click “Clone” to finalize.
+
+
+
+
+Cloning an existing workflow (or creating a new one) will generate a draft version within the [PERSON_17] page. This draft can then be customized further to match the expected workflow design and requirements.
+“”
+
+Once the new workflow is created, it will appear under the Vendor Workflows menu. To configure it, open the workflow and modify its stages as required.
+Current stages:
+
+
+Follow the steps below to update the stages for the onboarding workflow:
+Delete any unnecessary stages using the delete icon on the stage name tile.
+Rename “Stage 1” to “New Third Party” using the edit option in the Stage Details tab.
+Assign the “Badge Color” as “New.”
+Retain the Live stage as the final stage.
+This configuration ensures that the onboarding workflow includes the necessary entry and exit points to handle vendor initiation and post-assessment activation within OneTrust.
+
+
+Workflow Customization:
+The above setup represents the basic structure of the onboarding workflow. The same approach can be followed to configure or edit stages for other workflows, such as Tier 1, [PERSON_7], and Tier 3 workflows.
+Once stages are defined, additional automation rules and triggers are added within the workflow tabs. These rules control actions such as:
+Sending notifications.
+Launching due diligence questionnaires.
+Advancing workflow stages automatically based on responses.
+Changing workflow paths (for reassessments or renewals).
+This stage-wise automation ensures smooth progression of vendors through their respective assessment processes.
+Workflow Dependencies and Publishing:
+Before adding rules to the onboarding workflow, all other workflows (for Tier 1, [PERSON_7], and Tier 3 third parties) must be developed and finalized. This is because the onboarding workflow relies on these workflows for routing vendors to the correct due diligence stream.
+Therefore, it is essential to first complete and publish the Tier-specific workflows before assigning them to the onboarding workflow configuration.
+Once all workflows are created and validated, they can be viewed in the Vendor Workflows list.
+
+
+Note: A workflow should only be published after all rules, triggers, and automation logic have been configured and validated. Publishing prematurely may lead to incomplete routing or broken dependencies within the automation.
+
+7. Appendix A
+This appendix covers the details of the rules that are created and added in the workflows and in every stage. 
+
+
+8. Appendix B
+This appendix covers the details of the questionnaire that are created and added in the workflows in different stages.
+
+	
+9. Appendix C
+In this appendix, all the show logic rules added in both the questionnaires are documented. These rules can be referred to locating, understanding and updating to new rules in the tool as per later requirements.
+
+
+
+10. Appendix D
+This appendix contains data of the approved Service Level Agreement (SLA) or Timelines associated with different aspects of the configuration.
+
+
+
+11. Appendix E
+This appendix contains details of rules added into the questionnaire that can automatically analyze the responses provided by the third-party and flag a risk. This content would also cover rules developed for creating tasks and scoring.
+
+General
+Copyright
+The information transmitted in this document is intended only for the addressee and may contain confidential and/or privileged material. Any interception, review, retransmission, dissemination, or other use of or taking of any action upon this information by persons or entities other than the intended recipient is prohibited by law and may subject them to criminal or civil liability.
+Copyright © 2026 Optiv Security Inc. All rights reserved. The Optiv Security logo is a registered trademark of Optiv Security. All other products and company names mentioned herein are trademarks or registered trademarks of their respective owners.
+Version Control
+
+
+
+
+
+
+
+
+September 16, 2026 |  | 
+
+
+
+
+Opportunity Number: OP-
+Version Number: 
+THIRD-PARTY TYPE | DESCRIPTION | USER GROUPS | APPROVER
+Service Providers and Vendors | Includes consultants, contractors, business process outsourcing (BPO) providers, technology service vendors, and customer support partners that deliver operational or IT services critical to Cadence’s business functions. | All reviewers
+ | Vendor Risk Management Group
+
+Revenue Partners | Vendors or partners contributing directly to revenue generation such as affiliate marketing platforms, financial partners, or other entities responsible for revenue-driving collaborations. | All reviewers
+ | Vendor Risk Management Group
+
+Marketing Partners | Vendors and third parties engaged in marketing, advertising, or promotional activities, including analytics service providers and digital campaign partners. | All reviewers
+ | Vendor Risk Management Group
+
+International Vendors | Vendors located or operating outside the United States, subject to cross-border data transfer, regulatory, and compliance requirements (e.g., GDPR, [PERSON_18]). | All reviewers
+ | Vendor Risk Management Group
+
+Staffing Vendors | Third parties provide temporary staffing, recruitment, or professional resourcing services supporting business operations. | All reviewers
+ | Vendor Risk Management Group
+
+USER GROUPS | DESCRIPTION | PERMISSIONS | USERS
+Vendor Risk Management Group | Composed of senior or executive-level stakeholders. This group is the decision-making body for third-party assessments. | [PERSON_19] | [PERSON_20] | Composed of senior or executive-level stakeholders. This group is the decision-making body for third-party assessments. | Edit | [PERSON_21]
+[PERSON_22]
+[PERSON_23]
+Legal Group | This group includes the users from the Legal team who are responsible for reviewing workflows. | Edit | [PERSON_24]
+[PERSON_25] | This group includes the users from the Procurement team who are responsible for reviewing workflows. | Edit | [PERSON_26] | This group includes the users from the Finance team who are responsible for reviewing workflows. | Edit | [PERSON_27] | This group includes the users from the IT team who are responsible for reviewing workflows. | Edit | [PERSON_28][PERSON_29][PERSON_30]
+[PERSON_31]
+Compliance Group | This group includes the users from the Compliance team who are responsible for reviewing workflows. | Edit | [PERSON_32] | This group includes the users from the Privacy team who are responsible for reviewing workflows and risk flagged for privacy section. | Edit | [PERSON_33]
+Security Group | This group includes the users from the Security team who are responsible for reviewing workflows and risk flagged for security section. | Edit | [PERSON_34] Quality Group | This group includes the users from the Data Quality team who are responsible for reviewing workflows. | Edit | [PERSON_35]
+WORKFLOWS NAME | STAGE | [PERSON_36] | STAGE RULE | WORKFLOW RULE
+[[PERSON_2]]
+
+ | New Third Party | The newly added Third-Party will enter OneTrust environment through this stage. This will be the major stage to analyze the type of Third-party as filled as one of the Vendor Attribute in [PERSON_6]. This stage will analyze the type and then assign the respective workflow to the Third Party.   | No stage rule is applied here. | [PERSON_38] Name: On_T_Assign [PERSON_10]
+
+Trigger Type: Vendor Created
+Analyze the vendor type attribute and perform action to assign workflow.
+[[PERSON_2]]
+
+ | Live | This stage will be in place but not be used. |  | 
+WORKFLOW NAME | STAGE (These are not the exact stage names) | [PERSON_36] | STAGE RULE | WORKFLOW RULE
+CD_Revenue Partners Workflow
+
+CD_Marketing Partners Workflow
+
+CD_Service Providers Workflow
+
+CD_Staffing Vendors Workflow
+
+CD_International Vendors Workflow | New | This stage will be in place but not be used. | No stage rule is applied here. | [PERSON_38] Name: mentioned in Appendix
+
+Trigger Type: Vendor Created
+Analyze the Vendor Category attribute and perform action to advance stage.
+CD_Revenue Partners Workflow
+
+CD_Marketing Partners Workflow
+
+CD_Service Providers Workflow
+
+CD_Staffing Vendors Workflow
+
+CD_International Vendors Workflow | Launch | This stage will be used to send assessment to the Primary Vendor Contact. The assessment will be initiated by sending a general security questionnaire (Due Diligence Questionnaire T1-2 v1) | Stage Rule Name:
+Stage rules to Launch the assessments are in place to send the due diligence questionnaire | [PERSON_39]:
+Mentioned in Appendix
+
+Trigger Type:
+Assessment Submitted
+
+Rule Name:
+Mentioned in Apendix
+CD_Revenue Partners Workflow
+
+CD_Marketing Partners Workflow
+
+CD_Service Providers Workflow
+
+CD_Staffing Vendors Workflow
+
+CD_International Vendors Workflow | Review Reject |  | Rule to notify and review the rejection.
+Rule for notifying offboarding of the third-party. | 
+CD_Revenue Partners Workflow
+
+CD_Marketing Partners Workflow
+
+CD_Service Providers Workflow
+
+CD_Staffing Vendors Workflow
+
+CD_International Vendors Workflow | Live | The third-party will be in Live stage once the assessment is completed. | Rule to notify about approval. | 
+ | Closed | The third-party is to be manually moved by the internal user to this stage after offboarding is completed. Post this, if required, the vendor record can be archived manually.
+If required, automation rules can be added in this stage when further integrations for offboarding process are needed. | No Stage Rule | No Workflow Rule
+WORKFLOW NAME | STAGE
+(These are not the exact stage names) | [PERSON_36] | STAGE RULE | WORKFLOW RULE
+CD_Tier3 [PERSON_40]| New | This stage will be in place but not be used. | No stage rule is applied here. | [PERSON_38] Name: mentioned in Appendix
+
+Trigger Type: Vendor Created
+Analyze the Vendor Tier attribute and perform action to advance stage.
+CD_Tier3 [PERSON_41] Launch | This stage will be used to send assessment to the Primary Vendor Contact. The assessment will be initiated by sending a general security questionnaire (Due Diligence Questionnaire T3 v1).
+Auto-approval rule will be set in this questionnaire and the trigger in workflow rules to auto-approve the Tier 3 third party based on favorable responses. | Stage Rule Name:
+Stage rules to Launch the assessments are in place to send the due diligence questionnaire | [PERSON_39]:
+Mentioned in Appendix
+
+Trigger Type:
+Auto -approval rule
+Manual reject rule (Please note, a review of the third-party before rejection is formulated)
+Rule Name:
+Mentioned in [PERSON_42]| Review Reject |  | Rule to notify and review the rejection.
+Rule for notifying offboarding of the third-party. | 
+ | Live |  | Rule to Notify about approval.
+(Please note: As per Cadence’s earlier process the reassessment of the Tier 3 was performed in a span of 3 years, that is now revised to 2 years) | 
+ | Closed | The third-party is to be manually moved by the internal user to this stage after offboarding is completed. Post this, if required, the vendor record can be archived manually.
+If required, automation rules can be added in this stage when further integrations for offboarding process are needed. |  | 
+ATTRIBUTE | [PERSON_36] | VALUE | DIRECTION
+Name | Default system attribute representing the third-party name, automatically imported from Ironclad into OneTrust. | Third-party name | From: Ironclad
+To: OneTrust
+Type | Represents the nature of vendor engagement (e.g., Consulting, Operations, Regulatory). Used for classification and reporting. | Consulting, Operations, Regulatory, Strategic, Technology,
+Unknown | From: Ironclad
+To: OneTrust
+Criticality | It indicates the business importance of the third-party. Though optional, it can be used for prioritization. | [PERSON_43], High, Medium, Low | From: Ironclad
+To: OneTrust
+Primary vendor contact | Mandatory attribute that stores the vendor point of contact (POC) email address. Used for automated questionnaire distribution. | [PERSON_44] ID of vendor POC | From: Ironclad
+To: OneTrust
+Business Owner | Identifies the internal requestor or process owner responsible for managing the third-party relationship. | [PERSON_44] ID of internal POC | From: Ironclad
+To: OneTrust
+Vendor Tier | Custom attribute used to classify vendors into Tier 1, [PERSON_7], or [PERSON_45] based on data sensitivity and risk exposure. Determines reassessment and renewal cadence. | Tier 1, [PERSON_7], Tier 3 | From: Ironclad
+To: OneTrust
+Vendor Category | Custom attribute used to assign the appropriate workflow for a new vendor based on the vendor type (e.g., Service Provider, Marketing Partner, Staffing, etc.). | Service Provider and Vendor, Revenue Partner, Marketing Partner, Staffing Vendor, International Vendor | From: Ironclad
+To: OneTrust
+Website | This is a system attribute that can be used to automatically connect the third-party to the Third-Party Exchange. | Domain of the vendor organization.
+Example: www.Vendor.com | From: Ironclad
+To: OneTrust
+SR. NO. | RULE NAME | PLACE | [PERSON_36] | RULE
+WR.RP.1 | RP_R_Push to Next | Workflow: CD_Revenue Partners Workflow
+
+Stage: Initiated
+
+[PERSON_38]: RP_T_Push to Next
+Trigger Type:
+[PERSON_46] | To push the third-party to the next stage in Revenue Partners Workflow | Rule Type: Workflow Rule
+
+Condition: 
+Attribute: Vendor Category
+Contains Any: Revenue Partner
+AND
+Attribute: Vendor Category
+Does not contain: Tier 3
+
+Actions:
+Advance to stage
+Stage: Launching RevPart
+WR.RP.2 | Send [PERSON_47] | [PERSON_10]: CD_Revenue Partners Workflow
+
+Stage: Launching RevPart
+
+ | To launch third-party due diligence assessment for the third-party | Rule Type: Stage Rule
+
+Condition: 
+Attribute: Vendor Category
+Contains Any: Revenue Partner
+AND
+Attribute: Vendor Tier
+Does not contain: Tier 3
+
+Actions:
+Launch Assessment
+
+Template:
+Due Diligence Questionnaire T1-2 v1
+
+Approver:
+TPRM_Vendor Risk Management Team
+
+Respondent:
+Primary Vendor Contact
+WR.RP.3 | RP_R_Assessment Approved | [PERSON_10]: CD_Revenue Partners Workflow
+
+Stage: Launching RevPart
+
+Trigger: RP_T_Assessment Approved
+[PERSON_48]| To move the third party to the next stage when the third-party is approved. | Rule Type: Workflow Rule
+
+Condition: 
+Assessment stage – By template: Completed
+AND
+Template name: Due Diligence Questionnaire T1-2 v1
+Actions:
+Advance to stage
+
+Stage:
+Live
+PWR.RP.4 | RP_R_Assessment Rejected | [PERSON_10]: CD_Revenue Partners Workflow
+
+Stage: Launching RevPart
+
+Trigger: RP_T_Assessment Rejected
+Trigger Type:
+Rejected
+ | To move the rejected third-party to the appropriate stage Review Reject RevPart | Rule Type: Workflow Rule
+
+Condition: 
+Assessment stage – By template: Completed
+AND
+Template name: Due Diligence Questionnaire T1-2 v1
+Actions:
+Advance to stage
+
+Stage:
+Review Reject RevPart
+WR.RP.5 | Notify RevPart Reject | [PERSON_10]: CD_Revenue Partners Workflow
+
+Stage: Review Reject RevPart | To notify the respective internal users of the rejection of the third-party | Rule Type: Stage Rule
+
+Condition: 
+Attribute: Vendor Category
+Contains: Revenue Partner
+
+Actions:
+Send Notification
+AND
+
+Create Task
+Assignee: Business Owner
+Collaborator: TPRM_Vendor Risk Management Team
+Deadline 14 Days
+WR.RP.6 | Notify RevPart Approval | [PERSON_10]: CD_Revenue Partners Workflow
+
+Stage: Live | To notify the respective internal users of the approval of the third-party | Rule Type: Stage Rule
+
+Condition: 
+Attribute: Vendor Category
+Contains: Revenue Partner
+
+Actions:
+Send Notification
+WR.T3.1 | T3_R_Push to Next | Workflow: CD_Tier3 Workflow
+
+Stage: Initiated
+
+[PERSON_38]: T3_T_Push to Next
+Trigger Type:
+[PERSON_46] | To push the third-party to the next stage in Tier 3 Workflow | Rule Type: Workflow Rule
+
+Condition: 
+Attribute: Vendor Category
+Contains Any: ALL categories
+
+Actions:
+Advance to stage
+Stage: Launching Tier3
+WR.T3.2 | Send Tier3 Questionnaire | [PERSON_10]: CD_Tier3 Workflow
+
+Stage: Launching Tier3
+
+ | To launch third-party due diligence assessment for the third-party | Rule Type: Stage Rule
+
+Condition: 
+Attribute: Vendor [PERSON_49]: Tier 3
+
+Actions:
+Launch Assessment
+
+Template:
+Due Diligence Questionnaire T3 v1
+
+Approver:
+TPRM_Vendor Risk Management Team
+
+Respondent:
+Primary Vendor Contact
+WR.T3.3 | T3_R_Assessment Auto-approve | [PERSON_10]: CD_Tier3 Workflow
+
+Stage: Launching Tier3
+
+[PERSON_38]: T3_T_Assessment Auto-approve
+ | To move the third party to the next stage when the third-party is approved. | Rule Type: Workflow Rule
+
+Condition: 
+Assessment stage – By template: Completed
+AND
+Template name: Due Diligence Questionnaire T3 v1
+
+Actions:
+Advance to stage
+Stage:
+Live
+WR.T3.4 | T3_R_Assessment Rejected | [PERSON_10]: CD_Tier3 Workflow
+
+Stage: Launching Tier3
+[PERSON_38]: T3_T_Assessment [PERSON_50]| To move the rejected third-party to the Review Reject Tier 3 stage. | Rule Type: Workflow Rule
+
+Condition: 
+Assessment stage – By template: Completed
+AND
+Template name: Due Diligence Questionnaire T3 v1
+Actions:
+Advance to stage
+
+Stage:
+Review Reject Tier3
+WR.T3.5 | Notify Tier3 Reject | [PERSON_10]: CD_Tier3 Workflow
+
+Stage: Review Reject Tier3 | To notify the respective internal users of the rejection of the third-party | Rule Type: Stage Rule
+
+Condition: 
+Attribute: Vendor [PERSON_49]: Tier 3
+
+Actions:
+Send Notification
+AND
+
+Create Task
+Assignee: Business Owner
+Collaborator: TPRM_Vendor Risk Management Team
+Deadline 14 Days
+WR.T3.6 | Notify Tier3 Approval | [PERSON_10]: CD_Tier3 Workflow
+
+Stage: Live | To notify the respective internal users of the approval of the third-party | Rule Type: Stage Rule
+
+Condition: 
+Attribute: Vendor [PERSON_49]: Tier 3
+
+Actions:
+Send Notification
+AR.T1.1 | Tier 1 Reassessment rule
+
+ | Rule Group:
+TPRM Reassessment Rules
+
+
+Rule Type:
+Vendor
+ | This is the automation rules in the “Automation Rules” section in OneTrust [PERSON_2].
+This rule will send reassessments to Tier 1 third parties on an annual basis.
+
+Please note: The reassessment rule will be executed 90 days prior to completion of one year from the previous assessment completion date.
+
+Please note: To set the frequency option enabled for the automation rule Go to Global Settings > Automation rules > Set automation run frequency.
+
+ | [PERSON_51]:
+Daily
+
+Conditions:
+Last Assessment Completion Date – By Template
+
+Operator:
+Greater than equal to
+
+Days: 275
+
+Equal to: Due Diligence Questionnaire T1-2 v1
+
+AND
+
+Condition:
+Attribute: Vendor [PERSON_49] any: Tier 1
+
+Actions:
+Send vendor assessment
+
+Copy Previous Assessment = Yes
+
+Template:
+Due Diligence Questionnaire T1-2 v1
+
+Select respondents: User type attributes : Primary Vendor Contact
+
+AND
+
+Action:
+Send vendor email
+
+Email template:
+Vendor Upcoming Re-Assessment
+
+Recipients:
+User type attributes: Business Owners
+AR.T2.1 | [PERSON_52] rule
+
+ | Rule Group:
+TPRM Reassessment Rules
+
+
+Rule Type:
+Vendor
+ | This is the automation rules in the “Automation Rules” section in OneTrust [PERSON_2].
+This rule will send reassessments to Tier 2 third parties in a period of two years.
+Please note: The reassessment rule will be executed 90 days prior to completion of two years from the previous assessment completion date.
+
+ | [PERSON_51]:
+Daily
+
+Conditions:
+Last Assessment Completion Date – By Template
+
+Operator:
+Greater than equal to
+
+Days: 640
+
+Equal to: Due Diligence Questionnaire T1-2 v1
+
+AND
+
+Condition:
+Attribute: Vendor [PERSON_49] any: Tier 2
+
+Actions:
+Send vendor assessment
+
+Copy Previous Assessment = Yes
+
+Template:
+Due Diligence Questionnaire T1-2 v1
+
+Select respondents: User type attributes : Primary Vendor Contact
+
+AND
+
+Action:
+Send vendor email
+
+Email template:
+Vendor Upcoming Re-Assessment
+
+Recipients:
+User type attributes: Business Owners
+AR.T3.1 | Tier 3 Reassessment rule
+
+ | Rule Group:
+TPRM Reassessment Rules
+
+
+Rule Type:
+Vendor
+ | This is the automation rules in the “Automation Rules” section in OneTrust [PERSON_2].
+This rule will send reassessments to Tier 3 third parties in a period of two years.
+Please note: The reassessment rule will be executed 90 days prior to completion of two years from the previous assessment completion date.
+
+ | [PERSON_51]:
+Daily
+
+Conditions:
+Last Assessment Completion Date – By Template
+
+Operator:
+Greater than equal to
+
+Days: 640
+
+Equal to: Due Diligence Questionnaire T3 v1
+
+
+AND
+
+Condition:
+Attribute: Vendor [PERSON_49] any: Tier 3
+
+Actions:
+Send vendor assessment
+
+Copy Previous Assessment = Yes
+
+Template:
+Due Diligence Questionnaire T3 v1
+
+
+Select respondents: User type attributes : Primary Vendor Contact
+
+AND
+
+Action:
+Send vendor email
+
+Email template:
+Vendor Upcoming Re-Assessment
+
+Recipients:
+User type attributes: Business Owners
+WR.MP.1 | MP_R_Push to Next | Workflow: CD_Marketing Partners Workflow
+
+Stage: Initiated
+
+[PERSON_38]: MP_T_Push to Next
+Trigger Type:
+[PERSON_46] | To push the third-party to the next stage in Marketing Partners Workflow | Rule Type: Workflow Rule
+
+Condition: 
+Attribute: Vendor Category
+Contains Any: Marketing Partner
+AND
+Attribute: Vendor Tier
+Does not contain: Tier 3
+
+Actions:
+Advance to stage
+Stage: Launching MarPart
+WR.MP.2 | Send [PERSON_53] | [PERSON_10]: CD_Marketing Partners Workflow
+
+Stage: Launching MarPart
+
+ | To launch third-party due diligence assessment for the third-party | Rule Type: Stage Rule
+
+Condition: 
+Attribute: Vendor Category
+Contains Any: Marketing Partner
+AND
+Attribute: Vendor Tier
+Does not contain: Tier 3
+
+Actions:
+Launch Assessment
+
+Template:
+Due Diligence Questionnaire T1-2 v1
+
+Approver:
+TPRM_Vendor Risk Management Team
+
+Respondent:
+Primary Vendor Contact
+WR.MP.3 | MP_R_Assessment Approved | [PERSON_10]: CD_Marketing Partners Workflow
+
+Stage: Launching MarPart
+
+Trigger: MP_T_Assessment Approved
+[PERSON_54]Approved
+ | To move the third party to the next stage when the third-party is approved. | Rule Type: Workflow Rule
+
+Condition: 
+Assessment stage – By template: Completed
+AND
+Template name: Due Diligence Questionnaire T1-2 v1
+Actions:
+Advance to stage
+
+Stage:
+Live
+WR.MP.4 | MP_R_Assessment Rejected | Workflow: CD_Marketing Partners Workflow
+
+Stage: Launching MarPart
+
+Trigger: MP_T_Assessment Rejected
+Trigger Type:
+Rejected
+ | To move the rejected third-party to the appropriate stage Review Reject MarPart | Rule Type: Workflow Rule
+
+Condition: 
+Assessment stage – By template: Completed
+AND
+Template name: Due Diligence Questionnaire T1-2 v1
+Actions:
+Advance to stage
+
+Stage:
+Review Reject MarPart
+WR.MP.5 | Notify MarPart Reject | Workflow: CD_Marketing Partners Workflow
+
+Stage: Review Reject MarPart | To notify the respective internal users of the rejection of the third-party | Rule Type: Stage Rule
+
+Condition: 
+Attribute: Vendor Category
+Contains: Marketing Partner
+
+Actions:
+Send Notification
+AND
+
+Create Task
+Assignee: Business Owner
+Collaborator: TPRM_Vendor Risk Management Team
+Deadline 14 Days
+WR.MP.6 | Notify MarPart Approval | Workflow: CD_Marketing Partners Workflow
+
+Stage: Live | To notify the respective internal users of the approval of the third-party | Rule Type: Stage Rule
+
+Condition: 
+Attribute: Vendor Category
+Contains: Marketing Partner
+
+Actions:
+Send Notification
+WR.IV.1 | IV_R_Push to Next | Workflow: CD_International Vendors Workflow
+
+Stage: Initiated
+
+[PERSON_38]: IV_T_Push to Next
+Trigger Type:
+[PERSON_46] | To push the third-party to the next stage in International Vendors Workflow | Rule Type: Workflow Rule
+
+Condition: 
+Attribute: Vendor Category
+Contains Any: International Vendors
+AND
+Attribute: Vendor Tier
+Does not contain: Tier 3
+
+Actions:
+Advance to stage
+Stage: Launching IntVen
+WR.IV.2 | Send IntVen Questionnaire | Workflow: CD_International Vendors Workflow
+
+Stage: Launching IntVen
+
+ | To launch third-party due diligence assessment for the third-party | Rule Type: Stage Rule
+
+Condition: 
+Attribute: Vendor Category
+Contains Any: International Vendors
+AND
+Attribute: Vendor Tier
+Does not contain: Tier 3
+
+Actions:
+Launch Assessment
+
+Template:
+Due Diligence Questionnaire T1-2 v1
+
+Approver:
+TPRM_Vendor Risk Management Team
+
+Respondent:
+Primary Vendor Contact
+WR.IV.3 | IV_R_Assessment Approved | Workflow: CD_International Vendors Workflow
+
+Stage: Launching IntVen
+
+[PERSON_38]: IV_T_Assessment Approved
+[PERSON_54]Approved
+ | To move the third party to the next stage when the third-party is approved. | Rule Type: Workflow Rule
+
+Condition: 
+Assessment stage – By template: Completed
+AND
+Template name: Due Diligence Questionnaire T1-2 v1
+Actions:
+Advance to stage
+
+Stage:
+Live
+WR.IV.4 | IV_R_Assessment Rejected | Workflow: CD_International Vendors Workflow
+
+Stage: Launching IntVen
+
+[PERSON_38]: IV_T_Assessment Rejected
+Trigger Type:
+Rejected
+ | To move the rejected third-party to the appropriate stage Review Reject IntVen | Rule Type: Workflow Rule
+
+Condition: 
+Assessment stage – By template: Completed
+AND
+Template name: Due Diligence Questionnaire T1-2 v1
+Actions:
+Advance to stage
+
+Stage:
+Review Reject IntVen
+WR.IV.5 | Notify IntVen Reject | Workflow: CD_International Vendors Workflow
+
+Stage: Review Reject IntVen | To notify the respective internal users of the rejection of the third-party | Rule Type: Stage Rule
+
+Condition: 
+Attribute: Vendor Category
+Contains: International Vendors
+
+Actions:
+Send Notification
+AND
+
+Create Task
+Assignee: Business Owner
+Collaborator: TPRM_Vendor Risk Management Team
+Deadline 14 Days
+WR.IV.6 | Notify IntVen Approval | Workflow: CD_International Vendors Workflow
+
+Stage: Live | To notify the respective internal users of the approval of the third-party | Rule Type: Stage Rule
+
+Condition: 
+Attribute: Vendor Category
+Contains: International Vendors
+
+Actions:
+Send Notification
+WR.SP.1 | SP_R_Push to Next | Workflow: CD_Service Providers Workflow
+
+Stage: Initiated
+
+[PERSON_38]: SP_T_Push to Next
+Trigger Type:
+[PERSON_46] | To push the third-party to the next stage in Service Providers Workflow | Rule Type: Workflow Rule
+
+Condition: 
+Attribute: Vendor Category
+Contains Any: Service Provider and Vendor
+AND
+Attribute: Vendor Tier
+Does not contain: Tier 3
+
+Actions:
+Advance to stage
+Stage: Launching ServPro
+WR.SP.2 | Send [PERSON_55] | Workflow: CD_Service Providers Workflow
+
+Stage: Launching ServPro
+
+ | To launch third-party due diligence assessment for the third-party | Rule Type: Stage Rule
+
+Condition: 
+Attribute: Vendor Category
+Contains Any: Service Provider and Vendor
+AND
+Attribute: Vendor Tier
+Does not contain: Tier 3
+
+Actions:
+Launch Assessment
+
+Template:
+Due Diligence Questionnaire T1-2 v1
+
+Approver:
+TPRM_Vendor Risk Management Team
+
+Respondent:
+Primary Vendor Contact
+WR.SP.3 | SP_R_Assessment Approved | [PERSON_10]: CD_Service Providers Workflow
+
+Stage: Launching ServPro
+
+[PERSON_38]: SP_T_Assessment Approved
+[PERSON_54]Approved
+ | To move the third party to the next stage when the third-party is approved. | Rule Type: Workflow Rule
+
+Condition: 
+Assessment stage – By template: Completed
+AND
+Template name: Due Diligence Questionnaire T1-2 v1
+Actions:
+Advance to stage
+
+Stage:
+Live
+WR.SP.4 | SP_R_Assessment Rejected | Workflow: CD_Service Providers Workflow
+
+Stage: Launching ServPro
+
+[PERSON_38]: SP_T_Assessment Rejected
+Trigger Type:
+Rejected
+ | To move the rejected third-party to the appropriate stage Review Reject ServPro | Rule Type: Workflow Rule
+
+Condition: 
+Assessment stage – By template: Completed
+AND
+Template name: Due Diligence Questionnaire T1-2 v1
+Actions:
+Advance to stage
+
+Stage:
+Review Reject ServPro
+WR.SP.5 | Notify ServPro Reject | Workflow: CD_Service Providers Workflow
+
+Stage: Review Reject ServPro | To notify the respective internal users of the rejection of the third-party | Rule Type: Stage Rule
+
+Condition: 
+Attribute: Vendor Category
+Contains: Service Provider and Vendor
+
+Actions:
+Send Notification
+AND
+
+Create Task
+Assignee: Business Owner
+Collaborator: TPRM_Vendor Risk Management Team
+Deadline 14 Days
+WR.SP.6 | Notify ServPro Approval | Workflow: CD_Service Providers Workflow
+
+Stage: Live | To notify the respective internal users of the approval of the third-party | Rule Type: Stage Rule
+
+Condition: 
+Attribute: Vendor Category
+Contains: Service Provider and Vendor
+
+Actions:
+Send Notification
+WR.SV.1 | SV_R_Push to Next | Workflow: CD_Staffing Vendors Workflow
+
+Stage: Initiated
+
+[PERSON_38]: SV_T_Push to Next
+Trigger Type:
+[PERSON_46] | To push the third-party to the next stage in Staffing Vendors Workflow | Rule Type: Workflow Rule
+
+Condition: 
+Attribute: Vendor Category
+Contains Any: Staffing Vendor
+AND
+Attribute: Vendor Tier
+Does not contain: Tier 3
+
+Actions:
+Advance to stage
+Stage: Launching StafVen
+WR.SV.2 | Send StafVen Questionnaire | [PERSON_10]: CD_Staffing Vendors Workflow
+
+Stage: Launching StafVen
+
+ | To launch third-party due diligence assessment for the third-party | Rule Type: Stage Rule
+
+Condition: 
+Attribute: Vendor Category
+Contains Any: Staffing Vendor
+AND
+Attribute: Vendor Tier
+Does not contain: Tier 3
+
+Actions:
+Launch Assessment
+
+Template:
+Due Diligence Questionnaire T1-2 v1
+
+Approver:
+TPRM_Vendor Risk Management Team
+
+Respondent:
+Primary Vendor Contact
+WR.SV.3 | SV_R_Assessment Approved | [PERSON_10]: CD_Staffing Vendors Workflow
+
+Stage: Launching StafVen
+
+[PERSON_38]: SV_T_Assessment Approved
+[PERSON_48]| To move the third party to the next stage when the third-party is approved. | Rule Type: Workflow Rule
+
+Condition: 
+Assessment stage – By template: Completed
+AND
+Template name: Due Diligence Questionnaire T1-2 v1
+AND 
+Attribute: Vendor Category
+Contains Any: Staffing Vendor
+Actions:
+Advance to stage
+
+Stage:
+Live
+WR.SV.4 | SV_R_Assessment Rejected | [PERSON_10]: CD_Staffing Vendors Workflow
+Stage: Launching StafVen
+
+[PERSON_38]: SV_T_Assessment Rejected
+[PERSON_38] Type:
+Rejected
+ | To move the rejected third-party to the appropriate stage Review Reject StafVen | Rule Type: Workflow Rule
+
+Condition: 
+Assessment stage – By template: Completed
+AND
+Template name: Due Diligence Questionnaire T1-2 v1
+AND 
+Attribute: Vendor Category
+Contains Any: Staffing Vendor
+
+Actions:
+Advance to stage
+
+Stage:
+Review Reject StafVen
+WR.SV.5 | Notify StafVen Reject | [PERSON_10]: CD_Staffing Vendors Workflow
+
+Stage: Review Reject StafVen | To notify the respective internal users of the rejection of the third-party | Rule Type: Stage Rule
+
+Condition: 
+Attribute: Vendor Category
+Contains: Staffing Vendor
+
+Actions:
+Send Notification
+AND
+
+Create Task
+Assignee: Business Owner
+Collaborator: TPRM_Vendor Risk Management Team
+Deadline 14 Days
+WR.SV.6 | Notify StafVen Approval | [PERSON_10]: CD_Staffing Vendors Workflow
+
+Stage: Live | To notify the respective internal users of the approval of the third-party | Rule Type: Stage Rule
+
+Condition: 
+Attribute: Vendor Category
+Contains: Staffing Vendor
+
+Actions:
+Send Notification
+WR.ON.1 | On_R_Assign RevPart | Workflow: CD_Onboarding Workflow
+
+Stage: New Third Party
+
+[PERSON_38]:
+On_T_Assign Workflow | To assign workflow for Revenue Partners. | Rule Type: Workflow Rule
+
+Condition: 
+Attribute: Vendor Category
+Contains Any: Revenue Partner
+AND
+Attribute: Vendor Tier
+Contains Any: Tier 1, Tier 2
+Actions:
+[PERSON_56]
+Workflows: CD_Revenue Partners Workflow
+
+Stage:
+Launching RevPart
+WR.ON.2 | On_R_Assign MarPart | Workflow: CD_Onboarding Workflow
+
+Stage: New Third Party
+[PERSON_38]:
+On_T_Assign Workflow | To assign workflow for Marketing Partners. | Rule Type: Workflow Rule
+
+Condition: 
+Attribute: Vendor Category
+Contains Any: Marketing Partner
+AND
+Attribute: Vendor Tier
+Contains Any: Tier 1, Tier 2
+Actions:
+[PERSON_56]
+Workflows: CD_Marketing Partners Workflow
+
+Stage:
+[PERSON_57]
+WR.ON.3 | On_R_Assign IntVen | [PERSON_10]: CD_Onboarding Workflow
+
+Stage: New Third Party
+[PERSON_38]:
+On_T_Assign Workflow | To assign workflow for International Vendors. | Rule Type: Workflow Rule
+
+Condition: 
+Attribute: Vendor Category
+Contains Any: International Vendor
+AND
+Attribute: Vendor Tier
+Contains Any: Tier 1, Tier 2
+Actions:
+[PERSON_56]
+Workflows: CD_International Vendors Workflow
+Stage:
+Launching IntVen
+WR.ON.4 | On_R_Assign ServPro | [PERSON_10]: CD_Onboarding Workflow
+
+Stage: New Third Party
+[PERSON_38]:
+On_T_Assign Workflow | To assign workflow for Service Providers and Vendors. | Rule Type: Workflow Rule
+
+Condition: 
+Attribute: Vendor Category
+Contains Any: Service Provider and Vendor
+AND
+Attribute: Vendor Tier
+Contains Any: Tier 1, Tier 2
+Actions:
+[PERSON_56]
+Workflows: CD_Service Providers Workflow
+Stage:
+Launching ServPro
+WR.ON.5 | On_R_Assign StafVen | Workflow: CD_Onboarding Workflow
+
+Stage: New Third Party
+[PERSON_38]:
+On_T_Assign Workflow | To assign workflow for Staffing Vendors. | Rule Type: Workflow Rule
+
+Condition: 
+Attribute: Vendor Category
+Contains Any: Staffing Vendor
+AND
+Attribute: Vendor Tier
+Contains Any: Tier 1, Tier 2
+Actions:
+[PERSON_56]
+Workflows: CD_Staffing Vendors Workflow
+Stage:
+[PERSON_58]
+WR.ON.6 | On_R_Assign Tier3 | [PERSON_10]: CD_Onboarding Workflow
+
+Stage: New Third Party
+[PERSON_38]:
+On_T_Assign Workflow | To assign workflow for Tier 3 Vendors. | Rule Type: Workflow Rule
+
+Condition: 
+Attribute: Vendor Category
+Contains Any: All
+AND
+Attribute: Vendor Tier
+Contains Any: Tier 3
+Actions:
+[PERSON_56]
+Workflows: CD_Tier3 Workflow
+Stage:
+Launching Tier3
+QUESTIONNAIRE NO. | QUESTIONNAIRE NAME | PLACE | [PERSON_36] | APPROVERS
+Q.1 | Due Diligence Questionnaire T1-2 v1 | [PERSON_10]: 
+1. CD_Revenue Partners Workflow
+2. CD_Marketing Partners Workflow
+3. CD_Service Providers Workflow
+4. CD_Staffing Vendors
+5. CD_Intrnational Vendors
+
+Stage: Launching stage for all above workflows.
+
+File Name: Final Due Diligence Questionnaire v1.0
+ | This is a general security questionnaire that will be sent to all the third parties who will be added in OneTrust. | Vendor Risk Management Group
+Q.2 | Due Diligence Questionnaire T3 v1 | [PERSON_10]:
+CD_Tier3 Workflow
+
+Stage: Launch RevPart Assessment
+
+File Name: Final Due Diligence Questionnaire v1.0 | This is a specific questionnaire that will be sent to all third parties whose [PERSON_12] attribute will be selected as Tier 3. | Vendor Risk Management Group
+LOGIC NO. | PLACE | CONDITION | ACTION | QUESTION SHOWN
+CL.1 | Questionnaire: Due Diligence Questionnaire T1-2 v1
+
+Question: 1.6 | IF: Any
+Section: Contracting and Legal
+Question: 1.5
+Operator: Equal To
+Response: Yes
+ | Show Question: 1.6
+Copy logic to additional questions: 1.7, 1.8 | 1.6 Please provide the following: State of Incorporation, Principal Place of Business, Parent Company / Affiliates, Ownership/investment by foreign governments?
+
+1.7 Please provide the date of incorporation.
+1.8 How long has your company been in business?
+CL.2 | Questionnaire: Due Diligence Questionnaire T1-2 v1
+
+Question: 2.5 | IF: Any
+Section: Compliance and Legal
+Question: 2.4
+Operator: Equal To
+Response: Yes
+ | Show Question: 2.5 | 2.5 Please provide a copy of your policy for handling consumer complaints.
+CL.3 | Questionnaire: Due Diligence Questionnaire T1-2 v1
+
+Question: 3.7 | IF: Any
+Section: Finance
+Question: 3.6
+Operator: Equal To
+Response: No
+ | Show Question: 3.7 | 3.7 If no, please complete the form here: Oracle Vendor Onboarding Form (link). Please provide the confirmation or upload evidence once completed.
+CL.4 | Questionnaire: Due Diligence Questionnaire T1-2 v1
+
+Question: 4.5 | IF: Any
+Section: Data Privacy and Security
+Question: 4.4
+Operator: Equal To
+Response: Yes
+ | Show Question: 4.5
+Copy logic to additional questions: 4.6 | 4.5 Select Cadence data subjects.
+4.6 Describe (Select) personal data categories.
+CL.5 | Questionnaire: Due Diligence Questionnaire T1-2 v1
+
+Question: 4.11 | IF: Any
+Section: Data Privacy and Security
+Question: 4.10
+Operator: Equal To
+Response: Yes
+ | Show Question: 4.11
+Copy logic to additional questions: 4.12. 4.13 | 4.11 Will the AI a) interact with Cadence customers, b) have access to customer data (PI), or sensitive employee information (i.e., race, gender, religion, etc.). Please describe in detail.
+4.12 Does the organization use AI or large language models in data processing?
+4.13 Are there processes established for managing risks related to [PERSON_59]? If Yes, describe in detail.
+CL.6 | Questionnaire: Due Diligence Questionnaire T1-2 v1
+
+Question: 4.19 | IF: Any
+Section: Data Privacy and Security
+Question: 4.18
+Operator: Equal To
+Response: No
+ | Show Question: 4.19
+ | 4.19 If No - Please explain why MFA is not required (e.g., compensating controls, acceptable risk)
+
+CL.7 | Questionnaire: Due Diligence Questionnaire T1-2 v1
+
+Question: 4.21 | IF: Any
+Section: Data Privacy and Security
+Question: 4.20
+Operator: Equal To
+Response: Yes
+ | Show Question: 4.21
+ | 4.21 If Yes - 
+(a) How is VPN secured? 
+(b) Is access control based on user role or uniform for all users?
+
+CL.8 | Questionnaire: Due Diligence Questionnaire T1-2 v1
+
+Question: 4.25 | IF: Any
+Section: Data Privacy and Security
+Question: 4.24
+Operator: Equal To
+Response: Yes
+ | Show Question: 4.25
+ | 4.25 If Yes - Please describe separation method (Logical, Physical, VLAN, [PERSON_60] tenant separation, Other)
+CL.9 | Questionnaire: Due Diligence Questionnaire T1-2 v1
+
+Question: 4.27 | IF: Any
+Section: Data Privacy and Security
+Question: 4.26
+Operator: Equal To
+Response: Yes
+ | Show Question: 4.27
+ | 4.27 Do you have a process for remediating critical and high-risk findings from penetration tests, including your defined timelines for remediation and how you communicate updates to clients?
+CL.10 | Questionnaire: Due Diligence Questionnaire T1-2 v1
+
+Question: 4.31 | IF: Any
+Section: Data Privacy and Security
+Question: 4.30
+Operator: Equal To
+Response: Yes
+ | Show Question: 4.31
+ | 4.31 If Yes - Please describe: 
+(a) Incident type (Data breach, Ransomware, Unauthorized Access, Other) 
+(b) Remediation actions 
+(c) Timeline 
+(d) Any residual risk or findings post remediation.
+CL.11 | Questionnaire: Due Diligence Questionnaire T1-2 v1
+
+Question: 4.35 | IF: Any
+Section: Data Privacy and Security
+Question: 4.34
+Operator: Equal To
+Response: Yes | Show Question: 4.35
+ | 4.35 How do you manage and store encryption keys? (e.g., access restrictions, storage method)
+
+CL.12 | Questionnaire: Due Diligence Questionnaire T1-2 v1
+
+Question: 4.37 | IF: Any
+Section: Data Privacy and Security
+Question: 4.36
+Operator: Equal To
+Response: Yes | Show Question: 4.37
+ | 4.37 If Yes - Indicate scope of DLP (End-user devices, [PERSON_44], File storage, [PERSON_61], [PERSON_62], Other).
+
+CL.13 | Questionnaire: Due Diligence Questionnaire T1-2 v1
+
+Question: 8.2 | IF: Any
+Section: Data Privacy and Security
+Question: 8.1
+Operator: Equal To
+Response: Yes | Show Question: 8.2
+ | 8.2 What KPIs or SLAs are linked to this engagement? Please provide details.
+
+CL.14 | Questionnaire: Due Diligence Questionnaire T3 v1
+
+Question: 3.5 | IF: Any
+Section: Finance
+Question: 3.4
+Operator: Equal To
+Response: No | Show Question: 3.5
+ | 3.5 If No, please complete the form here: Oracle Vendor Onboarding Form (link). Please provide the confirmation or upload evidence once completed.
+
+SLA NO. | [PERSON_63] | [PERSON_36] | TIMELINE (DAYS) | REMINDER
+SLA.1 | Assessment Completion | When a new assessment is sent to the Primary Vendor Contact, it must be completed within the specified timeline. | 9 | 5
+SLA.2 | [PERSON_64] | User Groups are responsible for reviewing the responses provided by the Primary Vendor Contact in the questionnaire and for analyzing any flagged risks. | 4 | 2
+SLA.3 | High Risk Response | The Primary Vendor Contact must provide a response within the defined timeframe to address a documented high risk. This stage is for acknowledging and analyzing the risk, it is not a remediation period. (The calculation for this duration starts after deadline period for Review Responses (4 days, see SLA.2). Therefore, actual deadline will be 5+4 = 9 days) | 5  | 3
+SLA.4 | Medium Risk Response | The Primary Vendor Contact must provide a response within the defined timeframe to address a documented medium risk. This stage is for acknowledging and analyzing the risk, it is not a remediation period. (The calculation for this duration starts after deadline period for Review Responses (4 days, see SLA.2). Therefore, actual deadline will be 10+4 = 14 days) | 10 | 7
+SLA.5 | Low Risk Response | The Primary Vendor Contact must provide a response within the defined timeframe to address a documented low risk. This stage is for acknowledging and analyzing the risk, it is not a remediation period. (The calculation for this duration starts after deadline period for Review Responses (4 days, see SLA.2). Therefore, actual deadline will be 15+4 = 19 days) | 15 | 10
+SLA.6 | Renewal Process Initiation – Tier 1 | For Tier 1 third parties, the reassessment process begins 90 days prior to the completion of the one-year period. An assessment questionnaire is issued, and the results are used to inform renewal decisions. | 275 | -
+SLA.7 | Renewal Process Initiation – Tier 2 and Tier 3 | For Tier 2 and Tier 3 third parties, the reassessment process begins 90 days prior to the completion of the two-year. An assessment questionnaire is issued, and the results are used to inform renewal decisions. | 640 | -
+RULE NO. | PLACE | RULE NAME | CONDITION | ACTION
+QR.1 | Due Diligence Questionnaire T1-2 v1 | QR_Non US Company | IF: Any
+
+[PERSON_38]: Question
+Question: 1.3
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_Non US Company
+Inherent risk: High
+
+Control ID: QRC_CL_1.1
+Control Name: QRC_Non US Company
+
+QR.2 | Due Diligence Questionnaire T1-2 v1 | QR_Business duration_less | IF: Any
+
+[PERSON_38]: Question
+Question: 1.8
+Operator: Equal To
+Response: 0-5 | Action: Create risk
+Risk Name: QRN_Business duration_less
+Inherent risk: High
+
+Control ID: QRC_CL_1.2
+Control Name: QRC_ Business duration_less
+
+QR.3 | Due Diligence Questionnaire T1-2 v1 | QR_Business duration_medium | IF: Any
+
+[PERSON_38]: Question
+Question: 1.8
+Operator: Equal To
+Response: 5-10 | Action: Create risk
+Risk Name: QRN_Business duration_medium
+Inherent risk: Medium
+
+Control ID: QRC_CL_1.3
+Control Name: QRC_ Business duration_medium
+
+QR.4 | Due Diligence Questionnaire T1-2 v1 | QR_Subsidiaries and Affiliates | IF: Any
+
+[PERSON_38]: Question
+Question: 1.9
+Operator: Equal To
+Response: Yes | Action: Create risk
+Risk Name: QRN_Subsidiaries and Affiliates
+Inherent risk: Medium
+
+Control ID: QRC_CL_1.4
+Control Name: QRC_Subsidiaries and Affiliates
+
+QR.5 | Due Diligence Questionnaire T1-2 v1 | QR_Recent M and A | IF: Any
+
+[PERSON_38]: Question
+Question: 1.11
+Operator: Equal To
+Response: Yes | Action: Create risk
+Risk Name: QRN_Recent M and A
+Inherent risk: Medium
+
+Control ID: QRC_CL_1.5
+Control Name: QRC_Recent M and A
+
+QR.6 | Due Diligence Questionnaire T1-2 v1 | QR_No Compliance Report | IF: Any
+
+[PERSON_38]: Question
+Question: 2.2
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_No Compliance Report
+Inherent risk: High
+
+Control ID: QRC_CmL_2.1
+Control Name: QRC_No Compliance Report
+
+QR.7 | Due Diligence Questionnaire T1-2 v1 | QR_No Strong Laws | IF: Any
+
+[PERSON_38]: Question
+Question: 2.3
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_No Strong Laws
+Inherent risk: Medium
+
+Control ID: QRC_CmL_2.2
+Control Name: QRC_No Strong Laws
+
+QR.8 | Due Diligence Questionnaire T1-2 v1 | QR_AML Requirement | IF: Any
+
+[PERSON_38]: Question
+Question: 2.6
+Operator: Equal To
+Response: Yes | Action: Create risk
+Risk Name: QRN_AML Requirement
+Inherent risk: Medium
+
+Control ID: QRC_CmL_2.3
+Control Name: QRC_AML Requirement
+QR.9 | Due Diligence Questionnaire T1-2 v1 | QR_No AML Audit | IF: Any
+
+[PERSON_38]: Question
+Question: 2.7
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_No AML Audit
+Inherent risk: Medium
+
+Control ID: QRC_CmL_2.4
+Control Name: QRC_No AML Audit
+
+QR.10 | Due Diligence Questionnaire T1-2 v1 | QR_No Financial Statement | IF: Any
+
+[PERSON_38]: Question
+Question: 3.3
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_No Financial Statement
+Inherent risk: High
+
+Control ID: QRC_Fin_3.1
+Control Name: QRC_No Financial Statement
+
+QR.11 | Due Diligence Questionnaire T1-2 v1 | QR_No Financial Audits | IF: Any
+
+[PERSON_38]: Question
+Question: 3.5
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_No Financial Audits
+Inherent risk: High
+
+Control ID: QRC_Fin_3.2
+Control Name: QRC_No Financial Audits
+
+QR.12 | Due Diligence Questionnaire T1-2 v1 | QR_Cust_Data Outside US | IF: Any
+
+[PERSON_38]: Question
+Question: 4.1
+Operator: Equal To
+Response: Yes | Action: Create risk
+Risk Name: QRN_Cust_Data Outside US
+Inherent risk: High
+
+Control ID: QRC_Pri_4.1
+Control Name: QRC_Cust_Data Outside US
+QR.13 | Due Diligence Questionnaire T1-2 v1 | QR_Operations_Risk Regions | IF: Any
+
+[PERSON_38]: Question
+Question: 4.2
+Operator: Equal To
+Response: Yes | Action: Create risk
+Risk Name: QRN_Operations_Risk Regions
+Inherent risk: High
+
+Control ID: QRC_Pri_4.2
+Control Name: QRC_Operations_Risk Regions
+
+QR.14 | Due Diligence Questionnaire T1-2 v1 | QR_Personal Data Collected | IF: Any
+
+[PERSON_38]: Question
+Question: 4.4
+Operator: Equal To
+Response: Yes | Action: Create risk
+Risk Name: QRN_Personal Data Collected
+Inherent risk: Medium
+
+Control ID: QRC_Pri_4.3
+Control Name: QRC_Personal Data Collected
+
+QR.15 | Due Diligence Questionnaire T1-2 v1 | QR_Sub-processor Used | IF: Any
+
+[PERSON_38]: Question
+Question: 4.8
+Operator: Equal To
+Response: Yes | Action: Create risk
+Risk Name: QRN_Sub-processor Used
+Inherent risk: Medium
+
+Control ID: QRC_Pri_4.4
+Control Name: QRC_Sub-processor Used
+
+QR.16 | Due Diligence Questionnaire T1-2 v1 | QR_AI Interaction with Data | IF: Any
+
+[PERSON_38]: Question
+Question: 4.11
+Operator: Equal To
+Response: Yes | Action: Create risk
+Risk Name: QRN_AI Interaction with Data
+Inherent risk: Medium
+
+Control ID: QRC_Pri_4.5
+Control Name: QRC_AI Interaction with Data
+QR.17 | Due Diligence Questionnaire T1-2 v1 | QR_LLM Use in Data Processing | IF: Any
+
+[PERSON_38]: Question
+Question: 4.12
+Operator: Equal To
+Response: Yes | Action: Create risk
+Risk Name: QRN_LLM Use in Data Processing
+Inherent risk: Medium
+
+Control ID: QRC_Pri_4.6
+Control Name: QRC_LLM Use in Data Processing
+QR.18 | Due Diligence Questionnaire T1-2 v1 | QR_No RM for AI | IF: Any
+
+[PERSON_38]: Question
+Question: 4.13
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_No RM for AI
+Inherent risk: Medium
+
+Control ID: QRC_Pri_4.7
+Control Name: QRC_No RM for AI
+QR.19 | Due Diligence Questionnaire T1-2 v1 | QR_No Privacy Policy | IF: Any
+
+[PERSON_38]: Question
+Question: 4.14
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_No Privacy Policy
+Inherent risk: High
+
+Control ID: QRC_Pri_4.8
+Control Name: QRC_No Privacy Policy
+QR.20 | Due Diligence Questionnaire T1-2 v1 | QR_No IAM Policy | IF: Any
+
+[PERSON_38]: Question
+Question: 4.15
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_No IAM Policy
+Inherent risk: High
+
+Control ID: QRC_Sec_4.9
+Control Name: QRC_No IAM Policy
+QR.21 | Due Diligence Questionnaire T1-2 v1 | QR_No Least Privilege Access | IF: Any
+
+[PERSON_38]: Question
+Question: 4.16
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_No Least Privilege Access
+Inherent risk: Medium
+
+Control ID: QRC_Sec_4.10
+Control Name: QRC_No Least Privilege Access
+QR.22 | Due Diligence Questionnaire T1-2 v1 | QR_No Password Policy | IF: Any
+
+[PERSON_38]: Question
+Question: 4.17
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_No Password Policy
+Inherent risk: Medium
+
+Control ID: QRC_Sec_4.11
+Control Name: QRC_No Password Policy
+QR.23 | Due Diligence Questionnaire T1-2 v1 | QR_No MFA | IF: Any
+
+[PERSON_38]: Question
+Question: 4.18
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_No MFA
+Inherent risk: Medium
+
+Control ID: QRC_Sec_4.12
+Control Name: QRC_No MFA
+QR.24 | Due Diligence Questionnaire T1-2 v1 | QR_Employee Remote Access | IF: Any
+
+[PERSON_38]: Question
+Question: 4.20
+Operator: Equal To
+Response: Yes | Action: Create risk
+Risk Name: QRN_Employee Remote Access
+Inherent risk: Medium
+
+Control ID: QRC_Sec_4.13
+Control Name: QRC_Employee Remote Access
+QR.25 | Due Diligence Questionnaire T1-2 v1 | QR_Network Not Monitored | IF: Any
+
+[PERSON_38]: Question
+Question: 4.22
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_Network Not Monitored
+Inherent risk: High
+
+Control ID: QRC_Sec_4.14
+Control Name: QRC_Network Not Monitored
+QR.26 | Due Diligence Questionnaire T1-2 v1 | QR_No Tools for Vulnerability Scan | IF: Any
+
+[PERSON_38]: Question
+Question: 4.23
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_No Tools for Vulnerability Scan
+Inherent risk: Medium
+
+Control ID: QRC_Sec_4.15
+Control Name: QRC_No Tools for Vulnerability Scan
+QR.27 | Due Diligence Questionnaire T1-2 v1 | QR_System Not Segrated | IF: Any
+
+[PERSON_38]: Question
+Question: 4.24
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_System Not Segrated
+Inherent risk: Medium
+
+Control ID: QRC_Sec_4.16
+Control Name: QRC_System Not Segrated
+QR.28 | Due Diligence Questionnaire T1-2 v1 | QR_No Pen Test | IF: Any
+
+[PERSON_38]: Question
+Question: 4.26
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_No Pen Test
+Inherent risk: High
+
+Control ID: QRC_Sec_4.17
+Control Name: QRC_No Pen Test
+QR.29 | Due Diligence Questionnaire T1-2 v1 | QR_No Remediation for Findings | IF: Any
+
+[PERSON_38]: Question
+Question: 4.27
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_No Remediation for Findings
+Inherent risk: Medium
+
+Control ID: QRC_Sec_4.18
+Control Name: QRC_No Remediation for Findings
+QR.30 | Due Diligence Questionnaire T1-2 v1 | QR_No Security App Dev Policy | IF: Any
+
+[PERSON_38]: Question
+Question: 4.28
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_No Security App Dev Policy
+Inherent risk: Medium
+
+Control ID: QRC_Sec_4.19
+Control Name: QRC_No Security App Dev Policy
+QR.31 | Due Diligence Questionnaire T1-2 v1 | QR_No Incident Response Plan | IF: Any
+
+[PERSON_38]: Question
+Question: 4.29
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_No Incident Response Plan
+Inherent risk: High
+
+Control ID: QRC_Sec_4.20
+Control Name: QRC_No Incident Response Plan
+QR.32 | Due Diligence Questionnaire T1-2 v1 | QR_24 Mon Security Incident | IF: Any
+
+[PERSON_38]: Question
+Question: 4.30
+Operator: Equal To
+Response: Yes | Action: Create risk
+Risk Name: QRN_24 Mon Security Incident
+Inherent risk: High
+
+Control ID: QRC_Sec_4.21
+Control Name: QRC_24 Mon Security Incident
+QR.33 | Due Diligence Questionnaire T1-2 v1 | QR_No Breach Notification Process | IF: Any
+
+[PERSON_38]: Question
+Question: 4.32
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_No Breach Notification Process
+Inherent risk: High
+
+Control ID: QRC_Sec_4.22
+Control Name: QRC_No Breach Notification Process
+QR.34 | Due Diligence Questionnaire T1-2 v1 | QR_No Notification to Cadence | IF: Any
+
+[PERSON_38]: Question
+Question: 4.33
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_No Notification to Cadence
+Inherent risk: High
+
+Control ID: QRC_Sec_4.23
+Control Name: QRC_No Notification to Cadence
+QR.35 | Due Diligence Questionnaire T1-2 v1 | QR_No Encryption Used | IF: Any
+
+[PERSON_38]: Question
+Question: 4.34
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_No Encryption Used
+Inherent risk: High
+
+Control ID: QRC_Sec_4.24
+Control Name: QRC_No Encryption Used
+QR.36 | Due Diligence Questionnaire T1-2 v1 | QR_No Data Loss Prevention | IF: Any
+
+[PERSON_38]: Question
+Question: 4.36
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_No Data Loss Prevention
+Inherent risk: Medium
+
+Control ID: QRC_Sec_4.25
+Control Name: QRC_No Data Loss Prevention
+QR.37 | Due Diligence Questionnaire T1-2 v1 | QR_No Data Retention Policy | IF: Any
+
+[PERSON_38]: Question
+Question: 4.38
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_No Data Retention Policy
+Inherent risk: Medium
+
+Control ID: QRC_Sec_4.26
+Control Name: QRC_No Data Retention Policy
+QR.38 | Due Diligence Questionnaire T1-2 v1 | QR_No Information Security Policy | IF: Any
+
+[PERSON_38]: Question
+Question: 4.39
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_No Information Security Policy
+Inherent risk: High
+
+Control ID: QRC_Sec_4.27
+Control Name: QRC_No Information Security Policy
+QR.39 | Due Diligence Questionnaire T1-2 v1 | QR_No RM for Information Security | IF: Any
+
+[PERSON_38]: Question
+Question: 4.40
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_No RM for Information Security
+Inherent risk: High
+
+Control ID: QRC_Sec_4.28
+Control Name: QRC_No RM for Information Security
+QR.40 | Due Diligence Questionnaire T1-2 v1 | QR_No Background checks for Emp | IF: Any
+
+[PERSON_38]: Question
+Question: 4.42
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_No Background checks for Emp
+Inherent risk: Medium
+
+Control ID: QRC_Sec_4.29
+Control Name: QRC_No [PERSON_65] checks for Emp
+QR.41 | Due Diligence Questionnaire T1-2 v1 | QR_No Offboarding Process | IF: Any
+
+[PERSON_38]: Question
+Question: 4.44
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_No Offboarding Process
+Inherent risk: Medium
+
+Control ID: QRC_Sec_4.30
+Control Name: QRC_No Offboarding Process
+QR.42 | Due Diligence Questionnaire T1-2 v1 | QR_BYOD Allowed | IF: Any
+
+[PERSON_38]: Question
+Question: 4.45
+Operator: Equal To
+Response: Yes | Action: Create risk
+Risk Name: QRN_BYOD Allowed
+Inherent risk: Medium
+
+Control ID: QRC_Sec_4.31
+Control Name: QRC_BYOD Allowed
+QR.43 | Due Diligence Questionnaire T1-2 v1 | QR_No MDM Policy | IF: Any
+
+[PERSON_38]: Question
+Question: 4.46
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_No MDM Policy
+Inherent risk: Medium
+
+Control ID: QRC_Sec_4.32
+Control Name: QRC_No MDM Policy
+QR.44 | Due Diligence Questionnaire T1-2 v1 | QR_No Data Deletion Supported | IF: Any
+
+[PERSON_38]: Question
+Question: 4.48
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_No Data Deletion Supported
+Inherent risk: Medium
+
+Control ID: QRC_Sec_4.33
+Control Name: QRC_No Data Deletion Supported
+QR.45 | Due Diligence Questionnaire T1-2 v1 | QR_No Security Certifications | IF: Any
+
+[PERSON_38]: Question
+Question: 4.49
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_No Security Certifications
+Inherent risk: High
+
+Control ID: QRC_Sec_4.34
+Control Name: QRC_No Security Certifications
+QR.46 | Due Diligence Questionnaire T1-2 v1 | QR_No Cyber Insurance | IF: Any
+
+[PERSON_38]: Question
+Question: 4.50
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_No Cyber Insurance
+Inherent risk: High
+
+Control ID: QRC_Sec_4.35
+Control Name: QRC_No Cyber Insurance
+QR.47 | Due Diligence Questionnaire T1-2 v1 | QR_No SSO_SCIM Provisioning | IF: Any
+
+[PERSON_38]: Question
+Question: 5.6
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_No SSO_SCIM Provisioning
+Inherent risk: Medium
+
+Control ID: QRC_IT_5.1
+Control Name: QRC_No SSO_SCIM Provisioning
+QR.48 | Due Diligence Questionnaire T1-2 v1 | QR_Sensitive Targeting Data | IF: Any
+
+[PERSON_38]: Question
+Question: 6.1
+Operator: Equal To
+Response: Yes | Action: Create risk
+Risk Name: QRN_Sensitive Targeting Data
+Inherent risk: Medium
+
+Control ID: QRC_Mar_6.1
+Control Name: QRC_Sensitive Targeting Data
+QR.49 | Due Diligence Questionnaire T1-2 v1 | QR_Publicity Rights | IF: Any
+
+[PERSON_38]: Question
+Question: 6.2
+Operator: Equal To
+Response: Yes | Action: Create risk
+Risk Name: QRN_Publicity Rights
+Inherent risk: Medium
+
+Control ID: QRC_Mar_6.2
+Control Name: QRC_Publicity Rights
+QR.50 | Due Diligence Questionnaire T1-2 v1 | QR_No Co-branding Disclosures | IF: Any
+
+[PERSON_38]: Question
+Question: 6.3
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_No Co-branding Disclosures
+Inherent risk: Medium
+
+Control ID: QRC_Mar_6.3
+Control Name: [PERSON_66] | Due Diligence Questionnaire T1-2 v1 | QR_No Employee Poaching Policy | IF: Any
+
+[PERSON_38]: Question
+Question: 7.2
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_No Employee Poaching Policy
+Inherent risk: Medium
+
+Control ID: QRC_Pcr_7.1
+Control Name: QRC_No Employee Poaching Policy
+QR.52 | Due Diligence Questionnaire T1-2 v1 | QR_No ESG Policy | IF: Any
+
+[PERSON_38]: Question
+Question: 7.3
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_No ESG Policy
+Inherent risk: Medium
+
+Control ID: QRC_Pcr_7.2
+Control Name: QRC_No ESG Policy
+QR.53 | Due Diligence Questionnaire T1-2 v1 | QR_No SLA KPI in Contract | IF: Any
+
+[PERSON_38]: Question
+Question: 8.1
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_No SLA KPI in Contract
+Inherent risk: High
+
+Control ID: QRC_RR_8.1
+Control Name: QRC_No SLA KPI in Contract
+QR.54 | Due Diligence Questionnaire T1-2 v1 | QR_No Business Continuity Plan | IF: Any
+
+[PERSON_38]: Question
+Question: 8.3
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_No Business Continuity Plan
+Inherent risk: High
+
+Control ID: QRC_RR_8.2
+Control Name: QRC_No Business Continuity Plan
+QR.55 | Due Diligence Questionnaire T1-2 v1 | QR_No Disaster Recovery Plan | IF: Any
+
+[PERSON_38]: Question
+Question: 8.4
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_No Disaster Recovery Plan
+Inherent risk: High
+
+Control ID: QRC_RR_8.3
+Control Name: QRC_No Disaster Recovery Plan
+QR.56 | Due Diligence Questionnaire T1-2 v1 | QR_Task [PERSON_67] | Condition 1:
+IF: Any
+
+[PERSON_38]: Question
+Question: 1.3
+Operator: Contains Any
+Response: Yes and No
+OR
+Condition 2:
+IF: Any
+
+[PERSON_38]: Question
+Question: 4.50
+Operator: Contains Any
+Response: Yes and No
+ | Action: Create task upon submission
+Task Name: Assessment Submitted
+Assignee: Assessment workflow approvers
+
+Collaborators: ALL [PERSON_68]
+QR.57 | Due Diligence Questionnaire T1-2 v1 | QR_Template score rule | IF: Any
+
+Trigger: Assessment Score
+Question: Tier 1 and 2 assessment scoring
+Operator: Less than
+Response: 40
+ | Action: Create task upon submission
+Task Name: Low Assessment Score
+Assignee: N/A 
+
+Collaborators: TPRM_Vendor Risk Management Team
+QR.58 | Due Diligence Questionnaire T1-2 v1 | Tier1 and 2 assessment scoring | Questions: ALL Yes and No and one Options based (O-5,5-10 and 10+) | Scoring Type: Average
+
+QR.59 | Due Diligence Questionnaire T3 v1 | QR_T3_Non-US Company | IF: Any
+
+[PERSON_38]: Question
+Question: 1.2
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_T3_ Non-US Company
+Inherent risk: High
+
+Control ID: QRC_T3_CL_1.1
+Control Name: QRC_T3_Non US Company
+QR.60 | Due Diligence Questionnaire T3 v1 | QR_T3_AML Requirement | IF: Any
+
+[PERSON_38]: Question
+Question: 2.2
+Operator: Equal To
+Response: Yes | Action: Create risk
+Risk Name: QRN_T3_AML Requirement
+Inherent risk: Medium
+
+Control ID: QRC_CmL_2.3
+Control Name: QRC_AML Requirement
+QR.61 | Due Diligence Questionnaire T3 v1 | QR_T3_No Financial Audits | IF: Any
+
+[PERSON_38]: Question
+Question: 3.3
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_T3_No Financial Audits
+Inherent risk: High
+
+Control ID: QRC_Fin_3.2
+Control Name: QRC_No Financial Audits
+
+QR.62 | Due Diligence Questionnaire T3 v1 | QR_T3_No Privacy Policy | IF: Any
+
+[PERSON_38]: Question
+Question: 4.1
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_T3_No Privacy Policy
+Inherent risk: High
+
+Control ID: QRC_Pri_4.8
+Control Name: QRC_No Privacy Policy
+QR.63 | Due Diligence Questionnaire T3 v1 | QR_T3_No Information Security Policy | IF: Any
+
+[PERSON_38]: Question
+Question: 4.2
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_T3_No Information Security Policy
+Inherent risk: High
+
+Control ID: QRC_Sec_4.27
+Control Name: QRC_No Information Security Policy
+QR.64 | Due Diligence Questionnaire T3 v1 | QR_T3_No RM for Information Security | IF: Any
+
+[PERSON_38]: Question
+Question: 4.3
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_T3_No RM for Information Security
+Inherent risk: High
+
+Control ID: QRC_Sec_4.28
+Control Name: QRC_No RM for Information Security
+QR.65 | Due Diligence Questionnaire T3 v1 | QR_T3_No Encryption Used | IF: Any
+
+[PERSON_38]: Question
+Question: 4.4
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_T3_No Encryption Used
+Inherent risk: High
+
+Control ID: QRC_Sec_4.24
+Control Name: QRC_No Encryption Used
+QR.66 | Due Diligence Questionnaire T3 v1 | QR_T3_No Cyber Insurance | IF: Any
+
+[PERSON_38]: Question
+Question: 4.5
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_T3_No Cyber Insurance
+Inherent risk: High
+
+Control ID: QRC_Sec_4.35
+Control Name: QRC_No Cyber Insurance
+QR.67 | Due Diligence Questionnaire T3 v1 | QR_T3_No Notification to Cadence | IF: Any
+
+[PERSON_38]: Question
+Question: 5.2
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_T3_No Notification to Cadence
+Inherent risk: High
+
+Control ID: QRC_Sec_4.23
+Control Name: QRC_No Notification to Cadence
+QR.68 | Due Diligence Questionnaire T3 v1 | QR_T3_No Business Continuity Plan | IF: Any
+
+[PERSON_38]: Question
+Question: 6.1
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_T3_No Business Continuity Plan
+Inherent risk: High
+
+Control ID: QRC_RR_8.2
+Control Name: QRC_No Business Continuity Plan
+QR.69 | Due Diligence Questionnaire T3 v1 | QR_T3_No Disaster Recovery Plan | IF: Any
+
+[PERSON_38]: Question
+Question: 6.2
+Operator: Equal To
+Response: No | Action: Create risk
+Risk Name: QRN_T3_No Disaster Recovery Plan
+Inherent risk: High
+
+Control ID: QRC_RR_8.3
+Control Name: QRC_No Disaster Recovery Plan
+QR.70 | Due Diligence Questionnaire T3 v1 | QR_T3_Task [PERSON_67] | Condition 1:
+IF: Any
+
+[PERSON_38]: Question
+Question: 1.2
+Operator: Contains Any
+Response: Yes and No
+OR
+Condition 2:
+IF: Any
+
+[PERSON_38]: Question
+Question: 4.5
+Operator: Contains Any
+Response: Yes and No | Action: Create task upon submission
+Task Name: Assessment Submitted_T3
+Assignee: Assessment workflow approvers
+
+Collaborators: ALL [PERSON_69] | Due Diligence Questionnaire T3 v1 | QR_T3_Template score rule | IF: Any
+
+Trigger: Assessment Score
+Question: Tier 1 and 2 assessment scoring
+Operator: Less than
+Response: 40 | Action: Create task upon submission
+Task Name: Template score rule_T3
+Assignee: N/A 
+
+Collaborators: TPRM_Vendor Risk Management Team
+QR.72 | Due Diligence Questionnaire T3 v1 | Tier 3 assessment scoring | Questions: ALL Yes and No questions | Scoring Type: Average
+QR.73 | Due Diligence Questionnaire T3 v1 | QR_T3_Auto Approve | IF: ALL
+
+Trigger: Question
+Question: All required questions
+Operator: Equal To
+Response: Yes / No | Action: Auto-Complete Assessment Upon Submission
+Result: Approved
+Result comments: The third-party is Approved
+
+
+QR.74 | Due Diligence Questionnaire T1-2 v1 | QR_Task [PERSON_70] | IF: Any
+
+[PERSON_38]: Question
+Question: Added as per requirement
+Operator: Equal to
+Response: Yes and No | Action: Create task upon submission
+Task Name: Legal Risk Identified for Third-Party
+Assignee: --
+Collaborators: TPRM_Legal Group
+QR.75 | Due Diligence Questionnaire T1-2 v1 | QR_Task Procurement Risk | IF: Any
+
+[PERSON_38]: Question
+Question: Added as per requirement
+Operator: Equal to, Contains Any
+Response: Yes and No, Options | Action: Create task upon submission
+Task Name: Procurement Risk Identified for Third-Party
+Assignee: --
+
+Collaborators: TPRM_Procurement Group
+QR.76 | Due Diligence Questionnaire T1-2 v1 | QR_Task Compliance Risk | IF: Any
+
+[PERSON_38]: Question
+Question: Added as per requirement
+Operator: Equal to
+Response: Yes and No | Action: Create task upon submission
+Task Name: Compliance Risk Identified for Third-Party
+Assignee: --
+
+Collaborators: TPRM_Compliance Group
+QR.77 | Due Diligence Questionnaire T1-2 v1 | QR_Task Finance Risk | IF: Any
+
+[PERSON_38]: Question
+Question: Added as per requirement
+Operator: Equal to
+Response: Yes and No | Action: Create task upon submission
+Task Name: Finance Risk Identified for Third-Party
+Assignee: --
+
+Collaborators: TPRM_Finance Group
+QR.78 | Due Diligence Questionnaire T1-2 v1 | QR_Task Privacy Risk | IF: Any
+
+[PERSON_38]: Question
+Question: Added as per requirement
+Operator: Equal to
+Response: Yes and No | Action: Create task upon submission
+Task Name: Privacy Risk Identified for Third-Party
+Assignee: --
+
+Collaborators: TPRM_Privacy Group
+QR.79 | Due Diligence Questionnaire T1-2 v1 | QR_Task Data Quality Risk | IF: Any
+
+[PERSON_38]: Question
+Question: Added as per requirement
+Operator: Equal to
+Response: Yes and No | Action: Create task upon submission
+Task Name: Data Quality Risk Identified for Third-Party
+Assignee: --
+
+Collaborators: TPRM_Data Quality Group
+QR.80 | Due Diligence Questionnaire T1-2 v1 | QR_Task Security Risk | IF: Any
+
+[PERSON_38]: Question
+Question: Added as per requirement
+Operator: Equal to
+Response: Yes and No | Action: Create task upon submission
+Task Name: Security Risk Identified for Third-Party
+Assignee: --
+
+Collaborators: TPRM_Security Group
+QR.81 | Due Diligence Questionnaire T1-2 v1 | QR_Task IT Risk | IF: Any
+
+[PERSON_38]: Question
+Question: 5.6
+Operator: Equal to
+Response: No | Action: Create task upon submission
+Task Name: IT Risk Identified for Third-Party
+Assignee: --
+
+Collaborators: TPRM_IT Group
+QR.82 | Due Diligence Questionnaire T1-2 v1 | QR_Task IT Requirement | IF: Any
+
+[PERSON_38]: Question
+Question: 5.1
+Operator: Equal to
+Response: Yes | Action: Create task upon submission
+Task Name: IT Requirement Identified for Third-Party
+Assignee: --
+
+Collaborators: TPRM_IT Group
+QR.83 | Due Diligence Questionnaire T3 v1 | QR_T3_Task [PERSON_70] | IF: Any
+
+[PERSON_38]: Question
+Question: Added as per requirement
+Operator: Equal to
+Response: Yes and No | Action: Create task upon submission
+Task Name: Legal Risk Identified for Third-Party_T3
+Assignee: --
+Collaborators: TPRM_Legal Group
+QR.84 | Due Diligence Questionnaire T3 v1 | QR_T3_Task Procurement Risk | IF: Any
+
+[PERSON_38]: Question
+Question: Added as per requirement
+Operator: Equal to
+Response: Yes and No, Options | Action: Create task upon submission
+Task Name: Procurement Risk Identified for Third-Party_T3
+Assignee: --
+
+Collaborators: TPRM_Procurement Group
+QR.85 | Due Diligence Questionnaire T3 v1 | QR_T3_Task Compliance Risk | IF: Any
+
+[PERSON_38]: Question
+Question: Added as per requirement
+Operator: Equal to
+Response: Yes and No | Action: Create task upon submission
+Task Name: Compliance Risk Identified for Third-Party_T3
+Assignee: --
+
+Collaborators: TPRM_Compliance Group
+QR.86 | Due Diligence Questionnaire T3 v1 | QR_T3_Task Finance Risk | IF: Any
+
+[PERSON_38]: Question
+Question: Added as per requirement
+Operator: Equal to
+Response: Yes and No | Action: Create task upon submission
+Task Name: Finance Risk Identified for Third-Party_T3
+Assignee: --
+
+Collaborators: TPRM_Finance Group
+QR.87 | Due Diligence Questionnaire T3 v1 | QR_T3_Task Privacy Risk | IF: Any
+
+[PERSON_38]: Question
+Question: Added as per requirement
+Operator: Equal to
+Response: Yes and No | Action: Create task upon submission
+Task Name: Privacy Risk Identified for Third-Party_T3
+Assignee: --
+
+Collaborators: TPRM_Privacy Group
+QR.88 | Due [PERSON_71] v1 | QR_T3_Task Security Risk | IF: Any
+
+[PERSON_38]: Question
+Question: Added as per requirement
+Operator: Equal to
+Response: Yes and No | Action: Create task upon submission
+Task Name: Security Risk Identified for Third-Party_T3
+Assignee: --
+
+Collaborators: TPRM_Security Group
+QR.89 | Due Diligence Questionnaire T3 v1 | QR_T3_Task IT Requirement | IF: Any
+
+[PERSON_38]: Question
+Question: 5.1
+Operator: Equal to
+Response: Yes | Action: Create task upon submission
+Task Name: IT Requirement Identified for Third-Party_T3
+Assignee: --
+
+Collaborators: TPRM_IT Group
+QR.90 | Due Diligence Questionnaire T3 v1 | QR_Task IT Risk | IF: Any
+
+[PERSON_38]: Question
+Question: Added as per requirement
+Operator: Equal to
+Response: Yes and No | Action: Create task upon submission
+Task Name: IT Risk Identified for Third-Party_T3
+Assignee: --
+
+Collaborators: TPRM_IT Group
+ | 
+Client Name | 
+Client Contact | [PERSON_72] Number | 
+Author(s) | [PERSON_73], [PERSON_74]
+Peer Reviewer | [PERSON_75]
+QA Reviewer | 
+Delivery Date | September 16, 2026
+Data Classification | Client Confidential
+
+Optiv is the cyber advisory and solutions leader, delivering strategic and technical expertise to more than 6,000 companies across every major industry. We partner with organizations to advise, deploy and operate complete cybersecurity programs from strategy and managed security services to risk, integration and technology solutions. With clients at the center of our unmatched ecosystem of people, products, partners and programs, we accelerate business progress like no other company can. At Optiv, we manage cyber risk so you can secure your full potential.

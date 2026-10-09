@@ -13,6 +13,7 @@ Agreed shapes:
 """
 import hashlib
 import importlib
+import inspect
 import json
 import os
 import re
@@ -28,6 +29,9 @@ EXTRACTOR_HOOKS = {
     ".pdf": ("extractors.pdf_extractor", "extract"),
     ".docx": ("extractors.docx_extractor", "extract"),
     ".pptx": ("extractors.pptx_extractor", "extract"),
+    ".png": ("extractors", "extract_image"),
+    ".jpg": ("extractors", "extract_image"),
+    ".jpeg": ("extractors", "extract_image"),
 }
 DETECTOR_HOOKS = [   # (module, function, used_in_quick_verify)
     ("detection.regex_detector", "detect", True),    # Member 2 - regex layer (fast)
@@ -35,7 +39,11 @@ DETECTOR_HOOKS = [   # (module, function, used_in_quick_verify)
 ]
 REDACTOR_HOOK = ("processing.redactor", "redact")  # Member 3
 
-SUPPORTED = {".pdf": "PDF", ".docx": "Word (DOCX)", ".pptx": "PowerPoint (PPTX)", ".txt": "Text (TXT)"}
+SUPPORTED = {".pdf": "PDF", ".docx": "Word (DOCX)", ".pptx": "PowerPoint (PPTX)", ".txt": "Text (TXT)",
+             ".png": "Image (OCR)", ".jpg": "Image (OCR)", ".jpeg": "Image (OCR)"}
+
+# Set True if company / organisation names should also be redacted (default: people only).
+REDACT_ORGANIZATIONS = False
 
 DATA = Path("data")
 ORIG_DIR, RED_DIR, CACHE_DIR = DATA / "original", DATA / "redacted", DATA / "cache"
@@ -144,7 +152,7 @@ def _fallback_extract(path: Path):
                         parts.append(" | ".join(c.text for c in r.cells))
             pages.append({"page": i, "text": "\n".join(parts)})
         return pages
-    raise ValueError("Unsupported file type")
+    raise ValueError("This file type needs the extractors package (extractors/__init__.py).")
 
 
 def _clean_ocr(text: str) -> str:
@@ -227,6 +235,103 @@ _PATTERNS = [
 ]
 _nlp = None
 
+# Words that are NOT part of a person's name (headings, labels, business words). A name containing one is rejected.
+_GENERIC = set("""
+tier tiers workflow workflows metadata navigate navigation vendor vendors description descriptions key keys process processes policy policies
+control controls risk risks data system systems report reports review reviews approval approvals level levels step steps section sections
+table tables page pages slide slides summary overview introduction appendix version versions status type types name names date dates title
+titles number numbers id ids project projects team teams member members leader leaders manager managers department departments company
+document documents file files form forms template templates guide guides manual standard standards framework security cyber network
+networks access user users admin administrator service services platform platforms application applications tool tools model models plan
+plans strategy objective objectives scope purpose requirement requirements details detail notes note action actions owner owners approver
+reviewer email phone address client customer customers employee employees staff student students course btech cse business continuity
+management governance compliance assessment audit incident response recovery general information technology software hardware cloud
+infrastructure operations operational financial finance legal regulatory enterprise global group limited ltd inc corp llc pvt private public
+confidential internal external draft final yes no tbd na nil none null nan pending open closed high medium low critical priority category
+categories item items list lists total amount count code codes event events log logs alert alerts rule rules ticket tickets queue
+monday tuesday wednesday thursday friday saturday sunday january february march april may june july august september october november december
+""".split())
+_PARTICLES = {"de", "van", "von", "bin", "al", "el", "la", "da", "di", "del", "dos", "bhai"}
+_LABEL_STOP = {"enroll", "enrollment", "roll", "reg", "registration", "course", "dept", "department", "branch", "year", "sem",
+               "semester", "email", "phone", "mobile", "contact", "id", "no", "number", "date", "on", "at", "of", "and", "is", "for"}
+_TOKEN_RE = re.compile(r"[A-Za-z][A-Za-z.'\u2019-]*")
+_NAME_VAL = r"[A-Za-z][A-Za-z.'\u2019-]*(?:[ \t]+[A-Za-z][A-Za-z.'\u2019-]*){0,3}"
+_LABEL_NAME = re.compile(
+    r"(?im)(?:^|[|\t]|[ \t]{2,})[ \t]*(?:(?:full|employee|student|candidate|applicant|customer|client|member|leader|lead|mentor|"
+    r"supervisor|manager|owner|author|reviewer|approver|assignee|guide|faculty|contact(?:[ \t]+person)?|team[ \t]+leader)"
+    r"(?:[ \t]*\d+)?(?:[ \t]*name)?|name)[ \t]*[:=\u2013\u2014-]+[ \t]*(?P<n>" + _NAME_VAL + r")")
+_BY_NAME = re.compile(
+    r"(?i)\b(?:prepared|reviewed|approved|submitted|signed|reported|created|verified|authored|assigned|written|presented)"
+    r"[ \t]+(?:by|to)[ \t:]+(?P<n>" + _NAME_VAL + r")")
+_LABEL_ID = re.compile(
+    r"(?i)\b(?P<lab>(?:enroll(?:ment)?|roll|registration|reg|student|employee|emp|staff|admission|usn|uid)[ .]*(?:no|number|id|code|#)?"
+    r"|id[ ]*(?:no|number)?)[ \t]*[:=\u2013\u2014-]+[ \t]*(?P<v>[A-Za-z0-9][A-Za-z0-9/_-]{3,})")
+
+
+def _tidy(value: str, start: int):
+    """Trim spaces and trailing punctuation from a name span; keeps the dot of an initial ('John A.')."""
+    lead = len(value) - len(value.lstrip())
+    value, start = value.strip(), start + lead
+    while value and value[-1] in ".,;:'\u2019\"":
+        last = value.split()[-1].rstrip(".,;:'\u2019\"") if value.split() else ""
+        if value[-1] == "." and len(last) == 1:
+            break
+        value = value[:-1]
+    return value, start
+
+
+def _is_person_name(text: str) -> bool:
+    """spaCy guess is kept only if it looks like a real full name: 2-4 capitalised words, none of them a business/label word."""
+    toks = text.replace("\n", " ").split()
+    if not 2 <= len(toks) <= 4:
+        return False
+    for t in toks:
+        low = t.lower().strip(".,'\u2019-")
+        if low in _GENERIC or any(ch.isdigit() for ch in t):
+            return False
+        if low in _PARTICLES:
+            continue
+        if not re.fullmatch(r"[A-Z][A-Za-z.'\u2019-]*", t):
+            return False
+    return True
+
+
+def _trim_name(value: str):
+    """Cut a captured name at the first label/business word; returns (name, offset) or None."""
+    keep = []
+    for m in _TOKEN_RE.finditer(value):
+        low = m.group().lower().strip(".'\u2019-")
+        if low in _GENERIC or low in _LABEL_STOP:
+            break
+        keep.append(m)
+    if not keep:
+        return None
+    name = value[keep[0].start():keep[-1].end()]
+    if len(name.replace(".", "").replace(" ", "")) < 2:
+        return None
+    return name, keep[0].start()
+
+
+def _context_findings(pg):
+    """Names and IDs recognised from the label in front of them: 'Name :- G Sujith', 'Leader: Vanshika jadaun',
+    'Prepared by ...', 'Enroll No :- 2024...'. The label itself is NOT redacted, only the value."""
+    text, out = pg["text"], []
+    for rx in (_LABEL_NAME, _BY_NAME):
+        for m in rx.finditer(text):
+            got = _trim_name(m.group("n"))
+            if got:
+                name, st = _tidy(got[0], m.start("n") + got[1])
+                if name:
+                    out.append({"type": "PERSON", "value": name, "page": pg["page"], "start": st, "end": st + len(name)})
+    for m in _LABEL_ID.finditer(text):
+        v = m.group("v")
+        if not any(c.isdigit() for c in v):
+            continue
+        lab = m.group("lab").lower()
+        kind = "EMPLOYEE_ID" if lab.startswith(("emp", "staff")) else ("ID_NUMBER" if lab.startswith("id") else "STUDENT_ID")
+        out.append({"type": kind, "value": v, "page": pg["page"], "start": m.start("v"), "end": m.end("v")})
+    return out
+
 
 _nlp_lock = threading.Lock()
 _warm_started = False
@@ -267,15 +372,20 @@ def _fallback_detect(pages, use_ner=True):
                     continue
                 found.append({"type": typ, "value": m.group(), "page": pg["page"],
                               "start": m.start(), "end": m.end()})
-    try:  # names via spaCy (all pages in one batch = faster)
+        found += _context_findings(pg)
+    try:  # names via spaCy, then filtered so only real full names survive
         if not use_ner:
             raise RuntimeError
         docs = _get_nlp().pipe([p["text"] for p in pages], batch_size=8)
         for pg, doc in zip(pages, docs):
             for ent in doc.ents:
-                if ent.label_ == "PERSON":
-                    found.append({"type": "PERSON", "value": ent.text, "page": pg["page"],
-                                  "start": ent.start_char, "end": ent.end_char})
+                val, st = _tidy(ent.text, ent.start_char)
+                if not val:
+                    continue
+                if ent.label_ == "PERSON" and _is_person_name(val):
+                    found.append({"type": "PERSON", "value": val, "page": pg["page"], "start": st, "end": st + len(val)})
+                elif ent.label_ == "ORG" and REDACT_ORGANIZATIONS and _is_person_name(val):
+                    found.append({"type": "ORGANIZATION", "value": val, "page": pg["page"], "start": st, "end": st + len(val)})
     except Exception:
         pass
     return found
@@ -301,11 +411,22 @@ def _fallback_redact(pages, findings):
 
 
 # ------------------------------------------------------------ steps --------
+def _call_extractor(fn, path: Path):
+    kwargs = {}
+    try:
+        if "progress" in inspect.signature(fn).parameters:
+            kwargs["progress"] = lambda done, total: _report(
+                0.02 + 0.68 * done / max(total, 1), f"Reading page {done} of {total}", "extract")
+    except (TypeError, ValueError):
+        pass
+    return fn(str(path), **kwargs)
+
+
 def _extract(path: Path, used: dict):
     hook = EXTRACTOR_HOOKS.get(path.suffix.lower())
     fn = _hook(*hook) if hook else None
     used["Extraction"] = "teammate module" if fn else "temporary fallback"
-    pages = _norm_pages(fn(str(path)) if fn else _fallback_extract(path))
+    pages = _norm_pages(_call_extractor(fn, path) if fn else _fallback_extract(path))
     if fn and path.suffix.lower() == ".pdf" and not any(p["text"].strip() for p in pages):
         pages = _norm_pages(_fallback_extract(path))  # scanned PDF: OCR fallback
         used["Extraction"] = "teammate module + fallback OCR"

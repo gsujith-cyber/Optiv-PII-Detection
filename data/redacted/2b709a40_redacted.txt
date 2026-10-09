@@ -1,0 +1,225 @@
+--- Page/Slide 1 ---
+06
+Executive officers
+Organizational
+Reference Pack
+16
+Named role holders
+02
+Accountability matrices
+Leadership structure, reporting lines and accountability matrices
+03
+Divisional structures
+Prepared for
+Cadence Financial Group  ·  Version 1.0  ·  Internal — Confidential
+[Text found in pictures]
+S CADENCE
+=>
+
+--- Page/Slide 2 ---
+Organization at a Glance
+CADENCE FINANCIAL GROUP
+Cadence Financial Group is organised into five reporting divisions under the Chief Executive Officer. Governance of technology, data and risk activity is distributed across the Technology & Data and Risk, Compliance & Security divisions, with joint accountability recorded in the matrices that follow.
+Office of the CEO
+Operations
+Finance
+Strategy, communications and board reporting
+Client servicing, payments and shared services
+Treasury, financial control and planning
+Led by [PERSON_1] by [PERSON_2]
+Led by Priyanka Raghunathan
+Technology & Data
+Risk, Compliance & Security
+People & Culture
+Engineering, infrastructure, data and security
+Enterprise risk, compliance, privacy and assurance
+Talent, workforce policy and employee relations
+Led by [PERSON_3]
+Led by [PERSON_1]
+Led by Rosalind Featherstone
+Cadence Financial Group  |  Internal — Confidential  |  Contains personal data (synthetic sample)
+2
+
+--- Page/Slide 3 ---
+Executive Leadership Structure
+ORG CHART — TIER 1 AND TIER 2
+Marguerite Vossberg
+CHIEF EXECUTIVE OFFICER
+[EMAIL_1]
+M +1 (555) 0114
+[PERSON_2]
+Priyanka Raghunathan
+[PERSON_3]
+[PERSON_1]
+Rosalind Featherstone
+CHIEF OPERATING OFFICER
+CHIEF FINANCIAL OFFICER
+CHIEF INFORMATION OFFICER
+CHIEF RISK OFFICER
+CHIEF PEOPLE OFFICER
+[EMAIL_2]
+M +1 (555) 0121
+[EMAIL_3]
+M +1 (555) 0128
+[EMAIL_4]
+M +1 (555) 0133
+[EMAIL_5]
+M +1 (555) 0139
+[EMAIL_6]
+M +1 (555) 0145
+Independent reporting line
+The General Counsel and the Data Protection Officer report directly to the Chief Executive Officer and hold a standing reporting line to the Board Risk Committee.
+[PERSON_4]
+[PERSON_5]
+GENERAL COUNSEL
+DATA PROTECTION OFFICER
+[EMAIL_7]
+M +1 (555) 0196
+[EMAIL_8]
+M +1 (555) 0192
+Cadence Financial Group  |  Internal — Confidential  |  Contains personal data (synthetic sample)
+3
+
+--- Page/Slide 4 ---
+Technology & Data Division
+ORG CHART — REPORTING TO THE CHIEF INFORMATION OFFICER
+[PERSON_3]
+CHIEF INFORMATION OFFICER
+[EMAIL_4]
+M +1 (555) 0133
+[PERSON_2]
+[PERSON_6]
+Hyun-Woo Park
+[PERSON_7]
+VP, INFORMATION SECURITY
+VP, ENGINEERING
+VP, DATA & ANALYTICS
+VP, INFRASTRUCTURE & CLOUD
+[EMAIL_9]
+M +1 (555) 0152
+[EMAIL_10]
+M +1 (555) 0163
+[EMAIL_11]
+M +1 (555) 0157
+[EMAIL_12]
+M +1 (555) 0168
+Information Security
+Engineering
+Data & Analytics
+Infrastructure & Cloud
+Security operations, identity, vulnerability management
+Core banking platform, digital channels, release management
+Data platform, model development, reporting services
+Hosting, networks, resilience and cloud governance
+Cadence Financial Group  |  Internal — Confidential  |  Contains personal data (synthetic sample)
+4
+
+--- Page/Slide 5 ---
+Risk, Compliance & Security Division
+ORG CHART — REPORTING TO THE CHIEF RISK OFFICER
+[PERSON_8]
+CHIEF RISK OFFICER
+[EMAIL_5]
+M +1 (555) 0139
+Imani Oduya
+[PERSON_3]
+[PERSON_4]
+[PERSON_9], COMPLIANCE
+VP, OPERATIONAL RISK
+DIRECTOR, THIRD-PARTY RISK
+DIRECTOR, INTERNAL ASSURANCE
+[EMAIL_13]
+M +1 (555) 0174
+[EMAIL_14]
+M +1 (555) 0179
+[EMAIL_15]
+M +1 (555) 0183
+[EMAIL_16]
+M +1 (555) 0188
+Committee interlock   The Chief Risk Officer chairs the Enterprise Risk Committee. The Data Protection Officer, the VP Information Security and the Director of Third-Party Risk hold standing membership. Escalations from the divisions feed the committee on a monthly cycle, with material items routed to the Board Risk Committee.
+Cadence Financial Group  |  Internal — Confidential  |  Contains personal data (synthetic sample)
+5
+
+--- Page/Slide 6 ---
+RACI — AI & Data Governance Programme
+ACCOUNTABILITY BY ACTIVITY AND ROLE HOLDER
+Activity | [PERSON_10] CEO | T. Lindqvist CIO | [PERSON_11] CRO | [PERSON_12] | H. Park VP Data | [PERSON_13] DPO | I. Oduya VP Compliance
+AI use-case intake and approval | I | R | A | C | R | C | C
+Model inventory and registration |  | A | C | I | R | C | I
+Data classification and PII detection |  | C | C | R | R | A | I
+Privacy impact assessment | I | C | C | C | I | A | R
+Security review of AI platforms |  | C | A | R | C | C | I
+Model monitoring and drift review |  | A | C | I | R | I | C
+Regulatory reporting on AI use | A | I | R | I | C | C | R
+Programme funding and prioritisation | A | R | C | I | I | I | I
+Blank cells indicate no formal involvement
+in the activity.
+R
+Responsible
+A
+Accountable
+C
+Consulted
+I
+Informed
+Cadence Financial Group  |  Internal — Confidential  |  Contains personal data (synthetic sample)
+6
+
+--- Page/Slide 7 ---
+RACI — Third-Party Risk & Incident Response
+ACCOUNTABILITY BY ACTIVITY AND ROLE HOLDER
+Activity | [PERSON_11] CRO | [PERSON_14]. TPRM | [PERSON_12] | G. Wenzel VP Op Risk | N. Brandvold VP Cloud | B. Nkemdirim General Counsel | [PERSON_15]. Assurance
+Vendor onboarding due diligence | A | R | C | C | I | C | I
+SOC 2 report review and gap analysis | I | R | C | C | I |  | A
+Contractual security schedules | C | R | C | I | I | A | I
+Continuous vendor monitoring | A | R | C | R | I | I | C
+Incident detection and triage | I | I | A | C | R | I | I
+Incident escalation and notification | A | C | R | C | I | R | I
+Post-incident review and remediation | C | C | R | A | R | I | C
+Annual control testing | I | C | C | C | I | I | A
+Role holders are listed by name; contact
+details appear in the directory.
+R
+Responsible
+A
+Accountable
+C
+Consulted
+I
+Informed
+Cadence Financial Group  |  Internal — Confidential  |  Contains personal data (synthetic sample)
+7
+
+--- Page/Slide 8 ---
+[PERSON_16]
+NAMED CONTACTS BY DIVISION
+Name | Role | Division | Email | Mobile
+Marguerite Vossberg | Chief Executive Officer | Office of the CEO | [EMAIL_1] | +1 (555) 0114
+[PERSON_4] | General Counsel | Office of the CEO | [EMAIL_7] | +1 (555) 0196
+[PERSON_5] | Data Protection Officer | Office of the CEO | [EMAIL_8] | +1 (555) 0192
+[PERSON_2] | Chief Operating Officer | Operations | [EMAIL_2] | +1 (555) 0121
+Priyanka Raghunathan | Chief Financial Officer | Finance | [EMAIL_3] | +1 (555) 0128
+Rosalind Featherstone | Chief People Officer | People & Culture | [EMAIL_6] | +1 (555) 0145
+[PERSON_3] | Chief Information Officer | Technology & Data | [EMAIL_4] | +1 (555) 0133
+[PERSON_17] | VP, Information Security | Technology & Data | [EMAIL_9] | +1 (555) 0152
+[PERSON_6] | VP, Engineering | Technology & Data | [EMAIL_10] | +1 (555) 0163
+Hyun-Woo Park | VP, Data & Analytics | Technology & Data | [EMAIL_11] | +1 (555) 0157
+[PERSON_7] | VP, Infrastructure & Cloud | Technology & Data | [EMAIL_12] | +1 (555) 0168
+[PERSON_8] | Chief Risk Officer | Risk, Compliance & Security | [EMAIL_5] | +1 (555) 0139
+Imani Oduya | VP, Compliance | Risk, Compliance & Security | [EMAIL_13] | +1 (555) 0174
+[PERSON_18] | VP, Operational Risk | Risk, Compliance & Security | [EMAIL_14] | +1 (555) 0179
+[PERSON_19] | Director, Third-Party Risk | Risk, Compliance & Security | [EMAIL_15] | +1 (555) 0183
+[PERSON_20] | Director, Internal Assurance | Risk, Compliance & Security | [EMAIL_16] | +1 (555) 0188
+Cadence Financial Group  |  Internal — Confidential  |  Contains personal data (synthetic sample)
+8
+
+--- Page/Slide 9 ---
+Handling of Personal Data
+Classification
+This pack carries an Internal — Confidential marking and holds directory-level personal data comprising names, corporate email addresses and mobile numbers.
+Distribution
+Circulation is limited to named recipients with a defined business need. Onward forwarding, printing and upload to third-party or generative AI tools are to be avoided.
+Sample data notice
+The role holder details shown are synthetic and have been generated for illustration. Live records are to be sourced from the HR system of record before operational use.
+Retention
+Superseded versions are to be withdrawn once a revised pack is issued; retention beyond the current reporting cycle is not anticipated.

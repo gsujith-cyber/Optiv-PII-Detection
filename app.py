@@ -131,7 +131,7 @@ a{color:inherit;}
 .pgsep{display:block;color:#f9a8d4;letter-spacing:.18em;font-size:.72rem;margin:14px 0 6px;text-transform:uppercase;border-bottom:1px dashed rgba(249,168,212,.35);padding-bottom:4px;}
 .tblwrap{max-height:400px;overflow:auto;border:1px solid var(--line);border-radius:16px;background:rgba(6,4,16,.8);animation:fadeUp .7s both;}
 table.tbl{width:100%;border-collapse:collapse;font-size:.93rem;}
-table.tbl th{background:rgba(124,58,237,.35);color:#fff !important;text-align:left;padding:11px 14px;letter-spacing:.06em;position:sticky;top:0;font-size:.76rem;text-transform:uppercase;}
+table.tbl th{background:#2b1a63;color:#fff !important;text-align:left;padding:11px 14px;letter-spacing:.06em;position:sticky;top:0;z-index:5;font-size:.76rem;text-transform:uppercase;box-shadow:0 1px 0 rgba(255,255,255,.2);}
 table.tbl td{color:#ece8ff !important;padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.07);}
 table.tbl tr:hover td{background:rgba(255,255,255,.04);}
 
@@ -144,10 +144,12 @@ table.tbl tr:hover td{background:rgba(255,255,255,.04);}
   background:rgba(255,255,255,.4);transform:skewX(-20deg);}
 .stButton>button:hover::after,.stDownloadButton>button:hover::after,[data-testid="stFormSubmitButton"]>button:hover::after{animation:shine .8s;}
 .stButton>button:hover,.stDownloadButton>button:hover,[data-testid="stFormSubmitButton"]>button:hover{transform:translateY(-3px);box-shadow:0 12px 34px rgba(236,72,153,.6);color:#fff !important;}
-[class*="st-key-newfile"] button,[class*="st-key-logout"] button,[class*="st-key-cancel"] button,[class*="st-key-retry"] button{background:rgba(255,255,255,.08) !important;
+[class*="st-key-newfile"] button,[class*="st-key-logout"] button,[class*="st-key-cancel"] button,[class*="st-key-retry"] button,[class*="st-key-prevp"] button,[class*="st-key-nextp"] button,[class*="st-key-closev"] button{background:rgba(255,255,255,.08) !important;
   border:1.5px solid rgba(255,255,255,.5) !important;box-shadow:none;}
-[class*="st-key-newfile"] button:hover,[class*="st-key-logout"] button:hover,[class*="st-key-cancel"] button:hover,[class*="st-key-retry"] button:hover{
+[class*="st-key-newfile"] button:hover,[class*="st-key-logout"] button:hover,[class*="st-key-cancel"] button:hover,[class*="st-key-retry"] button:hover,[class*="st-key-prevp"] button:hover,[class*="st-key-nextp"] button:hover,[class*="st-key-closev"] button:hover{
   background:rgba(255,255,255,.18) !important;box-shadow:0 0 22px rgba(255,255,255,.2);}
+
+.stButton>button:disabled{opacity:.35 !important;box-shadow:none !important;transform:none !important;}
 
 /* ----- uploader ----- */
 [data-testid="stFileUploaderDropzone"],[data-testid="stFileUploader"] section{background:rgba(255,255,255,.05) !important;border:2px dashed rgba(244,114,182,.7) !important;
@@ -163,10 +165,15 @@ table.tbl tr:hover td{background:rgba(255,255,255,.04);}
 [data-testid="stFileUploaderFile"] svg,[data-testid="stFileChip"] svg{fill:#f9a8d4 !important;}
 
 /* ----- inputs, expanders ----- */
-[data-baseweb="input"],[data-baseweb="base-input"]{background:rgba(255,255,255,.08) !important;border:1px solid rgba(255,255,255,.3) !important;border-radius:12px;}
-[data-baseweb="input"] input,[data-baseweb="base-input"] input,[data-testid="stTextInput"] input{color:#fff !important;-webkit-text-fill-color:#fff !important;caret-color:#f472b6;background:transparent !important;}
+[data-testid="stTextInput"] [data-baseweb="input"],[data-testid="stTextInput"] [data-baseweb="base-input"],[data-testid="stTextInputRootElement"]{
+  background:#ffffff !important;border:1.5px solid #c4b5fd !important;border-radius:12px;}
+[data-testid="stTextInput"] input{background:#ffffff !important;color:#1b1038 !important;-webkit-text-fill-color:#1b1038 !important;
+  caret-color:#7c3aed;font-weight:600;}
+[data-testid="stTextInput"] input::placeholder{color:#6b5f8f !important;-webkit-text-fill-color:#6b5f8f !important;}
+[data-testid="stTextInput"] button{background:transparent !important;box-shadow:none !important;}
+[data-testid="stTextInput"] button svg{fill:#4c3a8f !important;color:#4c3a8f !important;}
+[data-testid="InputInstructions"],[data-testid="InputInstructions"] *{color:#6b5f8f !important;}
 [data-testid="stTextInput"] label p,[data-testid="stTextInput"] label{color:#e9d5ff !important;font-weight:700;}
-[data-testid="stTextInput"] button svg{fill:#e9d5ff !important;color:#e9d5ff !important;}
 [data-testid="stForm"]{background:linear-gradient(160deg,rgba(255,255,255,.09),rgba(255,255,255,.03));border:1px solid var(--line);border-radius:18px;padding:1.3rem;animation:fadeUp .6s both;}
 [data-testid="stText"],[data-testid="stText"] *{color:#ece8ff !important;}
 [data-testid="stExpander"] details{background:rgba(255,255,255,.05) !important;border:1px solid var(--line);border-radius:14px;}
@@ -207,11 +214,12 @@ table.tbl tr:hover td{background:rgba(255,255,255,.04);}
 """
 st.markdown(CSS, unsafe_allow_html=True)
 
-for _k, _v in {"page": "home", "result": None, "user": None, "show_login": False, "pending": None}.items():
+for _k, _v in {"page": "home", "result": None, "user": None, "show_login": False, "pending": None, "audit_view": None, "orig_page": 0}.items():
     st.session_state.setdefault(_k, _v)
 
 TYPE_COLORS = {"PERSON": "#c4b5fd", "EMAIL": "#22d3ee", "PHONE": "#fbbf24", "SSN": "#fb7185", "AADHAAR": "#fb7185",
-               "PAN": "#fb923c", "CREDIT_CARD": "#f472b6", "EMPLOYEE_ID": "#34d399"}
+               "PAN": "#fb923c", "CREDIT_CARD": "#f472b6", "EMPLOYEE_ID": "#34d399", "STUDENT_ID": "#38bdf8", "ID_NUMBER": "#38bdf8",
+               "ORGANIZATION": "#fbbf24"}
 PH_RE = re.compile(r"\[([A-Z][A-Z_]*?)_(\d+)(?:_R2)?\]")
 LOGO = ('<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" '
         'stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>')
@@ -227,6 +235,11 @@ def gauge_html(pct: float, ok: bool) -> str:
     kind = "int" if dec == 0 else "dec"
     return (f'<div class="gwrap" style="--target:{pct}%;--tw:{whole};--td:{dec};--c1:{c1};--c2:{c2}">'
             f'<div class="garc"></div><div class="gnum"><span class="gn {kind}"></span><small>REDACTED</small></div></div>')
+
+
+def short_type(t: str) -> str:
+    m = re.search(r"\((DOCX|PPTX|TXT)\)", t)
+    return m.group(1) if m else t
 
 
 def card(label, value, cls="", delay=0.0):
@@ -351,7 +364,7 @@ def home_page() -> None:
     st.markdown('<div class="upl-title">Upload a file to begin</div>', unsafe_allow_html=True)
     up = st.file_uploader("Upload a file", type=[e.strip(".") for e in SUPPORTED], label_visibility="collapsed")
     st.markdown('<div class="chips"><span class="chip">PDF</span><span class="chip">DOCX</span><span class="chip">PPTX</span>'
-                '<span class="chip">TXT</span><span class="chip">Scanned files (OCR)</span></div>', unsafe_allow_html=True)
+                '<span class="chip">TXT</span><span class="chip">Images</span><span class="chip">Scanned files (OCR)</span></div>', unsafe_allow_html=True)
     if up is not None:
         st.write("")
         if st.button("Start redaction", type="primary", key="start"):
@@ -421,8 +434,36 @@ def processing_page() -> None:
     state["details"]["done"] = f'{res["total"]} PII item(s) redacted in {time.time() - t0:.1f} s'
     render()
     time.sleep(0.7)
-    st.session_state.update(result=res, page="result", pending=None, show_login=False)
+    st.session_state.update(result=res, page="result", pending=None, show_login=False, audit_view=None)
     st.rerun()
+
+
+def original_viewer(r: dict) -> None:
+    """Show the original one page / slide at a time (short, no long scrolling)."""
+    pages = r["pages"]
+    n = len(pages)
+    i = min(max(st.session_state.orig_page, 0), n - 1)
+
+    def go(delta: int) -> None:
+        st.session_state.orig_page = min(max(st.session_state.orig_page + delta, 0), n - 1)
+
+    prev, label, nxt, close = st.columns([1, 3, 1, 1])
+    prev.button("Previous", key="prevp", on_click=go, args=(-1,), disabled=(i == 0))
+    label.markdown(f'<div style="text-align:center;padding-top:10px;font-weight:700">Page / Slide {pages[i]["page"]} of {n}</div>',
+                   unsafe_allow_html=True)
+    nxt.button("Next", key="nextp", on_click=go, args=(1,), disabled=(i == n - 1))
+    close.button("Close", key="closev", on_click=lambda: st.session_state.update(audit_view=None))
+    st.markdown(f'<div class="viewer" style="max-height:380px">{escape(pages[i]["text"])}</div>', unsafe_allow_html=True)
+
+
+def mapping_viewer(r: dict) -> None:
+    head, close = st.columns([5, 1])
+    head.markdown('<div style="color:#b9b0dc;padding-top:10px">Matching table (tag to original value)</div>', unsafe_allow_html=True)
+    close.button("Close", key="closev", on_click=lambda: st.session_state.update(audit_view=None))
+    if r["mapping"]:
+        html_table(pd.DataFrame([{"Placeholder": k, "Original value": v} for k, v in r["mapping"].items()]), chip_col="Placeholder")
+    else:
+        st.info("No matching table available (no PII found, or the redactor did not return one).")
 
 
 # ================================================================ RESULT ====
@@ -436,7 +477,7 @@ def result_page() -> None:
     with btn:
         st.write("")
         if st.button("New file", key="newfile"):
-            st.session_state.update(page="home", result=None, show_login=False)
+            st.session_state.update(page="home", result=None, show_login=False, audit_view=None)
             st.rerun()
 
     ok = r["remaining"] == 0
@@ -445,7 +486,7 @@ def result_page() -> None:
         st.markdown(gauge_html(r["redaction_pct"], ok), unsafe_allow_html=True)
     with stats:
         a, b, c = st.columns(3)
-        a.markdown(card("File type", r["file_type"], delay=0.0), unsafe_allow_html=True)
+        a.markdown(card("File type", short_type(r["file_type"]), delay=0.0), unsafe_allow_html=True)
         b.markdown(card("PII found", r["total"], delay=0.1), unsafe_allow_html=True)
         c.markdown(card("PII remaining", r["remaining"], "good" if ok else "bad", delay=0.2), unsafe_allow_html=True)
         if ok:
@@ -477,19 +518,20 @@ def result_page() -> None:
         a.markdown(f'<div class="banner-ok" style="margin-top:0">Audit access granted: {escape(st.session_state.user)}</div>', unsafe_allow_html=True)
         with b:
             if st.button("Logout", key="logout"):
-                st.session_state.update(user=None, show_login=False)
+                st.session_state.update(user=None, show_login=False, audit_view=None)
                 st.rerun()
+        st.markdown('<div style="color:#b9b0dc;margin:16px 0 8px">What would you like to do with the original file?</div>', unsafe_allow_html=True)
+        c1, c2, c3 = st.columns(3)
+        if c1.button("View original", type="primary", key="v_orig"):
+            st.session_state.update(audit_view="orig", orig_page=0)
+        if c2.button("Matching table", type="primary", key="v_map"):
+            st.session_state.audit_view = "map"
+        c3.download_button("Download original", Path(r["orig_path"]).read_bytes(), file_name=r["name"], type="primary", key="dl_orig")
         st.write("")
-        st.markdown('<div style="color:#b9b0dc;margin-bottom:6px">Original file content</div>', unsafe_allow_html=True)
-        for pg in r["pages"]:
-            with st.expander(f"Page / Slide {pg['page']}", expanded=(pg["page"] == 1)):
-                st.text(pg["text"])
-        st.download_button("Download original file", Path(r["orig_path"]).read_bytes(), file_name=r["name"], type="primary")
-        st.markdown('<div style="color:#b9b0dc;margin:22px 0 8px">Matching table (tag to original value)</div>', unsafe_allow_html=True)
-        if r["mapping"]:
-            html_table(pd.DataFrame([{"Placeholder": k, "Original value": v} for k, v in r["mapping"].items()]), chip_col="Placeholder")
-        else:
-            st.info("No matching table available (no PII found, or the redactor did not return one).")
+        if st.session_state.audit_view == "orig":
+            original_viewer(r)
+        elif st.session_state.audit_view == "map":
+            mapping_viewer(r)
     else:
         st.markdown(f'<div class="locked">{LOCK_SVG}<div><div class="big">Authorised audit access</div>'
                     '<div class="small">You already have your own file. This area is for authorised reviewers, such as audit or compliance, '

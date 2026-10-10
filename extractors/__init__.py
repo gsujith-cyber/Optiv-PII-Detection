@@ -20,32 +20,93 @@ _WIN_TESSERACT = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
 
 # --------------------------------------------------------------- file type ---
+
 def detect_type(path) -> str:
-    """Return: pdf_text | pdf_scanned | docx | pptx | txt | image | unknown  (by file signature, not extension)."""
+    """Detect file type using extension and file signature."""
     p = Path(path)
+    ext = p.suffix.lower()
+
     with open(p, "rb") as f:
         head = f.read(4096)
-    if head.startswith(b"%PDF"):
-        return "pdf_scanned" if _pdf_is_scanned(p) else "pdf_text"
-    if head.startswith(b"PK"):
-        try:
-            names = zipfile.ZipFile(p).namelist()
-        except zipfile.BadZipFile:
+
+    # PDF
+    if ext == ".pdf":
+        if not head.startswith(b"%PDF"):
             return "unknown"
-        if any(n.startswith("word/") for n in names):
-            return "docx"
-        if any(n.startswith("ppt/") for n in names):
-            return "pptx"
-        return "unknown"
-    if head[:8] == b"\x89PNG\r\n\x1a\n" or head[:3] == b"\xff\xd8\xff" or head[:4] in (b"II*\x00", b"MM\x00*") \
-            or head[:2] == b"BM" or (head[:4] == b"RIFF" and head[8:12] == b"WEBP"):
+        return "pdf_scanned" if _pdf_is_scanned(p) else "pdf_text"
+
+    # DOCX and PPTX
+    if ext in {".docx", ".pptx"}:
+        if not head.startswith(b"PK"):
+            return "unknown"
+
+        try:
+            with zipfile.ZipFile(p) as archive:
+                names = set(archive.namelist())
+                if archive.testzip() is not None:
+                    return "unknown"
+
+                if ext == ".docx":
+                    return (
+                        "docx"
+                        if "[Content_Types].xml" in names
+                        and "word/document.xml" in names
+                        else "unknown"
+                    )
+
+                return (
+                    "pptx"
+                    if "[Content_Types].xml" in names
+                    and "ppt/presentation.xml" in names
+                    else "unknown"
+                )
+        except (zipfile.BadZipFile, OSError):
+            return "unknown"
+
+    # Image files
+    if ext == ".png" and head.startswith(b"\x89PNG\r\n\x1a\n"):
         return "image"
-    try:
-        head.decode("utf-8")
-        return "txt"
-    except UnicodeDecodeError:
-        pass
-    return "txt" if p.suffix.lower() == ".txt" else "unknown"
+
+    if ext in {".jpg", ".jpeg"} and head.startswith(b"\xff\xd8\xff"):
+        return "image"
+
+    if ext in {".tif", ".tiff"} and head[:4] in (
+        b"II*\x00", b"MM\x00*"
+    ):
+        return "image"
+
+    if ext == ".bmp" and head.startswith(b"BM"):
+        return "image"
+
+    if (
+        ext == ".webp"
+        and head[:4] == b"RIFF"
+        and head[8:12] == b"WEBP"
+    ):
+        return "image"
+
+    # Plain text
+    if ext == ".txt":
+        try:
+            content = p.read_bytes()
+
+            # Reject binary or known non-text file signatures
+            if (
+                content.startswith(b"%PDF")
+                or content.startswith(b"PK")
+                or content.startswith(b"\x89PNG\r\n\x1a\n")
+                or content.startswith(b"\xff\xd8\xff")
+                or content.startswith(b"BM")
+            ):
+                return "unknown"
+
+            content.decode("utf-8-sig")
+            return "txt"
+        except (UnicodeDecodeError, OSError):
+            return "unknown"
+
+    return "unknown"
+
 
 
 def _pdf_is_scanned(path: Path) -> bool:

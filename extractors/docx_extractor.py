@@ -93,7 +93,10 @@ def extract(path, progress=None):
     # text boxes (Word often stores them twice, so de-duplicate)
     boxes, seen = [], set()
     for tb in body.xpath(".//w:txbxContent"):
-        txt = "\n".join("".join(t.text or "" for t in p.xpath(".//w:t")) for p in tb.xpath(".//w:p")).strip()
+        txt = "\n".join(
+    "".join(t.text or "" for t in p.iter("{http://schemas.openxmlformats.org/wordprocessingml/2006/main}t"))
+    for p in tb.iter("{http://schemas.openxmlformats.org/wordprocessingml/2006/main}p")
+).strip()
         if txt and txt not in seen:
             seen.add(txt)
             boxes.append(txt)

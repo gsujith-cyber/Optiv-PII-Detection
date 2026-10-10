@@ -15,7 +15,7 @@ from . import MIN_TEXT, OCR_DPI, normalize_text, ocr_many
 CACHE_DIR = Path("data") / "cache"
 
 
-def _page_text(page) -> str:
+def _page_text(page, plumber_page=None) -> str:
     import pymupdf
     tables = []                                   # (y_top, rect, text)
     try:
@@ -66,7 +66,37 @@ def _page_text(page) -> str:
         pass
     if extras:
         parts.append("[Form fields and comments]\n" + "\n".join(extras))
-    return normalize_text("\n".join(parts))
+    pymupdf_text = normalize_text("\n".join(parts))
+    if plumber_page is not None:
+        try:
+            plumber_text = normalize_text(plumber_page.extract_text() or "")
+            if len(plumber_text.strip()) >= MIN_TEXT:
+                # Use pdfplumber text once; retain only missing table rows.
+                extra_parts = [plumber_text]
+                try:
+                    for table in plumber_page.extract_tables() or []:
+                        rows = []
+                        for row in table:
+                            cells = [(cell or "").replace("\n", " ").strip() for cell in row]
+                            if any(cells):
+                                rows.append(" | ".join(cells))
+                        table_text = normalize_text("\n".join(rows))
+                        if table_text and table_text not in plumber_text:
+                            extra_parts.append(table_text)
+                except Exception:
+                    pass
+
+                # Preserve form-field values and annotation comments.
+                marker = "[Form fields and comments]"
+                if marker in pymupdf_text:
+                    extras = pymupdf_text.split(marker, 1)[1].strip()
+                    if extras:
+                        extra_parts.append(marker + "\n" + extras)
+
+                pymupdf_text = normalize_text("\n".join(extra_parts))
+        except Exception:
+            pass
+    return pymupdf_text
 
 
 def _ocr_pages(doc, path: Path, numbers, progress):
@@ -99,11 +129,17 @@ def _ocr_pages(doc, path: Path, numbers, progress):
 
 def extract(path, progress=None):
     import pymupdf
+    import pdfplumber
     path = Path(path)
-    with pymupdf.open(str(path)) as doc:
+    with pymupdf.open(str(path)) as doc, pdfplumber.open(str(path)) as plumber_doc:
         if doc.needs_pass:
             raise ValueError("This PDF is password protected. Remove the password and upload again.")
-        pages = [{"page": i, "text": _page_text(pg)} for i, pg in enumerate(doc, 1)]
+        if len(doc) != len(plumber_doc.pages):
+            raise ValueError("PDF page count mismatch between extractors.")
+        pages = [
+            {"page": i, "text": _page_text(pg, plumber_doc.pages[i - 1])}
+            for i, pg in enumerate(doc, 1)
+        ]
         scanned = [p["page"] for p in pages if len(p["text"].strip()) < MIN_TEXT]
         if scanned:
             try:

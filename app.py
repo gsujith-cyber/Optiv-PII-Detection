@@ -455,15 +455,38 @@ def original_viewer(r: dict) -> None:
     close.button("Close", key="closev", on_click=lambda: st.session_state.update(audit_view=None))
     st.markdown(f'<div class="viewer" style="max-height:380px">{escape(pages[i]["text"])}</div>', unsafe_allow_html=True)
 
-
 def mapping_viewer(r: dict) -> None:
     head, close = st.columns([5, 1])
-    head.markdown('<div style="color:#b9b0dc;padding-top:10px">Matching table (tag to original value)</div>', unsafe_allow_html=True)
-    close.button("Close", key="closev", on_click=lambda: st.session_state.update(audit_view=None))
+    head.markdown(
+        '<div style="color:#b9b0dc;padding-top:10px">Matching table (tag to original value)</div>',
+        unsafe_allow_html=True,
+    )
+    close.button(
+        "Close",
+        key="closev",
+        on_click=lambda: st.session_state.update(audit_view=None),
+    )
+
     if r["mapping"]:
-        html_table(pd.DataFrame([{"Placeholder": k, "Original value": v} for k, v in r["mapping"].items()]), chip_col="Placeholder")
+        visible_mapping = {
+            k: v for k, v in r["mapping"].items()
+            if not k.startswith("[EMPLOYEE_ID_")
+        }
+
+        if visible_mapping:
+            html_table(
+                pd.DataFrame([
+                    {"Placeholder": k, "Original value": v}
+                    for k, v in visible_mapping.items()
+                ]),
+                chip_col="Placeholder",
+            )
+        else:
+            st.info("No matching table available.")
     else:
-        st.info("No matching table available (no PII found, or the redactor did not return one).")
+        st.info(
+            "No matching table available (no PII found, or the redactor did not return one)."
+        )
 
 
 # ================================================================ RESULT ====

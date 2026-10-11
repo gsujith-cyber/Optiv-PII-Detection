@@ -253,7 +253,7 @@ monday tuesday wednesday thursday friday saturday sunday january february march 
 """.split())
 _PARTICLES = {"de", "van", "von", "bin", "al", "el", "la", "da", "di", "del", "dos", "bhai"}
 _LABEL_STOP = {"enroll", "enrollment", "roll", "reg", "registration", "course", "dept", "department", "branch", "year", "sem",
-               "semester", "email", "phone", "mobile", "contact", "id", "no", "number", "date", "on", "at", "of", "and", "is", "for"}
+               "semester", "email", "phone", "mobile", "contact", "id", "no", "number", "date", "on", "at", "of", "and", "is", "for","the"}
 _TOKEN_RE = re.compile(r"[A-Za-z][A-Za-z.'\u2019-]*")
 _NAME_VAL = r"[A-Za-z][A-Za-z.'\u2019-]*(?:[ \t]+[A-Za-z][A-Za-z.'\u2019-]*){0,3}"
 _LABEL_NAME = re.compile(

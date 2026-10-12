@@ -14,6 +14,14 @@ import streamlit as st
 
 import auth
 import pipeline
+try:                                              # optional ideas: each works only if its file is in the repo
+    from reports.report_generator import build_report, to_csv
+except Exception:
+    build_report = to_csv = None
+try:
+    from processing.file_redactor import redact_file
+except Exception:
+    redact_file = None
 from pipeline import SUPPORTED, detect_type, run_pipeline
 
 st.set_page_config(page_title="PII Detection", page_icon="🛡️", layout="wide",
@@ -219,7 +227,7 @@ for _k, _v in {"page": "home", "result": None, "user": None, "show_login": False
 
 TYPE_COLORS = {"PERSON": "#c4b5fd", "EMAIL": "#22d3ee", "PHONE": "#fbbf24", "SSN": "#fb7185", "AADHAAR": "#fb7185",
                "PAN": "#fb923c", "CREDIT_CARD": "#f472b6", "EMPLOYEE_ID": "#34d399", "STUDENT_ID": "#38bdf8", "ID_NUMBER": "#38bdf8",
-               "ORGANIZATION": "#fbbf24"}
+               "ORGANIZATION": "#fbbf24", "ADDRESS": "#60a5fa"}
 PH_RE = re.compile(r"\[([A-Z][A-Z_]*?)_(\d+)(?:_R2)?\]")
 LOGO = ('<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" '
         'stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>')
@@ -306,7 +314,8 @@ def info_sections() -> None:
              ("Phone numbers", "PHONE", "Local and international formats."),
              ("Government IDs", "SSN", "SSN, Aadhaar and PAN numbers."),
              ("Card numbers", "CREDIT_CARD", "Checked with the Luhn test to avoid false alarms."),
-             ("Employee IDs", "EMPLOYEE_ID", "IDs such as EMP-10234.")]
+             ("Employee IDs", "EMPLOYEE_ID", "IDs such as EMP-10234."),
+             ("Postal addresses", "ADDRESS", "Street addresses, PIN and ZIP codes.")]
     cards = "".join(f'<div class="card" style="animation-delay:{i*0.06}s"><div class="t"><span class="tag" style="--c:{TYPE_COLORS[k]}"></span>{t}</div>'
                     f'<div class="d">{d}</div></div>' for i, (t, k, d) in enumerate(feats))
     st.markdown(f'<div class="grid">{cards}</div>', unsafe_allow_html=True)
@@ -455,38 +464,58 @@ def original_viewer(r: dict) -> None:
     close.button("Close", key="closev", on_click=lambda: st.session_state.update(audit_view=None))
     st.markdown(f'<div class="viewer" style="max-height:380px">{escape(pages[i]["text"])}</div>', unsafe_allow_html=True)
 
+
 def mapping_viewer(r: dict) -> None:
     head, close = st.columns([5, 1])
-    head.markdown(
-        '<div style="color:#b9b0dc;padding-top:10px">Matching table (tag to original value)</div>',
-        unsafe_allow_html=True,
-    )
-    close.button(
-        "Close",
-        key="closev",
-        on_click=lambda: st.session_state.update(audit_view=None),
-    )
-
-    if r["mapping"]:
-        visible_mapping = {
-            k: v for k, v in r["mapping"].items()
-            if not k.startswith("[EMPLOYEE_ID_")
-        }
-
-        if visible_mapping:
-            html_table(
-                pd.DataFrame([
-                    {"Placeholder": k, "Original value": v}
-                    for k, v in visible_mapping.items()
-                ]),
-                chip_col="Placeholder",
-            )
-        else:
-            st.info("No matching table available.")
+    head.markdown('<div style="color:#b9b0dc;padding-top:10px">Matching table (tag to original value)</div>', unsafe_allow_html=True)
+    close.button("Close", key="closev", on_click=lambda: st.session_state.update(audit_view=None, map_q=""))
+    rows = [{"Placeholder": k, "Original value": v} for k, v in r["mapping"].items()]
+    if not rows:
+        st.info("No matching table available (no PII found, or the redactor did not return one).")
+        return
+    q = st.text_input("Search the matching table", key="map_q", label_visibility="collapsed",
+                      placeholder="Type a name, email, number or tag (for example PERSON_3), then press Enter")
+    ql = q.strip().lower()
+    if ql:
+        rows = [x for x in rows if ql in x["Placeholder"].lower() or ql in str(x["Original value"]).lower()]
+    st.markdown(f'<div style="color:#b9b0dc;font-size:.88rem;margin:4px 0 8px">Showing {len(rows)} of {len(r["mapping"])}</div>',
+                unsafe_allow_html=True)
+    if rows:
+        html_table(pd.DataFrame(rows), chip_col="Placeholder")
     else:
-        st.info(
-            "No matching table available (no PII found, or the redactor did not return one)."
-        )
+        st.info("Nothing matches your search.")
+
+
+def redacted_copy_ui(r: dict) -> None:
+    """Optional: redacted COPY in the original format (PDF / DOCX / PPTX / TXT), checked after saving."""
+    ext = Path(r["name"]).suffix.lower()
+    if redact_file is None or ext not in (".pdf", ".docx", ".pptx", ".txt"):
+        return
+    copies = st.session_state.setdefault("copies", {})
+    label = ext.strip(".").upper()
+    if r["id"] not in copies:
+        if st.button(f"Create redacted {label} (same format)", key="mk_copy", type="primary"):
+            with st.spinner("Creating the redacted copy and checking it..."):
+                try:
+                    copies[r["id"]] = redact_file(r["orig_path"], r["mapping"])
+                except Exception as e:
+                    st.error(str(e))
+                    return
+            st.rerun()
+        return
+    info = copies[r["id"]]
+    st.download_button(f"Download redacted {label}", Path(info["path"]).read_bytes(), file_name=Path(info["path"]).name,
+                       type="primary", key="dl_copy")
+    if info["leftovers"] == 0:
+        st.markdown('<div class="banner-ok" style="margin-top:10px">Checked: the redacted copy was read again and no original value was found in it.</div>',
+                    unsafe_allow_html=True)
+    elif info["leftovers"]:
+        st.markdown(f'<div class="banner-bad" style="margin-top:10px">{info["leftovers"]} original value(s) were still found in the copy. Review it.</div>',
+                    unsafe_allow_html=True)
+    for n in info.get("notes", []):
+        st.markdown(f'<div style="color:#b9b0dc;font-size:.88rem;margin-top:6px">{escape(n)}</div>', unsafe_allow_html=True)
+    for w in info.get("warnings", []):
+        st.markdown(f'<div class="banner-bad" style="margin-top:8px">{escape(w)}</div>', unsafe_allow_html=True)
 
 
 # ================================================================ RESULT ====
@@ -524,7 +553,13 @@ def result_page() -> None:
     with left:
         st.markdown(f'<div class="viewer">{highlight(r["redacted_text"])}</div>', unsafe_allow_html=True)
         st.write("")
-        st.download_button("Download redacted file", r["redacted_text"], file_name=f"redacted_{Path(r['name']).stem}.txt", type="primary")
+        b1, b2 = st.columns(2)
+        b1.download_button("Download redacted text", r["redacted_text"], file_name=f"redacted_{Path(r['name']).stem}.txt", type="primary", key="dl_txt")
+        if build_report is not None:
+            b2.download_button("Download audit report", to_csv(build_report(r)), file_name=f"audit_{Path(r['name']).stem}.csv",
+                               mime="text/csv", type="primary", key="dl_report")
+        st.write("")
+        redacted_copy_ui(r)
     with right:
         st.markdown('<div style="color:#b9b0dc;margin-bottom:8px">PII found (real values are not shown)</div>', unsafe_allow_html=True)
         if r["findings"]:
@@ -541,20 +576,30 @@ def result_page() -> None:
         a.markdown(f'<div class="banner-ok" style="margin-top:0">Audit access granted: {escape(st.session_state.user)}</div>', unsafe_allow_html=True)
         with b:
             if st.button("Logout", key="logout"):
+                auth.log_event(st.session_state.user, "logout")
                 st.session_state.update(user=None, show_login=False, audit_view=None)
                 st.rerun()
         st.markdown('<div style="color:#b9b0dc;margin:16px 0 8px">What would you like to do with the original file?</div>', unsafe_allow_html=True)
         c1, c2, c3 = st.columns(3)
         if c1.button("View original", type="primary", key="v_orig"):
             st.session_state.update(audit_view="orig", orig_page=0)
+            auth.log_event(st.session_state.user, "view_original", r["name"])
         if c2.button("Matching table", type="primary", key="v_map"):
             st.session_state.audit_view = "map"
-        c3.download_button("Download original", Path(r["orig_path"]).read_bytes(), file_name=r["name"], type="primary", key="dl_orig")
+            auth.log_event(st.session_state.user, "view_matching_table", r["name"])
+        c3.download_button("Download original", Path(r["orig_path"]).read_bytes(), file_name=r["name"], type="primary", key="dl_orig",
+                           on_click=auth.log_event, args=(st.session_state.user, "download_original", r["name"]))
         st.write("")
         if st.session_state.audit_view == "orig":
             original_viewer(r)
         elif st.session_state.audit_view == "map":
             mapping_viewer(r)
+        with st.expander("Access log (who opened what)"):
+            log = auth.read_log(8)
+            if log:
+                html_table(pd.DataFrame(log).rename(columns=str.title))
+            else:
+                st.write("No events yet.")
     else:
         st.markdown(f'<div class="locked">{LOCK_SVG}<div><div class="big">Authorised audit access</div>'
                     '<div class="small">You already have your own file. This area is for authorised reviewers, such as audit or compliance, '
@@ -573,8 +618,10 @@ def result_page() -> None:
                     if st.form_submit_button("Login", type="primary"):
                         if auth.verify_login(u, p):
                             st.session_state.user = u
+                            auth.log_event(u, "login")
                             st.rerun()
                         else:
+                            auth.log_event(u or "(empty)", "login_failed")
                             st.error("Access denied: wrong username or password.")
                 if st.button("Cancel", key="cancel"):
                     st.session_state.show_login = False

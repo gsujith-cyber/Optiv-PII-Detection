@@ -101,6 +101,7 @@ def _resolve_overlaps(findings):
     """When findings overlap on a page, keep one: specific IDs (email, SSN, PAN...)
     win over name guesses (PERSON); otherwise the longer finding wins."""
     kept = []
+    findings = [f for f in findings if not _PH_ONLY.fullmatch(f["value"].strip())]
     ranked = sorted(findings, key=lambda f: (f["type"] == "PERSON", -(f["end"] - f["start"])))
     for f in ranked:
         if any(k["page"] == f["page"] and f["start"] < k["end"] and k["start"] < f["end"] for k in kept):
@@ -212,6 +213,21 @@ def _ocr_pdf_pages(path: Path, page_numbers):
     return {n: _clean_ocr(cache[str(n)]) for n in page_numbers}
 
 
+_LABEL_ADDR = re.compile(
+    r"(?im)^[ \t]*(?:(?:registered|office|home|residential|mailing|postal|permanent|current|correspondence|billing|shipping|business|head[ ]?office|"
+    r"company|employee|street)[ \t]+)?address(?:[ \t]+line[ \t]*\d)?[ \t]*[:=\u2013\u2014-]+[ \t]*(?P<a>[^\n]{6,160})")
+_LABEL_PIN = re.compile(r"(?i)\b(?:pin(?:[ ]?code)?|zip(?:[ ]?code)?|postal[ ]?code|post[ ]?code)[ \t]*[:=\u2013\u2014-]*[ \t]*(?P<z>[A-Z0-9][A-Z0-9 -]{3,8}\d)\b")
+
+
+def _phone_ok(s: str) -> bool:
+    return 7 <= len(re.sub(r"\D", "", s)) <= 15
+
+
+_LABEL_PHONE = re.compile(
+    r"(?i)(?<![A-Za-z])(?P<lab>m|t|tel|telephone|ph|phone|mobile|mob|cell|fax|contact(?:[ \t]+no)?)(?![A-Za-z])[ \t]*[:.\-]*[ \t]*"
+    r"(?P<v>\+?\(?\d[\d \t().-]{5,}\d)")
+
+
 def _luhn_ok(num: str) -> bool:
     d = [int(c) for c in re.sub(r"\D", "", num)]
     if not 13 <= len(d) <= 19:
@@ -224,6 +240,10 @@ def _luhn_ok(num: str) -> bool:
     return s % 10 == 0
 
 
+_ADDR_TAIL = r"(?:,[ \t]*[A-Z0-9][^,\n]{1,38}){0,4}"      # ", Suite 400, New York, NY 10022, USA"
+_STREET_SFX = ("street|st|road|rd|avenue|ave|boulevard|blvd|lane|ln|drive|dr|court|ct|place|pl|way|square|sq|terrace|ter|"
+               "highway|hwy|parkway|pkwy|plaza|marg|nagar|colony")
+_PH_ONLY = re.compile(r"\[[A-Z_]+_\d+(?:_R2)?\]")           # an already-redacted tag must never be detected again
 _PATTERNS = [
     ("EMAIL", r"\b[\w.+-]+@[\w-]+(?:\.[\w-]+)+\b"),
     ("SSN", r"\b\d{3}-\d{2}-\d{4}\b"),
@@ -231,7 +251,15 @@ _PATTERNS = [
     ("PAN", r"\b[A-Z]{5}\d{4}[A-Z]\b"),
     ("CREDIT_CARD", r"\b(?:\d[ -]?){13,19}\b"),
     ("EMPLOYEE_ID", r"\b(?:EMP|EID)[-_ ]?\d{3,8}\b"),
-    ("PHONE", r"(?<![\w-])(?:\+?\d{1,3}[\s-]?)?(?:\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{4}|\d{5}[\s-]?\d{5})(?![\w-])"),
+    # postal addresses: "120 Park Avenue, Suite 400, New York, NY 10022", "Plot 45, Road No. 12, Hyderabad 500034", "PO Box 123"
+    ("ADDRESS", r"(?<![\w-])\d{1,6}[A-Za-z]?(?:[-/]\d{1,5})?[ \t,]+(?:[A-Z0-9][\w.'-]*[ \t]+){1,4}?(?i:" + _STREET_SFX + r")\b\.?" + _ADDR_TAIL),
+    ("ADDRESS", r"(?i:\b(?:plot|flat|door|house|h\.?[ ]?no\.?|block|building|bldg|floor|suite|ste|unit|apt|apartment|room)\b[ \t.#:-]*(?:no\.?[ \t#:-]*)?(?=[\w/-]*\d)[\w/-]+)" + _ADDR_TAIL),
+    ("ADDRESS", r"(?i:\bp\.?[ ]?o\.?[ ]?box[ ]+\d+)" + _ADDR_TAIL),
+    # phone numbers: international (+1 (555) 0174, +91 98765 43210, +44 20 7946 0958), US (555) 123-4567, 555-123-4567, Indian mobiles
+    ("PHONE", r"(?<![\w+])\+\d{1,3}[ \t.-]*(?:\(\d{1,4}\)|\d{1,4})(?:[ \t.-]*\d{2,5}){1,4}(?![\w-])"),
+    ("PHONE", r"(?<![\w-])\(\d{3}\)[ \t.-]*\d{3,4}(?:[ \t.-]*\d{4})?(?![\w-])"),
+    ("PHONE", r"(?<![\w-])\d{3}[ .-]\d{3}[ .-]\d{4}(?![\w-])"),
+    ("PHONE", r"(?<![\w.-])(?:(?:\+?91|0)[ -]?)?[6-9]\d{4}[ -]?\d{5}(?![\w.-])"),
 ]
 _nlp = None
 
@@ -251,13 +279,20 @@ confidential internal external draft final yes no tbd na nil none null nan pendi
 categories item items list lists total amount count code codes event events log logs alert alerts rule rules ticket tickets queue
 monday tuesday wednesday thursday friday saturday sunday january february march april may june july august september october november december
 """.split())
+_GENERIC |= set("""
+the a an and or of to for with by in on at from as is are was were be been being this that these those it its our your their his her my we you
+they he she them us who whom which what when where why how all any each every some not nor so than too very can will would should could may
+might must shall do does did has have had also but if then else about into over under between among per via
+everyone anyone someone others other another same above below following respective relevant designated assigned concerned responsible
+authorised authorized applicable board committee council office tba tbc
+""".split())
 _PARTICLES = {"de", "van", "von", "bin", "al", "el", "la", "da", "di", "del", "dos", "bhai"}
 _LABEL_STOP = {"enroll", "enrollment", "roll", "reg", "registration", "course", "dept", "department", "branch", "year", "sem",
-               "semester", "email", "phone", "mobile", "contact", "id", "no", "number", "date", "on", "at", "of", "and", "is", "for","the"}
+               "semester", "email", "phone", "mobile", "contact", "id", "no", "number", "date", "on", "at", "of", "and", "is", "for"}
 _TOKEN_RE = re.compile(r"[A-Za-z][A-Za-z.'\u2019-]*")
 _NAME_VAL = r"[A-Za-z][A-Za-z.'\u2019-]*(?:[ \t]+[A-Za-z][A-Za-z.'\u2019-]*){0,3}"
 _LABEL_NAME = re.compile(
-    r"(?im)(?:^|[|\t]|[ \t]{2,})[ \t]*(?:(?:full|employee|student|candidate|applicant|customer|client|member|leader|lead|mentor|"
+    r"(?im)(?:^|[|\t,;(]|[ \t]{2,})[ \t]*(?:(?:full|employee|student|candidate|applicant|customer|client|member|leader|lead|mentor|"
     r"supervisor|manager|owner|author|reviewer|approver|assignee|guide|faculty|contact(?:[ \t]+person)?|team[ \t]+leader)"
     r"(?:[ \t]*\d+)?(?:[ \t]*name)?|name)[ \t]*[:=\u2013\u2014-]+[ \t]*(?P<n>" + _NAME_VAL + r")")
 _BY_NAME = re.compile(
@@ -304,7 +339,7 @@ def _trim_name(value: str):
         if low in _GENERIC or low in _LABEL_STOP:
             break
         keep.append(m)
-    if not keep:
+    if not keep or not keep[0].group()[0].isupper():
         return None
     name = value[keep[0].start():keep[-1].end()]
     if len(name.replace(".", "").replace(" ", "")) < 2:
@@ -312,10 +347,49 @@ def _trim_name(value: str):
     return name, keep[0].start()
 
 
+_COL_NAME = ("name", "employee", "owner", "manager", "lead", "leader", "reviewer", "approver", "author", "contact", "assignee",
+             "member", "mentor", "supervisor", "signatory", "student", "candidate")
+_COL_SKIP = ("project", "file", "team", "company", "vendor", "product", "course", "document", "department", "app", "system",
+             "control", "policy", "role", "job", "title", "organi", "client", "supplier", "service", "tool")
+
+
+def _table_name_findings(pg):
+    """Table rows written as 'a | b | c': if a header cell says Name / Employee / Owner ..., the cells below it are people.
+    Only full names (2+ words) are taken, so vendor / product columns are not touched."""
+    text, out = pg["text"], []
+    header, pos = None, 0
+    for line in text.split("\n"):
+        line_start = pos
+        pos += len(line) + 1
+        if " | " not in line:
+            header = None
+            continue
+        cells, off = [], 0
+        for c in line.split(" | "):
+            cells.append((c, line_start + off))
+            off += len(c) + 3
+        if header is None:
+            low = [c.strip().lower() for c, _ in cells]
+            header = [i for i, h in enumerate(low) if any(k in h for k in _COL_NAME) and not any(s in h for s in _COL_SKIP)]
+            continue
+        for i in header:
+            if i >= len(cells):
+                continue
+            cell, off = cells[i]
+            lead = len(cell) - len(cell.lstrip())
+            got = _trim_name(cell.strip())
+            if not got:
+                continue
+            name, st = _tidy(got[0], off + lead + got[1])
+            if len(name.split()) >= 2:
+                out.append({"type": "PERSON", "value": name, "page": pg["page"], "start": st, "end": st + len(name)})
+    return out
+
+
 def _context_findings(pg):
     """Names and IDs recognised from the label in front of them: 'Name :- G Sujith', 'Leader: Vanshika jadaun',
     'Prepared by ...', 'Enroll No :- 2024...'. The label itself is NOT redacted, only the value."""
-    text, out = pg["text"], []
+    text, out = pg["text"], _table_name_findings(pg)
     for rx in (_LABEL_NAME, _BY_NAME):
         for m in rx.finditer(text):
             got = _trim_name(m.group("n"))
@@ -323,6 +397,26 @@ def _context_findings(pg):
                 name, st = _tidy(got[0], m.start("n") + got[1])
                 if name:
                     out.append({"type": "PERSON", "value": name, "page": pg["page"], "start": st, "end": st + len(name)})
+    for m in _LABEL_ADDR.finditer(text):                # 'Address: ...' (continues on the next line only after a trailing comma)
+        end, last, extra = m.end("a"), m.group("a"), 0
+        for ln in text[end:].split("\n")[1:]:
+            if extra >= 2 or not last.rstrip().endswith(",") or not ln.strip() or ":" in ln[:30] or len(ln) > 90:
+                break
+            end += 1 + len(ln)
+            last, extra = ln, extra + 1
+        val = text[m.start("a"):end].rstrip(" \t.,;")
+        out.append({"type": "ADDRESS", "value": val, "page": pg["page"], "start": m.start("a"), "end": m.start("a") + len(val)})
+    for m in _LABEL_PIN.finditer(text):                 # 'PIN: 520001', 'ZIP 94105'
+        z = m.group("z").strip()
+        if any(c.isdigit() for c in z):
+            out.append({"type": "ADDRESS", "value": z, "page": pg["page"], "start": m.start("z"), "end": m.start("z") + len(z)})
+    for m in _LABEL_PHONE.finditer(text):               # 'M +1 (555) 0174', 'Tel: 020 7946 0958'
+        v = m.group("v").rstrip(" \t.-")
+        if not _phone_ok(v):
+            continue
+        if len(m.group("lab")) <= 1 and not v.startswith(("+", "(")):
+            continue                                       # single letter label (M / T): only trust clear phone shapes
+        out.append({"type": "PHONE", "value": v, "page": pg["page"], "start": m.start("v"), "end": m.start("v") + len(v)})
     for m in _LABEL_ID.finditer(text):
         v = m.group("v")
         if not any(c.isdigit() for c in v):
@@ -370,6 +464,8 @@ def _fallback_detect(pages, use_ner=True):
             for m in re.finditer(rx, pg["text"]):
                 if typ == "CREDIT_CARD" and not _luhn_ok(m.group()):
                     continue
+                if typ == "PHONE" and not _phone_ok(m.group()):
+                    continue
                 found.append({"type": typ, "value": m.group(), "page": pg["page"],
                               "start": m.start(), "end": m.end()})
         found += _context_findings(pg)
@@ -379,7 +475,8 @@ def _fallback_detect(pages, use_ner=True):
         docs = _get_nlp().pipe([p["text"] for p in pages], batch_size=8)
         for pg, doc in zip(pages, docs):
             for ent in doc.ents:
-                val, st = _tidy(ent.text, ent.start_char)
+                raw = ent.text.lstrip()                      # a name never spans two lines: cut at the line end
+                val, st = _tidy(raw.split("\n")[0], ent.start_char + (len(ent.text) - len(raw)))
                 if not val:
                     continue
                 if ent.label_ == "PERSON" and _is_person_name(val):

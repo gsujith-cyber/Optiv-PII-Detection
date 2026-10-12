@@ -1,0 +1,11 @@
+[
+  {
+    "file": "test_data/input/example.docx",
+    "pii": [
+      {"type": "PERSON", "value": "Priya Sharma"},
+      {"type": "EMAIL", "value": "priya.sharma@cadence.com"},
+      {"type": "PHONE", "value": "+1 212-555-0147"},
+      {"type": "ADDRESS", "value": "120 Park Avenue, New York, NY 10022"}
+    ]
+  }
+]

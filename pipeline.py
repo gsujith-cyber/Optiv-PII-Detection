@@ -259,6 +259,7 @@ _PATTERNS = [
     ("PHONE", r"(?<![\w+])\+\d{1,3}[ \t.-]*(?:\(\d{1,4}\)|\d{1,4})(?:[ \t.-]*\d{2,5}){1,4}(?![\w-])"),
     ("PHONE", r"(?<![\w-])\(\d{3}\)[ \t.-]*\d{3,4}(?:[ \t.-]*\d{4})?(?![\w-])"),
     ("PHONE", r"(?<![\w-])\d{3}[ .-]\d{3}[ .-]\d{4}(?![\w-])"),
+    ("PHONE", r"(?<![\w-])0\d{2,4}[ -]\d{3,4}[ -]\d{3,4}(?![\w-])"),
     ("PHONE", r"(?<![\w.-])(?:(?:\+?91|0)[ -]?)?[6-9]\d{4}[ -]?\d{5}(?![\w.-])"),
 ]
 _nlp = None
@@ -283,6 +284,7 @@ _GENERIC |= set("""
 the a an and or of to for with by in on at from as is are was were be been being this that these those it its our your their his her my we you
 they he she them us who whom which what when where why how all any each every some not nor so than too very can will would should could may
 might must shall do does did has have had also but if then else about into over under between among per via
+recycle bin discard delete remove provider providers folder folders button buttons menu icon click select search home settings
 everyone anyone someone others other another same above below following respective relevant designated assigned concerned responsible
 authorised authorized applicable board committee council office tba tbc
 """.split())
@@ -305,6 +307,7 @@ _LABEL_ID = re.compile(
 
 def _tidy(value: str, start: int):
     """Trim spaces and trailing punctuation from a name span; keeps the dot of an initial ('John A.')."""
+    value = re.split(r"(?<=[a-z]{2})[.!?][ \t]", value.split("\n")[0])[0]      # a name ends where the sentence ends
     lead = len(value) - len(value.lstrip())
     value, start = value.strip(), start + lead
     while value and value[-1] in ".,;:'\u2019\"":
@@ -313,6 +316,55 @@ def _tidy(value: str, start: int):
             break
         value = value[:-1]
     return value, start
+
+
+STRICT_NAMES = True     # True: a name guessed by the language model is kept only with supporting evidence (see _name_evidence)
+_FIRST_NAMES = set("""
+james john robert michael william david richard joseph thomas charles christopher daniel matthew anthony mark donald steven paul andrew joshua
+kenneth kevin brian george timothy ronald edward jason jeffrey ryan jacob gary nicholas eric jonathan stephen larry justin scott brandon benjamin
+samuel gregory alexander patrick frank raymond jack dennis jerry tyler aaron jose adam nathan henry zachary douglas peter kyle noah ethan jeremy
+walter christian keith roger terry austin sean gerald carl harold dylan arthur lawrence jordan jesse bryan billy bruce gabriel joe logan albert
+alan eugene russell vincent philip bobby johnny bradley mary patricia jennifer linda elizabeth barbara susan jessica sarah karen lisa nancy betty
+margaret sandra ashley kimberly emily donna michelle carol amanda dorothy melissa deborah stephanie rebecca sharon laura cynthia kathleen amy angela
+shirley anna brenda pamela emma nicole helen samantha katherine christine debra rachel carolyn janet catherine maria heather diane olivia julie
+joyce victoria ruth virginia lauren kelly christina joan evelyn judith andrea hannah megan cheryl jacqueline martha madison teresa gloria sara
+janice marie julia grace judy theresa rose beverly denise marilyn amber danielle abigail brittany diana jane lori alexis kayla
+priya anita anil amit rahul rohan vikram vijay ajay sanjay sunil suresh ramesh mahesh ravi raj rajesh rakesh deepak manoj naveen praveen pradeep
+kiran arjun karthik krishna ganesh sai venkat srinivas lakshmi sita radha divya pooja neha sneha swati kavita sunita anjali ishita nisha meera
+rekha shweta aditi sujith vanshika naomi marta daniela pedro luis carlos juan miguel jorge antonio manuel francisco javier fernando sergio
+ricardo pablo diego andres marco luca giovanni mario paolo stefan hans klaus jan piotr tomasz pawel marek eva ewa agnieszka katarzyna ahmed
+mohammed muhammad ali omar hassan hussein fatima aisha yusuf ibrahim wei li zhang wang chen yang liu ying hiro kenji yuki akira sakura olga ivan
+dmitri sergei natalia elena
+""".split())
+_TITLE_RX = re.compile(r"(?i)\b(?:mr|mrs|ms|miss|dr|prof|shri|smt|sir|madam)\.?[ \t]*$")
+_EVIDENCE_RX = re.compile(r"[\w.+-]+@[\w-]+\.[\w.]+|\+?\d[\d ()-]{7,}\d|\b(?:EMP|EID)[-_ ]?\d+")
+_PIC_MARK = "[Text found in pictures]"
+_OTHER_MARKS = ("[Speaker notes]", "[Text boxes]", "[Headers and footers]", "[Form fields and comments]")
+
+
+def _in_picture(text: str, pos: int) -> bool:
+    return text.rfind(_PIC_MARK, 0, pos) > max(text.rfind(m, 0, pos) for m in _OTHER_MARKS)
+
+
+def _name_evidence(text: str, start: int, end: int, value: str, emails) -> bool:
+    """Why we believe a name guessed by the language model is really a person:
+    a title in front (Dr., Ms.), a middle initial, an email / phone / ID on the same or a neighbouring line,
+    or the name appearing inside an email address of the document."""
+    if _TITLE_RX.search(text[max(0, start - 12):start]):
+        return True
+    toks = value.split()
+    if len(toks) >= 3 and any(re.fullmatch(r"[A-Z]\.?", t) for t in toks[1:-1]):
+        return True
+    ls = text.rfind("\n", 0, start) + 1
+    prev = text.rfind("\n", 0, max(ls - 1, 0)) + 1
+    le = text.find("\n", end)
+    le = len(text) if le == -1 else le
+    nxt = text.find("\n", le + 1)
+    nxt = len(text) if nxt == -1 else nxt
+    if _EVIDENCE_RX.search(text[prev:nxt]):
+        return True
+    parts = [t.lower().strip(".'") for t in toks if len(t) >= 4]
+    return any(t in e for e in emails for t in parts)
 
 
 def _is_person_name(text: str) -> bool:
@@ -325,7 +377,9 @@ def _is_person_name(text: str) -> bool:
         if low in _GENERIC or any(ch.isdigit() for ch in t):
             return False
         if low in _PARTICLES:
-            continue
+            if 0 < toks.index(t) < len(toks) - 1:      # 'bin', 'van', 'de' only between two name words
+                continue
+            return False
         if not re.fullmatch(r"[A-Z][A-Za-z.'\u2019-]*", t):
             return False
     return True
@@ -386,6 +440,31 @@ def _table_name_findings(pg):
     return out
 
 
+_VERB_NAME = re.compile(
+    r"\b(?i:call|contact|email|ask|ping|reach|meet|thanks|thank|dear|hi|hello|attn|attention|cc|mr|mrs|ms|dr|prof)\b[ \t:.]*"
+    r"(?P<n>[A-Z][a-z]+(?:[ \t]+[A-Z][a-z.']+){1,2})")
+
+
+def _row_name_findings(pg, found):
+    """Pipe-separated rows: if one cell of the row is already a person / email / phone, other cells that look like
+    full names (2-3 capitalised words, no business words) are people too."""
+    text, out, pos = pg["text"], [], 0
+    mine = [f for f in found if f["page"] == pg["page"] and f["type"] in ("PERSON", "EMAIL", "PHONE")]
+    for line in text.split("\n"):
+        ls = pos
+        pos += len(line) + 1
+        if " | " not in line or not any(ls <= f["start"] < ls + len(line) for f in mine):
+            continue
+        off = 0
+        for c in line.split(" | "):
+            cs = ls + off
+            off += len(c) + 3
+            val, st = _tidy(c, cs)
+            if val and 2 <= len(val.split()) <= 3 and _is_person_name(val) and not any(f["start"] <= st < f["end"] for f in mine):
+                out.append({"type": "PERSON", "value": val, "page": pg["page"], "start": st, "end": st + len(val)})
+    return out
+
+
 def _context_findings(pg):
     """Names and IDs recognised from the label in front of them: 'Name :- G Sujith', 'Leader: Vanshika jadaun',
     'Prepared by ...', 'Enroll No :- 2024...'. The label itself is NOT redacted, only the value."""
@@ -397,6 +476,10 @@ def _context_findings(pg):
                 name, st = _tidy(got[0], m.start("n") + got[1])
                 if name:
                     out.append({"type": "PERSON", "value": name, "page": pg["page"], "start": st, "end": st + len(name)})
+    for m in _VERB_NAME.finditer(text):                 # 'Call Priya Sharma', 'Thanks Anita Rao'
+        v, st = _tidy(m.group("n"), m.start("n"))
+        if _is_person_name(v):
+            out.append({"type": "PERSON", "value": v, "page": pg["page"], "start": st, "end": st + len(v)})
     for m in _LABEL_ADDR.finditer(text):                # 'Address: ...' (continues on the next line only after a trailing comma)
         end, last, extra = m.end("a"), m.group("a"), 0
         for ln in text[end:].split("\n")[1:]:
@@ -457,8 +540,36 @@ def warmup():
     threading.Thread(target=_load, daemon=True).start()
 
 
+_MAILBOX = {"info", "support", "admin", "sales", "contact", "hr", "noreply", "careers", "help", "billing", "team", "office", "service",
+            "services", "security", "compliance", "legal", "finance", "marketing", "press", "hello", "mail", "webmaster", "postmaster"}
+
+_GENERIC |= _MAILBOX
+
+
+def _email_name_findings(pg, emails):
+    """An email like priya.nair@ or m.szewczyk@ tells us a person's name: redact 'Priya Nair' / 'Marta Szewczyk' in the text too."""
+    out, text = [], pg["text"]
+    for e in set(emails):
+        parts = [x for x in re.split(r"[._-]+", e.split("@")[0]) if x.isalpha()]
+        if len(parts) < 2 or len(parts[-1]) < 3:
+            continue
+        first, last = parts[0].lower(), parts[-1].lower()
+        if {first, last} & (_MAILBOX | _GENERIC):
+            continue
+        if len(first) == 1:
+            rx = rf"\b[A-Za-z][a-z]+[ \t]+(?:[A-Z]\.?[ \t]+)?{re.escape(last)}\b|\b{first}\.?[ \t]+{re.escape(last)}\b"
+        else:
+            rx = rf"\b{re.escape(first)}[ \t]+(?:[A-Z]\.?[ \t]+)?{re.escape(last)}\b"
+        for m in re.finditer(rx, text, re.I):
+            name = m.group()
+            if all(t[0].isupper() for t in name.split()):
+                out.append({"type": "PERSON", "value": name, "page": pg["page"], "start": m.start(), "end": m.end()})
+    return out
+
+
 def _fallback_detect(pages, use_ner=True):
     found = []
+    emails = [m.lower() for pg in pages for m in re.findall(r"[\w.+-]+@[\w-]+(?:\.[\w-]+)+", pg["text"])]
     for pg in pages:
         for typ, rx in _PATTERNS:
             for m in re.finditer(rx, pg["text"]):
@@ -469,22 +580,30 @@ def _fallback_detect(pages, use_ner=True):
                 found.append({"type": typ, "value": m.group(), "page": pg["page"],
                               "start": m.start(), "end": m.end()})
         found += _context_findings(pg)
+        found += _email_name_findings(pg, emails)
     try:  # names via spaCy, then filtered so only real full names survive
         if not use_ner:
             raise RuntimeError
         docs = _get_nlp().pipe([p["text"] for p in pages], batch_size=8)
         for pg, doc in zip(pages, docs):
             for ent in doc.ents:
-                raw = ent.text.lstrip()                      # a name never spans two lines: cut at the line end
-                val, st = _tidy(raw.split("\n")[0], ent.start_char + (len(ent.text) - len(raw)))
+                raw = ent.text.lstrip()                      # a name never spans two lines or two sentences
+                raw = re.split(r"(?<=[a-z]{2})[.!?][ \t]", raw.split("\n")[0])[0]
+                val, st = _tidy(raw, ent.start_char + (len(ent.text) - len(raw)))
                 if not val:
                     continue
                 if ent.label_ == "PERSON" and _is_person_name(val):
-                    found.append({"type": "PERSON", "value": val, "page": pg["page"], "start": st, "end": st + len(val)})
+                    text = pg["text"]
+                    keep = (not STRICT_NAMES) or _name_evidence(text, st, st + len(val), val, emails) \
+                        or (not _in_picture(text, st) and val.split()[0].lower() in _FIRST_NAMES)
+                    if keep:
+                        found.append({"type": "PERSON", "value": val, "page": pg["page"], "start": st, "end": st + len(val)})
                 elif ent.label_ == "ORG" and REDACT_ORGANIZATIONS and _is_person_name(val):
                     found.append({"type": "ORGANIZATION", "value": val, "page": pg["page"], "start": st, "end": st + len(val)})
     except Exception:
         pass
+    for pg in pages:
+        found += _row_name_findings(pg, found)
     return found
 
 

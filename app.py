@@ -19,9 +19,9 @@ try:                                              # optional ideas: each works o
 except Exception:
     build_report = to_csv = None
 try:
-    from processing.file_redactor import redact_file
+    from processing.file_redactor import check_copy, redact_file, rescan_copy
 except Exception:
-    redact_file = None
+    redact_file = check_copy = rescan_copy = None
 from pipeline import SUPPORTED, detect_type, run_pipeline
 
 st.set_page_config(page_title="PII Detection", page_icon="🛡️", layout="wide",
@@ -145,7 +145,7 @@ table.tbl tr:hover td{background:rgba(255,255,255,.04);}
 
 /* ----- buttons (always visible) ----- */
 .stButton>button,.stDownloadButton>button,[data-testid="stFormSubmitButton"]>button{position:relative;overflow:hidden;background:var(--grad) !important;
-  color:#fff !important;border:0 !important;border-radius:999px !important;padding:.7rem 2rem !important;font-weight:800 !important;font-size:1rem !important;
+  color:#fff !important;border:0 !important;border-radius:999px !important;padding:.65rem 1.2rem !important;font-weight:800 !important;font-size:.95rem !important;
   box-shadow:0 8px 26px rgba(236,72,153,.4);transition:transform .2s,box-shadow .2s;}
 .stButton>button p,.stDownloadButton>button p,[data-testid="stFormSubmitButton"]>button p{color:#fff !important;font-weight:800 !important;}
 .stButton>button::after,.stDownloadButton>button::after,[data-testid="stFormSubmitButton"]>button::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;
@@ -158,6 +158,9 @@ table.tbl tr:hover td{background:rgba(255,255,255,.04);}
   background:rgba(255,255,255,.18) !important;box-shadow:0 0 22px rgba(255,255,255,.2);}
 
 .stButton>button:disabled{opacity:.35 !important;box-shadow:none !important;transform:none !important;}
+
+[data-testid="stColumn"] .stButton>button p,[data-testid="stColumn"] .stDownloadButton>button p{white-space:normal;line-height:1.2;}
+[data-testid="stColumn"] .stButton>button,[data-testid="column"] .stButton>button,[data-testid="stColumn"] .stDownloadButton>button,[data-testid="column"] .stDownloadButton>button{width:100%;}
 
 /* ----- uploader ----- */
 [data-testid="stFileUploaderDropzone"],[data-testid="stFileUploader"] section{background:rgba(255,255,255,.05) !important;border:2px dashed rgba(244,114,182,.7) !important;
@@ -293,7 +296,7 @@ def section_title(num: str, text: str) -> None:
 
 def navbar(home: bool) -> None:
     right = ('<div class="links"><a href="#features">Features</a><a href="#how">How it works</a><a href="#security">Security</a>'
-             '<a href="#faq">FAQ</a><a href="#about">About</a></div>') if home else \
+             '<a href="#about">About</a></div>') if home else \
             '<div class="status"><span class="dot"></span>System online</div>'
     st.markdown(f'<div class="nav"><a class="brand" href="#top"><span class="logo">{LOGO}</span>PII Detection</a>{right}</div>'
                 '<div id="top"></div>', unsafe_allow_html=True)
@@ -340,19 +343,6 @@ def info_sections() -> None:
                     for i, (t, d) in enumerate(sec))
     st.markdown(f'<div class="grid">{cards}</div>', unsafe_allow_html=True)
 
-    st.markdown('<div class="section" id="faq"><div class="h2">Frequently asked <span class="grad">questions</span></div></div>',
-                unsafe_allow_html=True)
-    faqs = [("What is PII?", "Personally identifiable information: data that can identify a person, such as a name, email, phone number or government ID."),
-            ("Which files can I upload?", "PDF, DOCX, PPTX and TXT. Scanned PDFs are read with OCR, which needs the Tesseract program installed."),
-            ("What does the redaction percentage mean?", "It is the share of detected PII that was replaced. After redacting, the app checks the output again and "
-             "shows how many items remain. Detection itself can still miss things, so coverage is measured on test files."),
-            ("Can this miss PII?", "No automatic detector is perfect. That is why the result shows a re-check and why the team measures coverage on sample files."),
-            ("Why is there a login for the original file?", "You already have your own file. The login protects the copy stored by the system and the table that links "
-             "tags back to real values, for authorised reviewers such as audit or compliance.")]
-    for q, a in faqs:
-        with st.expander(q):
-            st.write(a)
-
     st.markdown('<div class="section" id="about"><div class="h2">About <span class="grad">this project</span></div>'
                 '<div class="sub">PII Detection was built by a team of four for Case Study 2 (Text Analysis and PII Detection). '
                 'It extracts text from varied documents, finds personal data, redacts it before AI processing and reports what was found.</div></div>',
@@ -360,7 +350,7 @@ def info_sections() -> None:
     st.markdown('<div class="footer"><div><div class="b">PII Detection</div><div class="m">Find and remove personal data from documents '
                 'before they reach an AI model.</div></div>'
                 '<div><h4>Product</h4><a href="#features">Features</a><a href="#how">How it works</a><a href="#top">Upload a file</a></div>'
-                '<div><h4>Info</h4><a href="#security">Security &amp; privacy</a><a href="#faq">Help &amp; FAQ</a><a href="#about">About</a></div></div>'
+                '<div><h4>Info</h4><a href="#security">Security &amp; privacy</a><a href="#about">About</a></div></div>'
                 '<div class="copy">&copy; 2026 PII Detection &middot; Case Study 2 project</div>', unsafe_allow_html=True)
 
 
@@ -486,36 +476,134 @@ def mapping_viewer(r: dict) -> None:
         st.info("Nothing matches your search.")
 
 
-def redacted_copy_ui(r: dict) -> None:
-    """Optional: redacted COPY in the original format (PDF / DOCX / PPTX / TXT), checked after saving."""
-    ext = Path(r["name"]).suffix.lower()
-    if redact_file is None or ext not in (".pdf", ".docx", ".pptx", ".txt"):
+def coverage_panel(cov: dict) -> None:
+    """Result of 'Check coverage': where original values remain and where new PII was found (never the real values)."""
+    items, new = cov["leftover_items"], cov["new_items"]
+    if not items and not new:
+        st.markdown(f'<div class="banner-ok" style="margin-top:10px">All clear. Scanned {cov["pages"]} page(s) or slide(s) of the redacted copy: '
+                    'the scanner found no original value and no new PII. No scanner is perfect, so skim the file once.</div>', unsafe_allow_html=True)
+        return
+    st.markdown(f'<div class="banner-bad" style="margin-top:10px">{len(items)} place(s) still hold an original value and {len(new)} possible new PII '
+                'item(s) were found. Use "Fix missed PII" to redact them.</div>', unsafe_allow_html=True)
+    rows = [{"Item": i["tag"], "Status": "Still in the copy", "Where": i["where"], "Page / Slide": i["page"]} for i in items[:30]]
+    rows += [{"Item": i["type"], "Status": "New, not redacted", "Where": i["where"], "Page / Slide": i["page"]} for i in new[:30]]
+    st.write("")
+    html_table(pd.DataFrame(rows), chip_col="Item")
+
+
+def coverage_panel(cov: dict, fix_msg: str = "") -> None:
+    """Result of Check coverage. Items are shown as tags and places only, never as real values."""
+    items, new = cov["leftover_items"], cov["new_items"]
+    if fix_msg:
+        st.markdown(f'<div style="color:#b9b0dc;font-size:.9rem;margin:10px 0 4px">{escape(fix_msg)}</div>', unsafe_allow_html=True)
+    if not items and not new:
+        st.markdown('<div class="banner-ok" style="margin-top:10px">All clear. Every PII item in the redacted copy is a tag such as [PERSON_1].</div>',
+                    unsafe_allow_html=True)
+        return
+    st.markdown('<div class="banner-bad" style="margin-top:10px">These items still need a tag. Click <b>Fix missed PII</b>.</div>', unsafe_allow_html=True)
+    rows = [{"Item": i["tag"], "Where": i["where"], "Page / Slide": i["page"]} for i in items[:30]]
+    rows += [{"Item": n["type"], "Where": n["where"], "Page / Slide": n["page"]} for n in new[:30]]
+    html_table(pd.DataFrame(rows), chip_col="Item")
+
+
+def _copy_supported(r: dict) -> bool:
+    return redact_file is not None and Path(r["name"]).suffix.lower() in (".pdf", ".docx", ".pptx", ".txt")
+
+
+def ensure_copy(r: dict) -> dict:
+    """Create the redacted copy if needed. Anything the first pass leaves behind is fixed straight away."""
+    copies = st.session_state.setdefault("copies", {})
+    if r["id"] not in copies:
+        info = redact_file(r["orig_path"], r["mapping"])
+        if info["leftovers"] and rescan_copy is not None:
+            res = rescan_copy(info["path"], r["mapping"])
+            r["mapping"].update(res["mapping"])
+            r["total"] += res["added"]
+            info.update(leftovers=res["after"]["leftovers"], leftover_items=res["after"]["leftover_items"],
+                        notes=res["notes"] or info.get("notes", []), warnings=res["warnings"])
+        copies[r["id"]] = info
+    return copies[r["id"]]
+
+
+def _run_ensure(r: dict) -> bool:
+    with st.spinner("Creating the redacted copy..."):
+        try:
+            ensure_copy(r)
+            return True
+        except Exception as e:
+            st.error(str(e))
+            return False
+
+
+def copy_main_button(r: dict) -> None:
+    """Create / download the redacted copy in the original format."""
+    if not _copy_supported(r):
+        return
+    label = Path(r["name"]).suffix.strip(".").upper()
+    copies = st.session_state.setdefault("copies", {})
+    if r["id"] not in copies:
+        if st.button(f"Create {label} copy", key="mk_copy", type="primary") and _run_ensure(r):
+            st.rerun()
+    else:
+        info = copies[r["id"]]
+        st.download_button(f"Download {label} copy", Path(info["path"]).read_bytes(), file_name=Path(info["path"]).name,
+                           type="primary", key="dl_copy")
+
+
+def copy_tools(r: dict) -> None:
+    """Check coverage / Fix missed PII, always next to the download buttons."""
+    if not _copy_supported(r) or check_copy is None:
         return
     copies = st.session_state.setdefault("copies", {})
-    label = ext.strip(".").upper()
-    if r["id"] not in copies:
-        if st.button(f"Create redacted {label} (same format)", key="mk_copy", type="primary"):
-            with st.spinner("Creating the redacted copy and checking it..."):
-                try:
-                    copies[r["id"]] = redact_file(r["orig_path"], r["mapping"])
-                except Exception as e:
-                    st.error(str(e))
-                    return
-            st.rerun()
-        return
-    info = copies[r["id"]]
-    st.download_button(f"Download redacted {label}", Path(info["path"]).read_bytes(), file_name=Path(info["path"]).name,
-                       type="primary", key="dl_copy")
-    if info["leftovers"] == 0:
-        st.markdown('<div class="banner-ok" style="margin-top:10px">Checked: the redacted copy was read again and no original value was found in it.</div>',
-                    unsafe_allow_html=True)
-    elif info["leftovers"]:
-        st.markdown(f'<div class="banner-bad" style="margin-top:10px">{info["leftovers"]} original value(s) were still found in the copy. Review it.</div>',
-                    unsafe_allow_html=True)
-    for n in info.get("notes", []):
-        st.markdown(f'<div style="color:#b9b0dc;font-size:.88rem;margin-top:6px">{escape(n)}</div>', unsafe_allow_html=True)
-    for w in info.get("warnings", []):
-        st.markdown(f'<div class="banner-bad" style="margin-top:8px">{escape(w)}</div>', unsafe_allow_html=True)
+    cov_all, msgs = st.session_state.setdefault("cov", {}), st.session_state.setdefault("fixmsg", {})
+    st.write("")
+    c1, c2, _ = st.columns(3)
+    if c1.button("Check coverage", key="chk_cov", type="primary") and _run_ensure(r):
+        with st.spinner("Scanning the redacted copy..."):
+            try:
+                cov_all[r["id"]] = check_copy(copies[r["id"]]["path"], r["mapping"])
+                msgs.pop(r["id"], None)
+            except Exception as e:
+                st.error(str(e))
+                return
+        st.rerun()
+    if c2.button("Fix missed PII", key="fix_cov", type="primary") and _run_ensure(r):
+        info = copies[r["id"]]
+        with st.spinner("Rescanning and replacing anything that is not a tag yet..."):
+            try:
+                res = rescan_copy(info["path"], r["mapping"])
+            except Exception as e:
+                st.error(str(e))
+                return
+        before = len(info.get("leftover_items", []))
+        new_tags = [k for k in res["mapping"] if k not in r["mapping"]]
+        r["mapping"].update(res["mapping"])
+        r["total"] += res["added"]
+        info.update(leftovers=res["after"]["leftovers"], leftover_items=res["after"]["leftover_items"], notes=res["notes"], warnings=res["warnings"])
+        cov_all[r["id"]] = res["after"]
+        if new_tags:
+            more = f" and {len(new_tags) - 8} more" if len(new_tags) > 8 else ""
+            msgs[r["id"]] = f"Done. {len(new_tags)} more item(s) are now tags: {', '.join(new_tags[:8])}{more}."
+        elif before:
+            msgs[r["id"]] = "Done. The items that were still visible are now replaced by their tags."
+        else:
+            msgs[r["id"]] = "Nothing to fix. Every PII item is already a tag."
+        st.rerun()
+
+    if r["id"] in copies:
+        info = copies[r["id"]]
+        if info["leftovers"] == 0 and r["id"] not in cov_all:
+            st.markdown('<div class="banner-ok" style="margin-top:10px">The redacted copy is ready. Every PII item in it is replaced by a tag such as [PERSON_1].</div>',
+                        unsafe_allow_html=True)
+        elif info["leftovers"]:
+            st.markdown('<div class="banner-bad" style="margin-top:10px">A few items in the copy are not replaced by tags yet. Click <b>Fix missed PII</b>.</div>',
+                        unsafe_allow_html=True)
+        for note in info.get("notes", []):
+            st.markdown(f'<div style="color:#b9b0dc;font-size:.88rem;margin-top:6px">{escape(note)}</div>', unsafe_allow_html=True)
+        for w in info.get("warnings", []):
+            st.markdown(f'<div class="banner-bad" style="margin-top:8px">{escape(w)}</div>', unsafe_allow_html=True)
+    if r["id"] in cov_all:
+        coverage_panel(cov_all[r["id"]], msgs.get(r["id"], ""))
 
 
 # ================================================================ RESULT ====
@@ -553,13 +641,14 @@ def result_page() -> None:
     with left:
         st.markdown(f'<div class="viewer">{highlight(r["redacted_text"])}</div>', unsafe_allow_html=True)
         st.write("")
-        b1, b2 = st.columns(2)
-        b1.download_button("Download redacted text", r["redacted_text"], file_name=f"redacted_{Path(r['name']).stem}.txt", type="primary", key="dl_txt")
+        b1, b2, b3 = st.columns(3)
+        b1.download_button("Download text", r["redacted_text"], file_name=f"redacted_{Path(r['name']).stem}.txt", type="primary", key="dl_txt")
         if build_report is not None:
-            b2.download_button("Download audit report", to_csv(build_report(r)), file_name=f"audit_{Path(r['name']).stem}.csv",
+            b2.download_button("Download report", to_csv(build_report(r)), file_name=f"audit_{Path(r['name']).stem}.csv",
                                mime="text/csv", type="primary", key="dl_report")
-        st.write("")
-        redacted_copy_ui(r)
+        with b3:
+            copy_main_button(r)
+        copy_tools(r)
     with right:
         st.markdown('<div style="color:#b9b0dc;margin-bottom:8px">PII found (real values are not shown)</div>', unsafe_allow_html=True)
         if r["findings"]:
